@@ -2,9 +2,6 @@
  * The base SnapCarPlatform module.
  *
  * @module SnapCarPlatform
- * @param SnapCarPlatform {Object} SnapCarPlatform itself.
- * @param $ {Object} the jQuery plugin
- * @requires jQuery
  */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
@@ -20,21 +17,62 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         }
     }
 
-    // Basic API config
+    /**
+     * Defines some basic API configuration.
+     *
+     * @class Config
+     * @constructor
+     */
+
+    SnapCarPlatform.Config = function () {};      
 
     if (canDefineProperty) {
-        Object.defineProperties(SnapCarPlatform, {
+        Object.defineProperties(SnapCarPlatform.Config, {
+            
+            /**
+             * The web service base domain on which API calls are made. You can change this value in order to perform requests on demo/sandbox web services rather than the production one.
+             *
+             * @property baseDomain
+             * @type String
+             * @default "https://api.snapcar.com/public"
+             */
+            
             baseDomain: {enumerable: true, writable: true, value: 'https://api.snapcar.com/public'},
+
+            /**
+             * The user token. You must provide this value in order to be able to make API calls.
+             *
+             * @property token
+             * @type String
+             */
+            
             token: {enumerable: true, writable: true},
-            locale: {enumerable: true, writable: true, value: 'fr'},
-            fallbackLocale: {enumerable: true, writable: false, value: 'fr'} // To be used if you define a non supported "locale" value.
+
+            /**
+             * The user locale. As you may know, some information returned through the API are localized (ex. : the meeting point details). You need to set this value in order to receive data localized in the user language if supported. The fallbackLocale value is used otherwise.
+             *
+             * @property locale
+             * @default "en"
+             * @type String
+             */
+            
+            locale: {enumerable: true, writable: true, value: 'en'},
+
+            /**
+             * Locale used as a default in case you would provide a non supported locale value. Its value is "en".
+             *
+             * @property fallbackLocale
+             * @type String
+             */
+            
+            fallbackLocale: {enumerable: true, writable: false, value: 'en'}
         });
     }
 
     else {
-        SnapCarPlatform.baseDomain = 'https://api.snapcar.com/public';
-        SnapCarPlatform.locale = 'fr';
-        SnapCarPlatform.fallbackLocale = 'fr';
+        SnapCarPlatform.Config.baseDomain = 'https://api.snapcar.com/public';
+        SnapCarPlatform.Config.locale = 'fr';
+        SnapCarPlatform.Config.fallbackLocale = 'fr';
     }
 
     // Define property helper
@@ -62,7 +100,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     // Helper
 
     function getTextInLocale(payload) {
-        return payload[SnapCarPlatform.locale] || payload[SnapCarPlatform.fallbackLocale];
+        return payload[SnapCarPlatform.Config.locale] || payload[SnapCarPlatform.Config.fallbackLocale];
     }
 
     function processObjectPayload(instance, payload, specialValueCallback) {
@@ -484,7 +522,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         }
 
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings/prices/" + this.id + "/confirm",
+            url: SnapCarPlatform.Config.baseDomain + "/bookings/prices/" + this.id + "/confirm",
             method: 'POST',
             data: additionalParameters
         }, function (data) {
@@ -756,7 +794,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.Booking.prototype.cancellationPrice = function bookingCancellationPrice() {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings/" + this.id + "/cancellation_price"
+            url: SnapCarPlatform.Config.baseDomain + "/bookings/" + this.id + "/cancellation_price"
         }, function (data) {
             var result = new SnapCarPlatform.CancellationFee();
             result.constructor.populateProperties(result, data);
@@ -766,7 +804,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.Booking.prototype.cancel = function bookingCancel() {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings/" + this.id + "/cancel",
+            url: SnapCarPlatform.Config.baseDomain + "/bookings/" + this.id + "/cancel",
             method: 'POST'
         }, function (data) {
             var result = new SnapCarPlatform.Booking();
@@ -778,7 +816,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     SnapCarPlatform.Booking.prototype.refresh = function bookingRefresh() {
         var booking = this;
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings/" + booking.id
+            url: SnapCarPlatform.Config.baseDomain + "/bookings/" + booking.id
         }, function (data) {
             booking.constructor.populateProperties(booking, data);
             return booking;
@@ -828,7 +866,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         var booking = this;
 
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings/prices",
+            url: SnapCarPlatform.Config.baseDomain + "/bookings/prices",
             method: 'POST',
             data: parameters
         }, function (data) {
@@ -850,12 +888,12 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     var performAPICall = function performAPICall(requestParams, resultProcessor) {
 
-        if (typeof SnapCarPlatform.token === 'undefined') {
+        if (typeof SnapCarPlatform.Config.token === 'undefined') {
             throw new SnapCarPlatform.ConfigError('missing_token', 'You have to provide a SnapCar API token in order to perform API calls.');
         }
 
         var deferred = $.Deferred();
-        requestParams.data = $.extend({}, requestParams.data || {}, {token: SnapCarPlatform.token});
+        requestParams.data = $.extend({}, requestParams.data || {}, {token: SnapCarPlatform.Config.token});
 
         $.ajax(requestParams).done(function (data) {
             deferred.resolveWith(this, [resultProcessor(data)]);
@@ -868,7 +906,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.eta = function eta(lat, lng) {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/info/eta",
+            url: SnapCarPlatform.Config.baseDomain + "/info/eta",
             data: {lat: lat, lng: lng}
         }, function (data) {
             return $.map(data, function (statusPayload) {
@@ -881,7 +919,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.serviceClasses = function serviceClasses(lat, lng) {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/info/service_classes",
+            url: SnapCarPlatform.Config.baseDomain + "/info/service_classes",
             data: {lat: lat, lng: lng}
         }, function (data) {
             return $.map(data, function (payload) {
@@ -894,7 +932,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.meetingPoints = function meetingPoints(lat, lng) {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/info/meeting_points",
+            url: SnapCarPlatform.Config.baseDomain + "/info/meeting_points",
             data: {lat: lat, lng: lng}
         }, function (data) {
             var result = new SnapCarPlatform.SpecialArea();
@@ -905,7 +943,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.user = function user() {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/users/me"
+            url: SnapCarPlatform.Config.baseDomain + "/users/me"
         }, function (data) {
             var result = new SnapCarPlatform.Rider(data);
             result.constructor.populateProperties(result, data);
@@ -915,7 +953,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.activeBookings = function activeBookings() {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings"
+            url: SnapCarPlatform.Config.baseDomain + "/bookings"
         }, function (data) {
             return $.map(data, function (payload) {
                 var result = new SnapCarPlatform.Booking();
@@ -928,7 +966,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     SnapCarPlatform.bookingsHistory = function bookingsHistory(offset, limit) {
         limit = limit || 20;
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings/history",
+            url: SnapCarPlatform.Config.baseDomain + "/bookings/history",
             data: {
                 offset: offset || 0,
                 limit: limit
@@ -942,7 +980,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.booking = function booking(id) {
         return performAPICall({
-            url: SnapCarPlatform.baseDomain + "/bookings/" + id
+            url: SnapCarPlatform.Config.baseDomain + "/bookings/" + id
         }, function (data) {
             var result = new SnapCarPlatform.Booking();
             result.constructor.populateProperties(result, data);
