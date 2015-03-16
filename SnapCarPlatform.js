@@ -99,11 +99,11 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     // Helper
 
-    function getTextInLocale(payload) {
+    var getTextInLocale = function (payload) {
         return payload[SnapCarPlatform.Config.locale] || payload[SnapCarPlatform.Config.fallbackLocale];
-    }
+    };
 
-    function processObjectPayload(instance, payload, specialValueCallback) {
+    var processObjectPayload = function (instance, payload, specialValueCallback) {
         var propertyConfig = [];
         $.each(payload || {}, function (key, val) {
             if (typeof instance.constructor.mapping === 'object') {
@@ -133,10 +133,9 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         if (canDefineProperty) {
             Object.defineProperties(instance, propertyConfig);
         }
+    };
 
-    }
-
-    function bootstrapInstanceProperties(instance) {
+    var bootstrapInstanceProperties = function (instance) {
         if (canDefineProperty) {
             var propertyConfig = [];
             $.each(instance.constructor.mapping, function (key, val) {
@@ -147,10 +146,18 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             });
             Object.defineProperties(instance, propertyConfig);
         }
-    }
+    };
 
-    // Error
-
+    /**
+     * Error object that is created upon errors such as a wrong API call.
+     *
+     * @class Error
+     * @param type {string} The type of error.
+     * @param message {string} A key which defines more precisely the type of error.
+     * @param description {string} A human readable text describing the error. Not to be displayed to the user.
+     * @constructor
+     */
+    
     SnapCarPlatform.Error = function (type, message, description) {
         processObjectPayload(this, {
             type: type,
@@ -160,11 +167,46 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.Error, {
+        
+        /**
+         * The type of error.
+         *
+         * @property type
+         * @type String
+         */
+        
         type: {name: 'type'},
+
+        /**
+         * A key which defines more precisely the type of error.
+         *
+         * @property message
+         * @type String
+         */
+        
         message: {name: 'message'},
+
+        /**
+         * A human readable text describing the error. Not to be displayed to the user.
+         *
+         * @property description
+         * @type String
+         */
+        
         description: {name: 'description'}
     });
 
+
+    /**
+     * Represents an error created upon configuration issues such as trying to perform an API call with no token defined.
+     *
+     * @class ConfigError
+     * @extends SnapCarPlatform.Error
+     * @param message {string} A key which defines more precisely the type of error.
+     * @param description {string} A human readable text describing the error. Not to be displayed to the user.
+     * @constructor
+     */
+    
     SnapCarPlatform.ConfigError = function (message, description) {
         processObjectPayload(this, {
             type: 'config',
@@ -175,6 +217,16 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.ConfigError.prototype = new SnapCarPlatform.Error();
 
+    /**
+     * Represents an error created when trying to make API calls with invalid parameters.
+     *
+     * @class InvalidParametersError
+     * @extends SnapCarPlatform.Error
+     * @param message {string} A key which defines more precisely the type of error.
+     * @param description {string} A human readable text describing the error. Not to be displayed to the user.
+     * @constructor
+     */
+
     SnapCarPlatform.InvalidParametersError = function (message, description) {
         processObjectPayload(this, {
             type: 'invalid_parameters',
@@ -184,6 +236,15 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     SnapCarPlatform.InvalidParametersError.prototype = new SnapCarPlatform.Error();
+
+    /**
+     * Represents an error received from the API.
+     *
+     * @class APIError
+     * @extends SnapCarPlatform.Error
+     * @param payload {Object} The API response body.
+     * @constructor
+     */
 
     SnapCarPlatform.APIError = function (payload) {
         var instance = this;
@@ -206,8 +267,32 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     SnapCarPlatform.APIError.prototype = new SnapCarPlatform.Error();
 
     defineProperties(SnapCarPlatform.Error, {
+        
+        /**
+         * The type of error.
+         *
+         * @property code
+         * @type int
+         */
+        
         code: {name: 'code'},
+
+        /**
+         * Additional details such as a list of invalid parameters. Refer to the API reference for more information.
+         *
+         * @property details
+         * @type Object
+         */
+        
         details: {name: 'details'},
+
+        /**
+         * The server response body.
+         *
+         * @property serverResponse
+         * @type String
+         */
+        
         server_response: {name: 'serverResponse'}
     });
 
