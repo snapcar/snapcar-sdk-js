@@ -2,6 +2,8 @@
  * The base SnapCarPlatform module.
  *
  * @module SnapCarPlatform
+ * @param SnapCarPlatform {Object} SnapCarPlatform itself.
+ * @param $ {Object} the jQuery plugin
  * @requires jQuery
  */
 
