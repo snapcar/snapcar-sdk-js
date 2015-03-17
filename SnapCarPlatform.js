@@ -173,6 +173,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          *
          * @property type
          * @type String
+         * @final
          */
         
         type: {name: 'type'},
@@ -182,6 +183,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          *
          * @property message
          * @type String
+         * @final
          */
         
         message: {name: 'message'},
@@ -191,6 +193,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          *
          * @property description
          * @type String
+         * @final
          */
         
         description: {name: 'description'}
@@ -273,6 +276,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          *
          * @property code
          * @type int
+         * @final
          */
         
         code: {name: 'code'},
@@ -282,6 +286,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          *
          * @property details
          * @type Object
+         * @final
          */
         
         details: {name: 'details'},
@@ -291,13 +296,19 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          *
          * @property serverResponse
          * @type String
+         * @final
          */
         
         server_response: {name: 'serverResponse'}
     });
 
 
-    // Model
+    /**
+     * Represents an error received from the API.
+     *
+     * @class ServiceClass
+     * @constructor
+     */
 
     SnapCarPlatform.ServiceClass = function () {
         bootstrapInstanceProperties(this);
@@ -313,7 +324,25 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.ServiceClass, {
+        
+        /**
+         * The service class unique identifier.
+         *
+         * @property id
+         * @type String
+         * @final
+         */
+        
         id: {name: 'id'},
+        
+        /**
+         * The localized service class name to display to the user.
+         *
+         * @property name
+         * @type String
+         * @final
+         */
+        
         name: {name: 'name'}
     });
 
@@ -517,6 +546,13 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         NORMAL: 'normal'
     };
 
+    /**
+     * Status and ETA for a specific service class.
+     * 
+     * @class ETAResult
+     * @constructor
+     */
+    
     SnapCarPlatform.ETAResult = function () {
         bootstrapInstanceProperties(this);
     };
@@ -531,10 +567,77 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.ETAResult, {
+        
+        /**
+         * Availability of the service class. Can be one of the SnapCarPlatform.ETAResultStatus object values.
+         * 
+         * @property status
+         * @final
+         * @type String
+         */        
+        
         status: {name: 'status'},
+
+        /**
+         * If the service is available, holds the ETA in minutes.
+         * 
+         * @property eta
+         * @final
+         * @type int
+         */        
+        
         eta: {name: 'eta'},
+        
+        /**
+         * The service class for which we want to know the ETA.
+         * 
+         * @property serviceClass
+         * @final
+         * @type SnapCarPlatform.ServiceClass
+         */        
+        
         service_class: {name: 'serviceClass'}
     });
+
+    /**
+     * The ETA possible statuses.
+     * 
+     * @class ETAResultStatuses
+     * @static
+     */
+    
+    SnapCarPlatform.ETAResultStatuses = {
+        
+        /**
+         * Means that the service class is available. Therefore, an ETA is provided.
+         * 
+         * @property OK
+         * @static
+         * @final
+         * @type String
+         */
+        
+        OK: 'ok',
+
+        /**
+         * Means that the service class is not available.
+         * 
+         * @property UNAVAILABLE
+         * @static
+         * @final
+         * @type String
+         */
+        
+        UNAVAILABLE: 'unavailable'
+
+    };
+
+    /**
+     * A user payment method.
+     * 
+     * @class PaymentCard
+     * @constructor
+     */
 
     SnapCarPlatform.PaymentCard = function () {
         bootstrapInstanceProperties(this);
@@ -544,9 +647,40 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         processObjectPayload(context, payload);
     };
 
+
+    
     defineProperties(SnapCarPlatform.PaymentCard, {
+        
+        /**
+         * Payment method unique identifier.
+         * 
+         * @property id
+         * @final
+         * @type String
+         */
+        
         id: {name: 'id'},
+
+        /**
+         * Payment method name given by the user. 
+         * 
+         * @property name
+         * @final
+         * @type String
+         */
+        
         name: {name: 'name'},
+        
+        /**
+         * Payment card brand.
+         * 
+         * @property brand
+         * @final
+         * @example 
+         "VISA"
+         * @type String
+         */
+        
         brand: {name: 'brand'}
     });
 
