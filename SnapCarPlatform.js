@@ -172,6 +172,8 @@
  *          booking.endLocation = new SnapCarPlatform.Location(48.855272, 2.345865, new SnapCarPlatform.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));
  *          booking.driverInfo = "Some useful info for you.";
  *          booking.nameboard = true; // We want a nameboard, for the example
+ *          
+ *          // We define the date. Warning: you must ensure that the timezone is correct!
  *          booking.plannedStartDate = new Date("2016-01-01 00:00:00");
  *          
  *          booking.flatPrices().done(function(prices) {
