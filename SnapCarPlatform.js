@@ -1,11 +1,20 @@
 
 
 /**
- * The base SnapCarPlatform module.
+ * This is the base SnapCarPlatform module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent of jQuery.
+ * 
+ * The module parameters can be managed through the SnapCarPlatform.Config static class. Before using this module, you have to initialize it with a user token by setting the SnapCarPlatform.Config.token property. Please refer to the general SnapCar API documentation for more information on how to obtain a user token : http://developer.snapcar.com/. 
+ * 
+ * The SnapCarPlatform SDK for JavaScript does not manage the user authentication. The reason for this is that obtaining a user token is done through a request that requires your API secret value to be provided. The API secret is a sensitive information that should never be revealed to the user. However, setting it in the JavaScript SDK implies that your users can access it by digging into the source code. Which is why such work flow has to be implemented server side. Once initialized with a token, the module allows you to perform actions such as making bookings or getting ETA on behalf of the authenticated user.
+ *
+ * Basic API calls such as getting ETA or allowed service classes can be performed through the SnapCarPlatform.Utils static class. In general, all methods that are in charged of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error happens during the request, the promises are rejected with an instance of SnapCarPlatform.APIError (containing more info about the issue) as the reason. Look at the examples below for a comprehensive vision of the work flow.
  *
  * @module SnapCarPlatform
  * @param {SnapCarPlatform} SnapCarPlatform itself.
  * @param {jQuery} $ The jQuery plugin.
+ * 
+ * @example
+ * 
  */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
@@ -25,10 +34,10 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * Defines some basic API configuration.
      *
      * @class Config
-     * @constructor
+     * @static
      */
 
-    SnapCarPlatform.Config = function () {};      
+    SnapCarPlatform.Config = {};      
 
     if (canDefineProperty) {
         Object.defineProperties(SnapCarPlatform.Config, {
