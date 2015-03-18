@@ -48,6 +48,214 @@
  *              // An other error occurred
  *          }
  *      });
+ *      
+ * @example     
+ *      
+ *      // Let's create a booking on demand (with no planned pick up date) and without flat price.
+ *      
+ *      // First, we get the info about the authenticated user
+ *      SnapCarPlatform.Utils.user().done(function (user) {
+ *
+ *            // You may check the user.status value in order to know if he is allowed to make bookings
+ *            
+ *            // We fetch the allowed service classes
+ *            SnapCarPlatform.Utils.serviceClasses().done(function (servicesClasses) {
+ *
+ *                // We create a booking
+ *                var booking = new SnapCarPlatform.Booking();
+ *
+ *                // We define the rider and its pick up location
+ *                booking.rider = user;
+ *                booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+ *
+ *                // We also need to define the service class. Here we take one service class randomly.
+ *                // In real life, you may present the different service class names to the user for selection.
+ *                booking.serviceClass = servicesClasses[0];
+ *                
+ *                // We confirme the booking, this sends a request to the SnapCar platform
+ *                booking.confirm()
+ *                
+ *                // This handler is called when the booking is either accepted by a driver or cancelled
+ *                .done(function () {
+ *
+ *                    if (booking.status === SnapCarPlatform.BookingStatuses.GOING_TO_GET) {
+ *                        // A driver has accepted the booking
+ *                    }
+ *
+ *                    else if (booking.status === SnapCarPlatform.BookingStatuses.CANCELLED) {
+ *                        // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCarPlatform.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.
+ *                    }
+ *
+ *                    else {
+ *                        // Other status, unlikely to happen unless the driver has switched to another status in the meantime.
+ *                    }
+ *                
+ *                // This handler is called when the SnapCar platform confirms the booking creation
+ *                }).progress(function(error) {
+ *
+ *                    // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.
+ *
+ *                // This handler is called upon error (ex: no driver available)
+ *                }).fail(function(error) {
+ *
+ *                    if (error.message === "no_driver") {
+ *                        // No driver is available for the required service class. You may try with another service class.
+ *                    }
+ *
+ *                    // Check out the documentation for a comprehensive list of error messages.
+ *
+ *                });
+ *            });
+ *        });
+ *        
+ * @example     
+ *      
+ *      // Let's create a booking in the future (with a planned pick up date) and without flat price.
+ *      
+ *      // First, we get the info about the authenticated user
+ *      SnapCarPlatform.Utils.user().done(function (user) {
+ *
+ *            // You may check the user.status value in order to know if he is allowed to make bookings
+ *            
+ *            // We fetch the allowed service classes
+ *            SnapCarPlatform.Utils.serviceClasses().done(function (servicesClasses) {
+ *
+ *                // We create a booking
+ *                var booking = new SnapCarPlatform.Booking();
+ *
+ *                // We define the rider and its pick up location
+ *                booking.rider = user;
+ *                booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+ *
+ *                // We define the date. Warning: you must ensure that the timezone is correct!
+ *                booking.plannedStartDate = new Date("2016-01-01 00:00:00");
+ *                
+ *                // We also need to define the service class. Here we take one service class randomly.
+ *                // In real life, you may present the different service class names to the user for selection.
+ *                booking.serviceClass = servicesClasses[0];
+ *                
+ *                // We confirme the booking, this sends a request to the SnapCar platform
+ *                booking.confirm()
+ *                
+ *                // This handler is called when the booking is confirmed
+ *                .done(function () {
+ *
+ *                    if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
+ *                        // Your booking is waiting for dispatch in the future
+ *                    }
+ *
+ *                // This handler is called upon error (ex: no driver available)
+ *                }).fail(function(error) {
+ *
+ *                    // Check out the documentation for a comprehensive list of error messages.
+ *
+ *                });
+ *            });
+ *        });
+ *
+ *
+ * @example     
+ *      
+ *      // Let's create a booking in the future (with a planned pick up date) and with a flat price.
+ *      
+ *      // First, we get the info about the authenticated user
+ *      SnapCarPlatform.Utils.user().done(function (user) {
+ *      
+ *          // You may check the user.status value in order to know if he is allowed to make bookings
+ *      
+ *          // We create a booking
+ *          var booking = new SnapCarPlatform.Booking();
+ *      
+ *          // We define the rider and its pick up location
+ *          booking.rider = user;
+ *          booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+ *          booking.endLocation = new SnapCarPlatform.Location(48.855272, 2.345865, new SnapCarPlatform.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));
+ *          booking.driverInfo = "Some useful info for you.";
+ *          booking.nameboard = true; // We want a nameboard, for the example
+ *          booking.plannedStartDate = new Date("2016-01-01 00:00:00");
+ *          
+ *          booking.flatPrices().done(function(prices) {
+ *      
+ *              // We have several prices, we will confirm the first one.
+ *              // In real life, you may present the different prices for each service class to the user for selection.
+ *      
+ *              // We confirm the booking, this sends a request to the SnapCar platform
+ *              prices[0].confirm()
+ *      
+ *              // This handler is called when the booking is confirmed
+ *              .done(function () {
+ *      
+ *                  if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
+ *                      // Your booking is waiting for dispatch in the future
+ *                  }
+ *      
+ *              // This handler is called upon error (ex: no driver available)
+ *              }).fail(function(error) {
+ *      
+ *                  // Check out the documentation for a comprehensive list of error messages.
+ *      
+ *              });        
+ *          });
+ *      });
+ *   
+ *   @example
+ *   
+ *      // Let's create a booking on demand (without a planned pick up date) and with a flat price.
+ *      
+ *      // First, we get the info about the authenticated user
+ *      SnapCarPlatform.Utils.user().done(function (user) {
+ *      
+ *          // You may check the user.status value in order to know if he is allowed to make bookings
+ *      
+ *          // We create a booking
+ *          var booking = new SnapCarPlatform.Booking();
+ *      
+ *          // We define the rider and its pick up location
+ *          booking.rider = user;
+ *          booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+ *          booking.endLocation = new SnapCarPlatform.Location(48.855272, 2.345865, new SnapCarPlatform.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));
+ *          
+ *          booking.flatPrices().done(function(prices) {
+ *      
+ *              // We have several prices, we will confirm the first one.
+ *              // In real life, you may present the different prices for each service class to the user for selection.
+ *      
+ *              // We confirm the booking, this sends a request to the SnapCar platform
+ *              prices[0].confirm()
+ *      
+ *              // This handler is called when the booking is either accepted by a driver or cancelled
+ *              .done(function () {
+ *      
+ *                  if (booking.status === SnapCarPlatform.BookingStatuses.GOING_TO_GET) {
+ *                      // A driver has accepted the booking
+ *                  }
+ *      
+ *                  else if (booking.status === SnapCarPlatform.BookingStatuses.CANCELLED) {
+ *                      // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCarPlatform.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.
+ *                  }
+ *      
+ *                  else {
+ *                      // Other status, unlikely to happen unless the driver has switched to another status in the meantime.
+ *                  }
+ *      
+ *              // This handler is called when the SnapCar platform confirms the booking creation
+ *              }).progress(function(error) {
+ *      
+ *                  // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.
+ *      
+ *              // This handler is called upon error (ex: no driver available)
+ *              }).fail(function(error) {
+ *      
+ *                  if (error.message === "no_driver") {
+ *                      // No driver is available for the required service class. You may try with another service class.
+ *                  }
+ *      
+ *                  // Check out the documentation for a comprehensive list of error messages.
+ *      
+ *              });       
+ *          });
+ *      });
+ *       
  */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
@@ -1853,7 +2061,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.CancellationFee as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
      */
 
-    SnapCarPlatform.Booking.prototype.cancellationPrice = function bookingCancellationPrice() {
+    SnapCarPlatform.Booking.prototype.cancellationPrice = function () {
         return performAPICall({
             url: SnapCarPlatform.Config.baseDomain + "/bookings/" + this.id + "/cancellation_price"
         }, function (data) {
@@ -1870,7 +2078,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * @return {jQuery.Promise} A Promise object. Success handlers are called with the updated instance of SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
      */
 
-    SnapCarPlatform.Booking.prototype.cancel = function bookingCancel() {
+    SnapCarPlatform.Booking.prototype.cancel = function () {
         var booking = this;
         return performAPICall({
             url: SnapCarPlatform.Config.baseDomain + "/bookings/" + this.id + "/cancel",
@@ -1929,7 +2137,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
     
     var properBookingPromise = function(booking, promise) {
-        if (typeof booking.date === 'undefined') {
+        if (typeof booking.plannedStartDate === 'undefined') {
             var deferred = $.Deferred();
 
             promise.done(function () {
