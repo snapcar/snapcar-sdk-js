@@ -974,7 +974,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * Creates a booking by confirming the booking price.
      * 
      * @method confirm
-     * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.Booking as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
+     * @return {jQuery.Promise} A Promise object. Success/progress handlers are called with a SnapCarPlatform.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the "pending" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
      */
     
     SnapCarPlatform.BookingPrice.prototype.confirm = function() {
@@ -1592,7 +1592,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return SnapCarPlatform.MeetingPoint.populateProperties(new SnapCarPlatform.MeetingPoint(), val);
                 case 'start_location':
                 case 'end_location':
-                    return SnapCarPlatform.Location.populateProperties(new napCarPlatform.Location(), val);
+                    return SnapCarPlatform.Location.populateProperties(new SnapCarPlatform.Location(), val);
                 case 'driver':
                     return SnapCarPlatform.Driver.populateProperties(new SnapCarPlatform.Driver(), val);
                 case 'rider':
@@ -1736,7 +1736,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         cancellation_date: {name: 'cancellationDate'},
 
         /**
-         * This code indicates the reason why the booking was cancelled.
+         * This code indicates the reason why the booking was cancelled. Check out the SnapCarPlatform.BookingCancellationReasons static class properties.
          * 
          * @property cancellationReason
          * @final
@@ -1964,13 +1964,13 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         else {
             return promise;
         }        
-    }
+    };
 
     /**
      * Confirms the booking (without flat price) to the SnapCar platform. Before calling this method, you have to provide at least a rider, a startLocation and the desired serviceClass. 
      * 
      * @method confirm
-     * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
+     * @return {jQuery.Promise} A Promise object. Success/progress handlers are called with a SnapCarPlatform.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the "pending" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
      */
     
     SnapCarPlatform.Booking.prototype.confirm = function() {
@@ -2126,6 +2126,72 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         
         CANCELLED: 'cancelled'
     };
+
+   /**
+     * The possible booking cancellation reasons.
+     * 
+     * @class BookingCancellationReasons
+     * @static
+     */
+    
+    SnapCarPlatform.BookingCancellationReasons = {
+        
+        /**
+         * The booking has been cancelled by the rider, and not charged. Its value is "rider_cancellation".
+         * 
+         * @property RIDER_CANCELLATION
+         * @static
+         * @final
+         * @type String
+         */
+        
+        RIDER_CANCELLATION: 'rider_cancellation',
+        
+        /**
+         * The booking has been cancelled by the rider, and has been charged a cancellation fee. Its value is "rider_cancellation_charged".
+         * 
+         * @property RIDER_CANCELLATION_CHARGED
+         * @static
+         * @final
+         * @type String
+         */
+        
+        RIDER_CANCELLATION_CHARGED: 'rider_cancellation_charged',
+        
+        /**
+         * The booking has been cancelled by SnapCar. Its value is "system_cancellation".
+         * 
+         * @property SYSTEM_CANCELLATION
+         * @static
+         * @final
+         * @type String
+         */
+        
+        SYSTEM_CANCELLATION: 'system_cancellation',
+        
+        /**
+         * The booking has been cancelled by SnapCar, and charged. Its value is "system_cancellation_charged".
+         * 
+         * @property SYSTEM_CANCELLATION_CHARGED
+         * @static
+         * @final
+         * @type String
+         */
+        
+        SYSTEM_CANCELLATION_CHARGED: 'system_cancellation_charged',
+        
+        /**
+         * No driver was available for dispatch.
+         * 
+         * @property NO_DRIVER
+         * @static
+         * @final
+         * @type String
+         */
+        
+        NO_DRIVER: 'no_driver'
+    };
+
 
     // Config test 
 
