@@ -18,14 +18,38 @@
  *      SnapCarPlatform.Config.token = "3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O";
  *      
  * @example
- *      // Getting current drivers availability at a specific location
+ *      // Getting current closest drivers availability at a specific location
  *      
- *      SnapCarPlatform.eta(48.859041, 2.327889).done(function (result) {
- *           $.each(result, function (key, eta) {
- *             // eta is an instance of SnapCarPlatform.ETAResult
+ *      SnapCarPlatform.Utils.eta(48.859041, 2.327889).done(function (result) {
+ *           $.each(result, function (key, info) {
+ *               
+ *             // info is an instance of SnapCarPlatform.ETAResult
+ *             // you get info about eta.serviceClass
+ *             
+ *             if (info.status === SnapCarPlatform.ETAResultStatuses.OK) {
+ *                 // an ETA is available and set in info.eta
+ *             } else if (info.status === SnapCarPlatform.ETAResultStatuses.UNAVAILABLE) {
+ *                 // this service class is not available at the moment
+ *             }
+ *             
  *           });
  *      });
- * 
+ *      
+ * @example
+ *      // Before making a booking, I want to know if there are meeting points at a specific area
+ *      
+ *      SnapCarPlatform.Utils.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
+ *
+ *          // There's a special area at this location. 
+ *          // Check out the specialArea info (which is an instance of SnapCarPlatform.SpecialArea)
+ *
+ *      }).fail(function (error) {
+ *          if (error.code === 404) {
+ *              // No special area/meeting points at this location
+ *          } else {
+ *              // An other error occurred
+ *          }
+ *      });
  */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
@@ -269,12 +293,17 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      *
      * @class APIError
      * @extends SnapCarPlatform.Error
-     * @param payload {Object} The API response body.
+     * @param data {Object} The jQuery object.
      * @constructor
      */
 
-    SnapCarPlatform.APIError = function (payload) {
-        var instance = this;
+    SnapCarPlatform.APIError = function (data) {
+
+        var payload;
+        
+        if (typeof data.responseJSON !== 'undefined') {
+            payload = data.responseJSON;
+        }
 
         if (typeof payload === 'object') {
             processObjectPayload(this, $.extend({}, payload, {
@@ -285,7 +314,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             processObjectPayload(this, $.extend({}, payload, {
                 message: 'other',
                 description: 'An error occurred while sending the request.',
-                server_response: 'An API error occurred. Check the message parameter for more details.',
+                server_response: payload,
                 type: 'api'
             }));
         }
@@ -2025,7 +2054,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         $.ajax(requestParams).done(function (data) {
             deferred.resolveWith(this, [resultProcessor(data)]);
         }).fail(function (data) {
-            deferred.rejectWith(this, [new SnapCarPlatform.APIError(data.responseJSON)]);
+            deferred.rejectWith(this, [new SnapCarPlatform.APIError(data)]);
         });
 
         return deferred.promise();
@@ -2105,7 +2134,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     /**
-     * Gets the currently authentified user information.
+     * Gets the currently authenticated user information.
      * 
      * @method user
      * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.Rider as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error. 
