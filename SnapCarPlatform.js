@@ -49,7 +49,7 @@
  *          }
  *      });
  */
-    
+
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     // Properties: browser compatibility
@@ -1961,7 +1961,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
         var booking = this;
         
-        return performAPICall({
+        var promise = performAPICall({
             url: SnapCarPlatform.Config.baseDomain + "/bookings",
             method: 'POST',
             data: parameters
@@ -1969,6 +1969,43 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             booking.constructor.populateProperties(booking, data);
             return booking;
         });
+
+        var deferred = $.Deferred();
+        
+        if (typeof booking.date === 'undefined') {
+            promise.done(function () {
+
+                // Booking confirmed by the platform, we now wait for a driver acceptance
+                deferred.notify(booking);
+
+                var poll = function () {
+                    booking.refresh().always(function() {
+                        if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
+                            scheduleRefresh();
+                        } else {
+                            deferred.resolve(booking);
+                        }
+                     });
+                };
+
+                // We refresh the data every 3 seconds
+                var scheduleRefresh = function() {
+                    setTimeout(poll, 3000);
+                };
+
+                scheduleRefresh();
+
+            }).fail(function(error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise();                 
+        }
+        
+        else {
+            return promise;
+        }
+        
     };
 
     /**
@@ -2105,7 +2142,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         $.ajax(requestParams).done(function (data) {
             deferred.resolveWith(this, [resultProcessor(data)]);
         }).fail(function (data) {
-            deferred.rejectWith(this, [new SnapCarPlatform.APIError(data)]);
+            deferred.reject(new SnapCarPlatform.APIError(data));
         });
 
         return deferred.promise();
