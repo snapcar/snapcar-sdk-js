@@ -14,6 +14,17 @@
  * @param {jQuery} $ The jQuery plugin.
  * 
  * @example
+ *      // Setting the token before using the SDK
+ *      SnapCarPlatform.Config.token = "3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O";
+ *      
+ * @example
+ *      // Getting current drivers availability at a specific location
+ *      
+ *      SnapCarPlatform.eta(48.859041, 2.327889).done(function (result) {
+ *           $.each(result, function (key, eta) {
+ *             // eta is an instance of SnapCarPlatform.ETAResult
+ *           });
+ *      });
  * 
  */
 
@@ -435,7 +446,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                 case 'meeting_points':
                 case 'meeting_points_nameboard':
                     return $.map(val, function (payload) {
-                        return new SnapCarPlatform.MeetingPoint(payload);
+                        return SnapCarPlatform.MeetingPoint.populateProperties(new SnapCarPlatform.MeetingPoint(), payload);
                     });
                     break;
             }
@@ -574,7 +585,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'service_class':
-                    return new SnapCarPlatform.ServiceClass(val);
+                    return SnapCarPlatform.ServiceClass.populateProperties(new SnapCarPlatform.ServiceClass(), val);
             }
         });
     };
@@ -592,7 +603,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         status: {name: 'status'},
 
         /**
-         * If the service is available, holds the ETA in minutes.
+         * If the service is available, holds the ETA in seconds.
          * 
          * @property eta
          * @final
@@ -658,6 +669,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.PaymentMethod.populateProperties = function (context, payload) {
         processObjectPayload(context, payload);
+        return context;
     };
     
     defineProperties(SnapCarPlatform.PaymentMethod, {
@@ -731,8 +743,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     SnapCarPlatform.Rider.populateProperties = function (context, payload) {
         processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case 'card':
-                    return new SnapCarPlatform.PaymentMethod(val);
+                case 'payment_method':
+                    return SnapCarPlatform.PaymentMethod.populateProperties(new SnapCarPlatform.PaymentMethod(), val);
             }
         });
     };
@@ -1107,7 +1119,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'address':
-                    return new SnapCarPlatform.Address(val);
+                    return SnapCarPlatform.Address.populateProperties(new SnapCarPlatform.Address(), val);
             }
         });
     };
@@ -1283,7 +1295,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return getTextInLocale(val);
                     break;
                 case 'position':
-                    return new SnapCarPlatform.GeoPoint(val);
+                    return SnapCarPlatform.GeoPoint.populateProperties(new SnapCarPlatform.GeoPoint(), val);
                     break;
             }
         });
@@ -1446,7 +1458,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             switch (key) {
                 case 'history':
                     return $.map(val, function (payload) {
-                        return new SnapCarPlatform.Booking(payload);
+                        return SnapCarPlatform.Booking.populateProperties(new SnapCarPlatform.Booking(), payload);
                     });
             }
         });
@@ -1544,28 +1556,28 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                 case 'cancellation_date':
                     return new Date(parseInt(val) * 1000);
                 case 'service_class':
-                    return new SnapCarPlatform.ServiceClass(val);
+                    return SnapCarPlatform.ServiceClass.populateProperties(new SnapCarPlatform.ServiceClass(), val);
                 case 'meeting_point':
-                    return new SnapCarPlatform.MeetingPoint(val);
+                    return SnapCarPlatform.MeetingPoint.populateProperties(new SnapCarPlatform.MeetingPoint(), val);
                 case 'start_location':
                 case 'end_location':
-                    return new SnapCarPlatform.Location(val);
+                    return SnapCarPlatform.Location.populateProperties(new napCarPlatform.Location(), val);
                 case 'driver':
-                    return new SnapCarPlatform.Driver(val);
+                    return SnapCarPlatform.Driver.populateProperties(new SnapCarPlatform.Driver(), val);
                 case 'rider':
-                    return new SnapCarPlatform.Rider(val);
+                    return SnapCarPlatform.Rider.populateProperties(new SnapCarPlatform.Rider(), val);
                 case 'vehicle':
-                    return new SnapCarPlatform.Vehicle(val);
+                    return SnapCarPlatform.Vehicle.populateProperties(new SnapCarPlatform.Vehicle(), val);
                 case 'route':
                     return $.map(val, function (payload) {
-                        return new SnapCarPlatform.TimestampedPoint(payload);
+                        return SnapCarPlatform.TimestampedPoint.populateProperties(new SnapCarPlatform.TimestampedPoint(), payload);
                     });
                 case 'documents':
                     return $.map(val, function (payload) {
-                        return new SnapCarPlatform.BillingDocument(payload);
+                        return SnapCarPlatform.BillingDocument.populateProperties(new SnapCarPlatform.BillingDocument(), payload);
                     });
                 case 'booking_price':
-                    return new SnapCarPlatform.BookingPrice(val);
+                    return SnapCarPlatform.BookingPrice.populateProperties(new SnapCarPlatform.BookingPrice(), val);
             }
         });
     };
