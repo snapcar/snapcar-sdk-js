@@ -5,7 +5,7 @@
  *
  * @module SnapCarPlatform
  * @param {SnapCarPlatform} SnapCarPlatform itself.
- * @param {jQuery} The jQuery plugin.
+ * @param {jQuery} $ The jQuery plugin.
  */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
@@ -279,7 +279,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          * The type of error.
          *
          * @property code
-         * @type Integer
+         * @type int
          * @final
          */
         
@@ -587,7 +587,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
          * 
          * @property eta
          * @final
-         * @type Integer
+         * @type int
          */        
         
         eta: {name: 'eta'},
@@ -967,9 +967,47 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.CancellationFee, {
+        
+        /**
+         * Whether a cancellation fee is charged. 
+         * 
+         * @property charged
+         * @final
+         * @type Boolean
+         */
+        
         charged: {name: 'charged'},
+
+        /**
+         * If charged, the cancellation amount.
+         * 
+         * @property amount
+         * @final
+         * @type float
+         */
+                
         amount: {name: 'amount'},
-        vat: {name: 'vat'}
+        
+        /**
+         * If charged, the currency of the cancellation fee.
+         * 
+         * @property currency
+         * @final
+         * @type String
+         */
+                
+        currency: {name: 'currency'},
+        
+        /**
+         * If charged, the price formatted in the currency.
+         * 
+         * @property formattedAmount
+         * @final
+         * @type String
+         */
+                
+        formatted_amount: {name: 'formattedAmount'}
+
     });
 
     /**
@@ -977,6 +1015,10 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * 
      * @class Address
      * @constructor
+     * @param {String} name The name of the address. Typically the number and street name.
+     * @param {String} city The city.
+     * @param {String} postalCode The postal code.
+     * @param {String} country The country.
      */
 
     SnapCarPlatform.Address = function (name, city, postalCode, country) {
@@ -993,9 +1035,45 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.Address, {
+        
+        /**
+         * The name of the address. Typically the number and street name.
+         * 
+         * @property name
+         * @final
+         * @type String
+         */
+        
         name: {name: 'name'},
+        
+        /**
+         * The postal code.
+         * 
+         * @property postalCode
+         * @final
+         * @type String
+         */
+        
         postal_code: {name: 'postalCode'},
+        
+        /**
+         * The city.
+         * 
+         * @property city
+         * @final
+         * @type String
+         */
+        
         city: {name: 'city'},
+        
+        /**
+         * The country.
+         * 
+         * @property country
+         * @final
+         * @type String
+         */
+        
         country: {name: 'country'}
     });
 
@@ -1004,12 +1082,14 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * 
      * @class Location
      * @constructor
+     * @param {float} lat The location latitude.
+     * @param {float} lng The location longitude.
+     * @param {SnapCarPlatform.Address} address The location address.
      */
     
     SnapCarPlatform.Location = function (lat, lng, address) {
         bootstrapInstanceProperties(this);
-
-        this.lat = lat;
+        this.lat = lat;        
         this.lng = lng;
         this.address = address;
     };
@@ -1024,8 +1104,36 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.Location, {
+        
+        /**
+         * The location latitude.
+         * 
+         * @property lat
+         * @final
+         * @type float
+         */
+                
         lat: {name: 'lat'},
+        
+        /**
+         * The location longitude.
+         * 
+         * @property lng
+         * @final
+         * @type float
+         */
+                
         lng: {name: 'lng'},
+        
+        
+        /**
+         * The location address.
+         * 
+         * @property address
+         * @final
+         * @type String
+         */        
+        
         address: {name: 'address'}
     });
 
@@ -1045,7 +1153,25 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.GeoPoint, {
+        
+        /**
+         * The point latitude.
+         * 
+         * @property lat
+         * @final
+         * @type float
+         */
+                
         lat: {name: 'lat'},
+        
+        /**
+         * The point longitude.
+         * 
+         * @property lng
+         * @final
+         * @type float
+         */
+                
         lng: {name: 'lng'}
     });
 
@@ -1065,13 +1191,67 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.BillingDocument, {
+        
+        /**
+         * Billing document unique identifier.
+         * 
+         * @property id
+         * @final
+         * @type String
+         */
+                
         id: {name: 'id'},
+
+        /**
+         * URL of to download the document.
+         * 
+         * @property url
+         * @final
+         * @type String
+         */
+        
         url: {name: 'url'},
+
+        /**
+         * The type of document, refer to the SnapCarPlatform.BillingDocumentTypes properties.
+         * 
+         * @property type
+         * @final
+         * @type String
+         */
+                
         type: {name: 'type'}
     });
 
-    SnapCarPlatform.BillingDocument.prototype.types = {
+
+    /**
+     * All possible types of billing documents.
+     * 
+     * @class BillingDocumentTypes
+     * @static
+     */
+    SnapCarPlatform.BillingDocumentTypes = {
+        
+        /**
+         * Bill type. When the client is charged.
+         * 
+         * @property BILL
+         * @static
+         * @final
+         * @type String
+         */
+        
         BILL: 'bill',
+        
+        /**
+         * Credit note type. When the client is reimbursed.
+         * 
+         * @property CREDIT_NOTE
+         * @static
+         * @final
+         * @type String
+         */
+                
         CREDIT_NOTE: 'credit_note'
     };
 
@@ -1101,9 +1281,45 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.Vehicle, {
+
+        /**
+         * The vehile model.
+         * 
+         * @property model
+         * @final
+         * @type String
+         */
+                
         model: {name: 'model'},
+
+        /**
+         * The localized vehile color.
+         * 
+         * @property color
+         * @final
+         * @type String
+         */
+                
         color: {name: 'color'},
+
+        /**
+         * The current vehile position.
+         * 
+         * @property position
+         * @final
+         * @type SnapCarPlatform.GeoPoint
+         */
+                
         position: {name: 'position'},
+
+        /**
+         * The vehile plate number.
+         * 
+         * @property plateNumber
+         * @final
+         * @type String
+         */
+                
         plate_number: {name: 'plateNumber'}
     });
 
@@ -1123,8 +1339,35 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.Driver, {
+
+        /**
+         * The driver display name.
+         * 
+         * @property name
+         * @final
+         * @type String
+         */
+                
         name: {name: 'name'},
+
+        /**
+         * The driver's phone number.
+         * 
+         * @property phone
+         * @final
+         * @type String
+         */
+                
         phone: {name: 'phone'},
+
+        /**
+         * The driver unique identifier.
+         * 
+         * @property id
+         * @final
+         * @type String
+         */
+                
         id: {name: 'id'}
     });
 
@@ -1144,8 +1387,35 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.TimestampedPoint, {
-        timestamp: {name: 'timestamp'},
+
+        /**
+         * The date at which the coordinate has been saved.
+         * 
+         * @property date
+         * @final
+         * @type Date
+         */
+                
+        timestamp: {name: 'date'},
+
+        /**
+         * The coordinate latitude.
+         * 
+         * @property lat
+         * @final
+         * @type float
+         */
+                
         lat: {name: 'lat'},
+
+        /**
+         * The coordinate longitude.
+         * 
+         * @property lng
+         * @final
+         * @type float
+         */
+                
         lng: {name: 'lng'}
     });
 
@@ -1154,7 +1424,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * 
      * @class BookingHistory
      * @constructor
-     * @param {Integer} [limit=20] The maximum number of elements to return.
+     * @param {int} [limit=20] The maximum number of elements to return.
      */
 
     SnapCarPlatform.BookingHistory = function (limit) {
@@ -1174,9 +1444,45 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.BookingHistory, {
+
+        /**
+         * The total number of bookings in the history.
+         * 
+         * @property total
+         * @final
+         * @type int
+         */
+                
         total: {name: 'total'},
+
+        /**
+         * The current position in the pagination.
+         * 
+         * @property offset
+         * @final
+         * @type int
+         */
+        
         offset: {name: 'offset'},
+
+        /**
+         * The number of bookings fetched.
+         * 
+         * @property count
+         * @final
+         * @type int
+         */
+        
         count: {name: 'count'},
+
+        /**
+         * The list of SnapCarPlatform.Booking fetched
+         * 
+         * @property history
+         * @final
+         * @type Array
+         */
+        
         history: {name: 'history'}
     });
 
@@ -1193,7 +1499,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     /**
-     * A booking that represents a real ride (if not cancelled).
+     * A booking that represents a request by the user to be picked up.
      * 
      * @class Booking
      * @constructor
@@ -1256,39 +1562,244 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     };
 
     defineProperties(SnapCarPlatform.Booking, {
+
+        /**
+         * The booking unique identifier.
+         * 
+         * @property id
+         * @final
+         * @type String
+         */
+        
         id: {name: 'id'},
+
+        /**
+         * The passenger of the booking.
+         * 
+         * @property rider
+         * @final
+         * @type SnapCarPlatform.Rider
+         */
+        
         rider: {name: 'rider'},
+
+        /**
+         * The ordered service class for this booking.
+         * 
+         * @property serviceClass
+         * @final
+         * @type SnapCarPlatform.ServiceClass
+         */
+        
         service_class: {name: 'serviceClass'},
+
+        /**
+         * The booking status, refer to the SnapCarPlatform.BookingStatuses properties to have a comprehensive list of all possible statuses.
+         * 
+         * @property status
+         * @final
+         * @type String
+         */
+        
         status: {name: 'status'},
+
+        /**
+         * The booking location's timezone.
+         * 
+         * @property timezone
+         * @final
+         * @type String
+         */
+        
         timezone: {name: 'timezone'},
+
+        /**
+         * The planned pick up date.
+         * 
+         * @property plannedStartDate
+         * @final
+         * @type Date
+         */
+        
         planned_start_date: {name: 'plannedStartDate'},
+
+        /**
+         * The booking creation date.
+         * 
+         * @property creationDate
+         * @final
+         * @type Date
+         */
+        
         creation_date: {name: 'creationDate'},
+
+        /**
+         * The driver arrival date at the pick up location.
+         * 
+         * @property driverArrivalDate
+         * @final
+         * @type Date
+         */
+        
         driver_arrival_date: {name: 'driverArrivalDate'},
+
+        /**
+         * The date at which the rider went on board.
+         * 
+         * @property startDate
+         * @final
+         * @type Date
+         */
+        
         start_date: {name: 'startDate'},
+
+        /**
+         * Meeting at which the rider will find its driver.
+         * 
+         * @property meetingPoint
+         * @final
+         * @type SnapCarPlatform.MeetingPoint
+         */
+        
         meeting_point: {name: 'meetingPoint'},
+
+        /**
+         * The date at which the rider has been dropped off.
+         * 
+         * @property history
+         * @final
+         * @type Date
+         */
+        
         end_date: {name: 'endDate'},
+
+        /**
+         * The date at which the booking was cancelled (if relevant).
+         * 
+         * @property cancellationDate
+         * @final
+         * @type Date
+         */
+        
         cancellation_date: {name: 'cancellationDate'},
+
+        /**
+         * This code indicates the reason why the booking was cancelled.
+         * 
+         * @property cancellationReason
+         * @final
+         * @type String
+         */
+        
         cancellation_reason: {name: 'cancellationReason'},
+
+        /**
+         * The pick up location.
+         * 
+         * @property startLocation
+         * @final
+         * @type SnapCarPlatform.Location
+         */
+        
         start_location: {name: 'startLocation'},
+
+        /**
+         * The location at which the rider has been dropped off.
+         * 
+         * @property endLocation
+         * @final
+         * @type SnapCarPlatform.Location
+         */
+        
         end_location: {name: 'endLocation'},
-        additional_info: {name: 'additionalInfo'},
+
+        /**
+         * Additional pick-up information for the driver. Provided by the rider.
+         * 
+         * @property driverInfo
+         * @final
+         * @type String
+         */
+        
+        driver_info: {name: 'driverInfo'},
+
+        /**
+         * The initial order information.
+         * 
+         * @property bookingPrice
+         * @final
+         * @type SnapCarPlatform.BookingPrice
+         */
+        
         booking_price: {name: 'bookingPrice'},
+
+        /**
+         * The total billed amount
+         * 
+         * @property billedAmount
+         * @final
+         * @type float
+         */
+        
         billed_amount: {name: 'billedAmount'},
+
+        /**
+         * The total VAT amount.
+         * 
+         * @property vatAmount
+         * @final
+         * @type float
+         */
+        
         vat_amount: {name: 'vatAmount'},
+
+        /**
+         * The tip given by the rider to the driver through the SnapCar application.
+         * 
+         * @property tip
+         * @final
+         * @type float
+         */
+        
         tip: {name: 'tip'},
+
+        /**
+         * A list of SnapCarPlatform.TimestampedPoint describing the driver route from the pick up location.
+         * 
+         * @property route
+         * @final
+         * @type Array
+         */
+        
         route: {name: 'route'},
+
+        /**
+         * The list of SnapCarPlatform.BillingDocument
+         * 
+         * @property documents
+         * @final
+         * @type Array
+         */
+        
         documents: {name: 'documents'},
+
+        /**
+         * The vehicle used by the driver to pick the rider up.
+         * 
+         * @property vehicle
+         * @final
+         * @type Array
+         */
+        
         vehicle: {name: 'vehicle'}
     });
 
-    SnapCarPlatform.Booking.prototype.statuses = {
-        PENDING: 'pending',
-        GOING_TO_GET: 'going_to_get',
-        DRIVER_WAITING: 'driver_waiting',
-        ON_BOARD: 'on_board',
-        COMPLETE: 'complete',
-        CANCELLED: 'cancelled'
-    };
+    /**
+     * Gets the booking cancellation price. Relevant only when the booking is either in the 'pending', 'going_to_get' or 'driver_waiting' state.
+     * 
+     * @method cancellationPrice
+     * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.CancellationFee as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
+     */
 
     SnapCarPlatform.Booking.prototype.cancellationPrice = function bookingCancellationPrice() {
         return performAPICall({
@@ -1300,18 +1811,32 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         });
     };
 
+    /**
+     * Cancels the booking. You may want to check the cancellation price by using the SnapCarPlatform.Booking.cancellationPrice() method before doing so.
+     * 
+     * @method cancel
+     * @return {jQuery.Promise} A Promise object. Success handlers are called with the updated instance of SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
+     */
+
     SnapCarPlatform.Booking.prototype.cancel = function bookingCancel() {
+        var booking = this;
         return performAPICall({
             url: SnapCarPlatform.Config.baseDomain + "/bookings/" + this.id + "/cancel",
             method: 'POST'
         }, function (data) {
-            var result = new SnapCarPlatform.Booking();
-            result.constructor.populateProperties(result, data);
-            return result;
+            booking.constructor.populateProperties(booking, data);
+            return booking;
         });
     };
 
-    SnapCarPlatform.Booking.prototype.refresh = function bookingRefresh() {
+    /**
+     * Refreshes the booking information.
+     * 
+     * @method refresh
+     * @return {jQuery.Promise} A Promise object. Success handlers are called with the updated instance of SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
+     */
+
+    SnapCarPlatform.Booking.prototype.refresh = function () {
         var booking = this;
         return performAPICall({
             url: SnapCarPlatform.Config.baseDomain + "/bookings/" + booking.id
@@ -1321,7 +1846,14 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         });
     };
 
-    SnapCarPlatform.Booking.prototype.flatPrices = function bookingFlatPrices() {
+    /**
+     * Calculates flat prices for all allowed service classes. Then, you may confirm one of these prices according to the service class selected by the user. The flat prices are based on the booking information (rider, planned start date, start location, end location, if the nameboard option is enabled). Before calling this method, you have to provide at least a rider, a startLocation and an endLocation which are the basic elements for price calculation. Flat prices cannot be calculated otherwise.
+     * 
+     * @method flatPrices
+     * @return {jQuery.Promise} A Promise object. Success handlers are called with an array of SnapCarPlatform.BookingPrice as the single argument. Check the value of the SnapCarPlatform.BookingPrice.serviceClassId property in order to know to which service class a booking price is associated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
+     */
+
+    SnapCarPlatform.Booking.prototype.flatPrices = function () {
 
         if ((typeof this.startLocation === 'undefined') || (typeof this.startLocation.address === 'undefined') || (typeof this.startLocation.lat === 'undefined') || (typeof this.startLocation.lng === 'undefined') || (typeof this.startLocation.address.name === 'undefined') || (typeof this.startLocation.address.city === 'undefined')) {
             throw new SnapCarPlatform.InvalidParametersError('start_location_missing', 'You must provide a start location including at least: lat, lng, name and city.');
@@ -1376,6 +1908,82 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         });
     };
 
+   /**
+     * The possible booking statuses.
+     * 
+     * @class BookingStatuses
+     * @static
+     */
+    
+    SnapCarPlatform.BookingStatuses = {
+        
+        /**
+         * When the booking is waiting for a driver to be attributed. Its value is "pending".
+         * 
+         * @property PENDING
+         * @static
+         * @final
+         * @type String
+         */
+        
+        PENDING: 'pending',
+        
+        /**
+         * When a driver has accepted a booking and is on his way to pick up the rider. Its value is "going_to_get".
+         * 
+         * @property GOING_TO_GET
+         * @static
+         * @final
+         * @type String
+         */
+        
+        GOING_TO_GET: 'going_to_get',
+        
+        /**
+         * When the driver has arrived at the pick up location and is waiting for the rider. Its value is "driver_waiting".
+         * 
+         * @property DRIVER_WAITING
+         * @static
+         * @final
+         * @type String
+         */
+        
+        DRIVER_WAITING: 'driver_waiting',
+        
+        /**
+         * When the rider is in the car. Its value is "on_board".
+         * 
+         * @property ON_BOARD
+         * @static
+         * @final
+         * @type String
+         */
+        
+        ON_BOARD: 'on_board',
+        
+        /**
+         * When the booking is ended, meaning that the rider has been dropped off. Its value is "complete".
+         * 
+         * @property COMPLETE
+         * @static
+         * @final
+         * @type String
+         */
+        
+        COMPLETE: 'complete',
+        
+        /**
+         * When the booking is cancelled. Its value is "cancelled".
+         * 
+         * @property CANCELLED
+         * @static
+         * @final
+         * @type String
+         */
+        
+        CANCELLED: 'cancelled'
+    };
+
     // Config test 
 
     if (typeof $ === 'undefined') {
@@ -1415,6 +2023,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * Retrieves current ETA and availability for each service class.
      * 
      * @method eta
+     * @param {float} lat Latitude of the position at which you want to get the current eta and availability.
+     * @param {float} lng Longitude of the position at which you want to get the current eta and availability.
      * @return {jQuery.Promise} A Promise object. Success handlers are called with an array of SnapCarPlatform.ETAResult as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
      */
 
@@ -1514,8 +2124,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * 
      * @method bookingsHistory
      * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.BookingHistory as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error. 
-     * @param {Integer} [offset=0] The position of the first booking in the pagination.
-     * @param {Integer} [limit=20] The maximum number of bookings to return.
+     * @param {int} [offset=0] The position of the first booking in the pagination.
+     * @param {int} [limit=20] The maximum number of bookings to return.
      */
 
     SnapCarPlatform.Utils.bookingsHistory = function (offset, limit) {
@@ -1535,9 +2145,9 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     /**
      * Gets information about a specific booking.
      * 
-     * @method bookingsHistory
+     * @method booking
      * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.Booking as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error. 
-     * @param {Integer} id The booking unique identifier.
+     * @param {int} id The booking unique identifier.
      */
 
     SnapCarPlatform.Utils.booking = function (id) {
