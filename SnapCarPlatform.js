@@ -1,5 +1,3 @@
-
-
 /**
  * This is the base SnapCarPlatform module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent of jQuery.
  * 
@@ -51,7 +49,7 @@
  *          }
  *      });
  */
-
+    
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     // Properties: browser compatibility
@@ -988,16 +986,18 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         }
 
         if (typeof this.booking.meetingPoint !== 'undefined') {
-            additionalParameters.meeting_point = this.booking.meetingPoint.id;
+            additionalParameters.meeting_point_id = this.booking.meetingPoint.id;
         }
 
+        var booking = this.booking;
+        
         return performAPICall({
             url: SnapCarPlatform.Config.baseDomain + "/bookings/prices/" + this.id + "/confirm",
             method: 'POST',
             data: additionalParameters
         }, function (data) {
-            this.booking.constructor.populateProperties(this.booking, data);
-            return this.booking;
+            booking.constructor.populateProperties(booking, data);
+            return booking;
         });
     };
 
@@ -1894,6 +1894,81 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             booking.constructor.populateProperties(booking, data);
             return booking;
         });
+    };    
+
+    var orderParameters = function() {
+        var parameters = {
+            start_location: {
+                lat: this.startLocation.lat,
+                lng: this.startLocation.lng,
+                address: {
+                    name: this.startLocation.address.name,
+                    city: this.startLocation.address.city,
+                    postal_code: this.startLocation.address.postalCode,
+                    country: this.startLocation.address.country
+                }
+            },
+            end_location: (typeof this.endLocation !== 'undefined') ? {
+                lat: this.endLocation.lat,
+                lng: this.endLocation.lng,
+                address: {
+                    name: this.endLocation.address.name,
+                    city: this.endLocation.address.city,
+                    postal_code: this.endLocation.address.postalCode,
+                    country: this.endLocation.address.country
+                }
+            } : undefined,
+            rider_id: this.rider.id,
+            nameboard: (typeof this.nameboard !== 'undefined' ? (this.nameboard ? 1 : 0) : undefined),
+            date: (typeof this.plannedStartDate !== 'undefined' ? parseInt(this.plannedStartDate.getTime() / 1000) : undefined)
+        };
+        
+        return parameters;
+    };
+
+    /**
+     * Confirms the booking (without flat price) to the SnapCar platform. Before calling this method, you have to provide at least a rider, a startLocation and the desired serviceClass. 
+     * 
+     * @method confirm
+     * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.
+     */
+    
+    SnapCarPlatform.Booking.prototype.confirm = function() {
+
+        if ((typeof this.startLocation === 'undefined') || (typeof this.startLocation.address === 'undefined') || (typeof this.startLocation.lat === 'undefined') || (typeof this.startLocation.lng === 'undefined') || (typeof this.startLocation.address.name === 'undefined') || (typeof this.startLocation.address.city === 'undefined')) {
+            throw new SnapCarPlatform.InvalidParametersError('start_location_missing', 'You must provide a start location including at least: lat, lng, name and city.');
+        }
+
+        if (typeof this.rider === 'undefined') {
+            throw new SnapCarPlatform.InvalidParametersError('rider_missing', 'You must provide a valid rider.');
+        }
+        
+        if (typeof this.serviceClass === 'undefined') {
+            throw new SnapCarPlatform.InvalidParametersError('service_class_missing', 'You must provide the required service class for this booking.');
+        }
+        
+        var parameters = orderParameters.call(this);
+        
+        if (typeof this.driverInfo !== 'undefined') {
+            parameters.driver_info = this.driverInfo;
+        }
+
+        if (typeof this.meetingPoint !== 'undefined') {
+            parameters.meeting_point_id = this.meetingPoint.id;
+        }
+
+        parameters.service_class_id = this.serviceClass.id;
+
+        var booking = this;
+        
+        return performAPICall({
+            url: SnapCarPlatform.Config.baseDomain + "/bookings",
+            method: 'POST',
+            data: parameters
+        }, function (data) {
+            booking.constructor.populateProperties(booking, data);
+            return booking;
+        });
     };
 
     /**
@@ -1917,31 +1992,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             throw new SnapCarPlatform.InvalidParametersError('rider_missing', 'You must provide a valid rider.');
         }
 
-        var parameters = {
-            start_location: {
-                lat: this.startLocation.lat,
-                lng: this.startLocation.lng,
-                address: {
-                    name: this.startLocation.address.name,
-                    city: this.startLocation.address.city,
-                    postal_code: this.startLocation.address.postalCode,
-                    country: this.startLocation.address.country
-                }
-            },
-            end_location: {
-                lat: this.endLocation.lat,
-                lng: this.endLocation.lng,
-                address: {
-                    name: this.endLocation.address.name,
-                    city: this.endLocation.address.city,
-                    postal_code: this.endLocation.address.postalCode,
-                    country: this.endLocation.address.country
-                }
-            },
-            rider_id: this.rider.id,
-            nameboard: (typeof this.nameboard !== 'undefined' ? (this.nameboard ? 1 : 0) : undefined),
-            date: (typeof this.plannedStartDate !== 'undefined' ? parseInt(this.plannedStartDate.getTime() / 1000) : undefined)
-        };
+        var parameters = orderParameters.call(this);
 
         var booking = this;
 
