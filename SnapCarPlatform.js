@@ -991,7 +991,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
         var booking = this.booking;
         
-        return performAPICall({
+        var promise = performAPICall({
             url: SnapCarPlatform.Config.baseDomain + "/bookings/prices/" + this.id + "/confirm",
             method: 'POST',
             data: additionalParameters
@@ -999,6 +999,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             booking.constructor.populateProperties(booking, data);
             return booking;
         });
+        
+        return properBookingPromise(booking, promise);        
     };
 
     /**
@@ -1925,6 +1927,44 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         
         return parameters;
     };
+    
+    var properBookingPromise = function(booking, promise) {
+        if (typeof booking.date === 'undefined') {
+            var deferred = $.Deferred();
+
+            promise.done(function () {
+
+                // Booking confirmed by the platform, we now wait for a driver acceptance
+                deferred.notify(booking);
+
+                var poll = function () {
+                    booking.refresh().always(function() {
+                        if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
+                            scheduleRefresh();
+                        } else {
+                            deferred.resolve(booking);
+                        }
+                     });
+                };
+
+                // We refresh the data every 3 seconds
+                var scheduleRefresh = function() {
+                    setTimeout(poll, 3000);
+                };
+
+                scheduleRefresh();
+
+            }).fail(function(error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise();                 
+        }
+        
+        else {
+            return promise;
+        }        
+    }
 
     /**
      * Confirms the booking (without flat price) to the SnapCar platform. Before calling this method, you have to provide at least a rider, a startLocation and the desired serviceClass. 
@@ -1969,43 +2009,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             booking.constructor.populateProperties(booking, data);
             return booking;
         });
-
-        var deferred = $.Deferred();
-        
-        if (typeof booking.date === 'undefined') {
-            promise.done(function () {
-
-                // Booking confirmed by the platform, we now wait for a driver acceptance
-                deferred.notify(booking);
-
-                var poll = function () {
-                    booking.refresh().always(function() {
-                        if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
-                            scheduleRefresh();
-                        } else {
-                            deferred.resolve(booking);
-                        }
-                     });
-                };
-
-                // We refresh the data every 3 seconds
-                var scheduleRefresh = function() {
-                    setTimeout(poll, 3000);
-                };
-
-                scheduleRefresh();
-
-            }).fail(function(error) {
-                deferred.reject(error);
-            });
-
-            return deferred.promise();                 
-        }
-        
-        else {
-            return promise;
-        }
-        
+    
+        return properBookingPromise(booking, promise);
     };
 
     /**
@@ -2140,7 +2145,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         requestParams.data = $.extend({}, requestParams.data || {}, {token: SnapCarPlatform.Config.token});
 
         $.ajax(requestParams).done(function (data) {
-            deferred.resolveWith(this, [resultProcessor(data)]);
+            deferred.resolve(resultProcessor(data));
         }).fail(function (data) {
             deferred.reject(new SnapCarPlatform.APIError(data));
         });
