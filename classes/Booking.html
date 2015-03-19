@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Address.html">Address</a></li>
+                                <li><a href="../classes/APIError.html">APIError</a></li>
+                                <li><a href="../classes/BillingDocument.html">BillingDocument</a></li>
+                                <li><a href="../classes/BillingDocumentTypes.html">BillingDocumentTypes</a></li>
+                                <li><a href="../classes/Booking.html">Booking</a></li>
+                                <li><a href="../classes/BookingCancellationReasons.html">BookingCancellationReasons</a></li>
+                                <li><a href="../classes/BookingHistory.html">BookingHistory</a></li>
+                                <li><a href="../classes/BookingPrice.html">BookingPrice</a></li>
+                                <li><a href="../classes/BookingStatuses.html">BookingStatuses</a></li>
+                                <li><a href="../classes/CancellationFee.html">CancellationFee</a></li>
+                                <li><a href="../classes/Config.html">Config</a></li>
+                                <li><a href="../classes/ConfigError.html">ConfigError</a></li>
+                                <li><a href="../classes/Driver.html">Driver</a></li>
+                                <li><a href="../classes/Error.html">Error</a></li>
+                                <li><a href="../classes/ETAResult.html">ETAResult</a></li>
+                                <li><a href="../classes/ETAResultStatuses.html">ETAResultStatuses</a></li>
+                                <li><a href="../classes/GeoPoint.html">GeoPoint</a></li>
+                                <li><a href="../classes/InvalidParametersError.html">InvalidParametersError</a></li>
+                                <li><a href="../classes/Location.html">Location</a></li>
+                                <li><a href="../classes/MeetingPoint.html">MeetingPoint</a></li>
+                                <li><a href="../classes/PaymentMethod.html">PaymentMethod</a></li>
+                                <li><a href="../classes/Rider.html">Rider</a></li>
+                                <li><a href="../classes/RiderStatuses.html">RiderStatuses</a></li>
+                                <li><a href="../classes/ServiceClass.html">ServiceClass</a></li>
+                                <li><a href="../classes/SpecialArea.html">SpecialArea</a></li>
+                                <li><a href="../classes/SpecialAreaTypes.html">SpecialAreaTypes</a></li>
+                                <li><a href="../classes/TimestampedPoint.html">TimestampedPoint</a></li>
+                                <li><a href="../classes/Utils.html">Utils</a></li>
+                                <li><a href="../classes/Vehicle.html">Vehicle</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/SnapCarPlatform.html">SnapCarPlatform</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Booking Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1836"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1836</code></a>
+        </div>
+
+            Module: <a href="../modules/SnapCarPlatform.html">SnapCarPlatform</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>A booking that represents a request by the user to be picked up.</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Booking" class="method item">
+            <h3 class="name"><code>Booking</code></h3>
+        
+                <div class="args">
+                    <span class="paren">(</span><ul class="args-list inline commas">
+                        <li class="arg">
+                                <code class="optional">[rider]</code>
+                        </li>
+                        <li class="arg">
+                                <code class="optional">[startLocation]</code>
+                        </li>
+                        <li class="arg">
+                                <code class="optional">[endLocation]</code>
+                        </li>
+                        <li class="arg">
+                                <code class="optional">[plannedStartDate]</code>
+                        </li>
+                        <li class="arg">
+                                <code class="optional">[nameboard]</code>
+                        </li>
+                        <li class="arg">
+                                <code class="optional">[driverInfo]</code>
+                        </li>
+                        <li class="arg">
+                                <code class="optional">[meetingPoint]</code>
+                        </li>
+                    </ul><span class="paren">)</span>
+                </div>
+        
+        
+        
+        
+        
+        
+        
+        
+            <div class="meta">
+                        <p>
+                        Defined in
+                <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1836"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1836</code></a>
+                </p>
+        
+        
+        
+            </div>
+        
+            <div class="description">
+                
+            </div>
+        
+                <div class="params">
+                    <h4>Parameters:</h4>
+        
+                    <ul class="params-list">
+                        <li class="param">
+                                <code class="param-name optional">[rider]</code>
+                                <span class="type">SnapCarPlatform.Rider</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>The passenger of the booking. Typically the currently identifier user.</p>
+        
+                            </div>
+        
+                        </li>
+                        <li class="param">
+                                <code class="param-name optional">[startLocation]</code>
+                                <span class="type">SnapCarPlatform.Location</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>The location at which the rider needs to be picked up.</p>
+        
+                            </div>
+        
+                        </li>
+                        <li class="param">
+                                <code class="param-name optional">[endLocation]</code>
+                                <span class="type">SnapCarPlatform.Location</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>The location at which the rider needs to be dropped off.</p>
+        
+                            </div>
+        
+                        </li>
+                        <li class="param">
+                                <code class="param-name optional">[plannedStartDate]</code>
+                                <span class="type">Date</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>The planned pick up date.</p>
+        
+                            </div>
+        
+                        </li>
+                        <li class="param">
+                                <code class="param-name optional">[nameboard]</code>
+                                <span class="type">Boolean</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>Set to true if the nameboard option is required</p>
+        
+                            </div>
+        
+                        </li>
+                        <li class="param">
+                                <code class="param-name optional">[driverInfo]</code>
+                                <span class="type">String</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>Additional pick up information to provide the driver with.</p>
+        
+                            </div>
+        
+                        </li>
+                        <li class="param">
+                                <code class="param-name optional">[meetingPoint]</code>
+                                <span class="type">SnapCarPlatform.MeetingPoint</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>Meeting at which the rider will find its driver.</p>
+        
+                            </div>
+        
+                        </li>
+                    </ul>
+                </div>
+        
+        
+        
+        </div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_cancel">cancel</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_cancellationPrice">cancellationPrice</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_confirm">confirm</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_flatPrices">flatPrices</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_refresh">refresh</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_billedAmount">billedAmount</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_bookingPrice">bookingPrice</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_cancellationDate">cancellationDate</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_cancellationReason">cancellationReason</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_creationDate">creationDate</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_documents">documents</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_driverArrivalDate">driverArrivalDate</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_driverInfo">driverInfo</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_endLocation">endLocation</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_history">history</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_id">id</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_meetingPoint">meetingPoint</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_plannedStartDate">plannedStartDate</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_rider">rider</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_route">route</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_serviceClass">serviceClass</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_startDate">startDate</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_startLocation">startLocation</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_status">status</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_timezone">timezone</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_tip">tip</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_vatAmount">vatAmount</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_vehicle">vehicle</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_cancel" class="method item">
+    <h3 class="name"><code>cancel</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">jQuery.Promise</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2151"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2151</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Cancels the booking. You may want to check the cancellation price by using the SnapCarPlatform.Booking.cancellationPrice() method before doing so.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">jQuery.Promise</span>:
+                    <p>A Promise object. Success handlers are called with the updated instance of SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_cancellationPrice" class="method item">
+    <h3 class="name"><code>cancellationPrice</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">jQuery.Promise</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2134"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2134</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Gets the booking cancellation price. Relevant only when the booking is either in the 'pending', 'going_to_get' or 'driver_waiting' state.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">jQuery.Promise</span>:
+                    <p>A Promise object. Success handlers are called with a SnapCarPlatform.CancellationFee as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_confirm" class="method item">
+    <h3 class="name"><code>confirm</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">jQuery.Promise</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2254"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2254</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Confirms the booking (without flat price) to the SnapCar platform. Before calling this method, you have to provide at least a rider, a startLocation and the desired serviceClass.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">jQuery.Promise</span>:
+                    <p>A Promise object. Success/progress handlers are called with a SnapCarPlatform.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the &quot;pending&quot; status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_flatPrices" class="method item">
+    <h3 class="name"><code>flatPrices</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">jQuery.Promise</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2301"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2301</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Calculates flat prices for all allowed service classes. Then, you may confirm one of these prices according to the service class selected by the user. The flat prices are based on the booking information (rider, planned start date, start location, end location, if the nameboard option is enabled). Before calling this method, you have to provide at least a rider, a startLocation and an endLocation which are the basic elements for price calculation. Flat prices cannot be calculated otherwise.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">jQuery.Promise</span>:
+                    <p>A Promise object. Success handlers are called with an array of SnapCarPlatform.BookingPrice as the single argument. Check the value of the SnapCarPlatform.BookingPrice.serviceClassId property in order to know to which service class a booking price is associated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_refresh" class="method item">
+    <h3 class="name"><code>refresh</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">jQuery.Promise</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2169"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2169</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Refreshes the booking information.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">jQuery.Promise</span>:
+                    <p>A Promise object. Success handlers are called with the updated instance of SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.</p>
+
+            </div>
+        </div>
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_billedAmount" class="property item">
+                        <h3 class="name"><code>billedAmount</code></h3>
+                        <span class="type">Float</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2073"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2073</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The total billed amount</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_bookingPrice" class="property item">
+                        <h3 class="name"><code>bookingPrice</code></h3>
+                        <span class="type">SnapCarPlatform.BookingPrice</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2063"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2063</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The initial order information.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_cancellationDate" class="property item">
+                        <h3 class="name"><code>cancellationDate</code></h3>
+                        <span class="type">Date</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2013"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2013</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The date at which the booking was cancelled (if relevant).</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_cancellationReason" class="property item">
+                        <h3 class="name"><code>cancellationReason</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2023"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2023</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This code indicates the reason why the booking was cancelled. Check out the SnapCarPlatform.BookingCancellationReasons static class properties.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_creationDate" class="property item">
+                        <h3 class="name"><code>creationDate</code></h3>
+                        <span class="type">Date</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1963"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1963</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The booking creation date.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_documents" class="property item">
+                        <h3 class="name"><code>documents</code></h3>
+                        <span class="type">Array</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2113"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2113</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The list of SnapCarPlatform.BillingDocument</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_driverArrivalDate" class="property item">
+                        <h3 class="name"><code>driverArrivalDate</code></h3>
+                        <span class="type">Date</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1973"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1973</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The driver arrival date at the pick up location.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_driverInfo" class="property item">
+                        <h3 class="name"><code>driverInfo</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2053"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2053</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Additional pick-up information for the driver. Provided by the rider.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_endLocation" class="property item">
+                        <h3 class="name"><code>endLocation</code></h3>
+                        <span class="type">SnapCarPlatform.Location</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2043"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2043</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The location at which the rider has been dropped off.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_history" class="property item">
+                        <h3 class="name"><code>history</code></h3>
+                        <span class="type">Date</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2003"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2003</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The date at which the rider has been dropped off.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_id" class="property item">
+                        <h3 class="name"><code>id</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1903"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1903</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The booking unique identifier.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_meetingPoint" class="property item">
+                        <h3 class="name"><code>meetingPoint</code></h3>
+                        <span class="type">SnapCarPlatform.MeetingPoint</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1993"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1993</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Meeting at which the rider will find its driver.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_plannedStartDate" class="property item">
+                        <h3 class="name"><code>plannedStartDate</code></h3>
+                        <span class="type">Date</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1953"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1953</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The planned pick up date.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_rider" class="property item">
+                        <h3 class="name"><code>rider</code></h3>
+                        <span class="type">SnapCarPlatform.Rider</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1913"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1913</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The passenger of the booking.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_route" class="property item">
+                        <h3 class="name"><code>route</code></h3>
+                        <span class="type">Array</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2103"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2103</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>A list of SnapCarPlatform.TimestampedPoint describing the driver route from the pick up location.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_serviceClass" class="property item">
+                        <h3 class="name"><code>serviceClass</code></h3>
+                        <span class="type">SnapCarPlatform.ServiceClass</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1923"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1923</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The ordered service class for this booking.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_startDate" class="property item">
+                        <h3 class="name"><code>startDate</code></h3>
+                        <span class="type">Date</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1983"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1983</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The date at which the rider went on board.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_startLocation" class="property item">
+                        <h3 class="name"><code>startLocation</code></h3>
+                        <span class="type">SnapCarPlatform.Location</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2033"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2033</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The pick up location.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_status" class="property item">
+                        <h3 class="name"><code>status</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1933"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1933</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The booking status, refer to the SnapCarPlatform.BookingStatuses properties to have a comprehensive list of all possible statuses.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_timezone" class="property item">
+                        <h3 class="name"><code>timezone</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l1943"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:1943</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The booking location's timezone.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_tip" class="property item">
+                        <h3 class="name"><code>tip</code></h3>
+                        <span class="type">Float</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2093"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2093</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The tip given by the rider to the driver through the SnapCar application.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_vatAmount" class="property item">
+                        <h3 class="name"><code>vatAmount</code></h3>
+                        <span class="type">Float</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2083"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2083</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The total VAT amount.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_vehicle" class="property item">
+                        <h3 class="name"><code>vehicle</code></h3>
+                        <span class="type">Array</span>
+                    
+                    
+                    
+                            <span class="flag final">final</span>
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2123"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2123</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The vehicle used by the driver to pick the rider up.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

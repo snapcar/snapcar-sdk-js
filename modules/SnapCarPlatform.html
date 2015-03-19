@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SnapCarPlatform</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Address.html">Address</a></li>
+                                <li><a href="../classes/APIError.html">APIError</a></li>
+                                <li><a href="../classes/BillingDocument.html">BillingDocument</a></li>
+                                <li><a href="../classes/BillingDocumentTypes.html">BillingDocumentTypes</a></li>
+                                <li><a href="../classes/Booking.html">Booking</a></li>
+                                <li><a href="../classes/BookingCancellationReasons.html">BookingCancellationReasons</a></li>
+                                <li><a href="../classes/BookingHistory.html">BookingHistory</a></li>
+                                <li><a href="../classes/BookingPrice.html">BookingPrice</a></li>
+                                <li><a href="../classes/BookingStatuses.html">BookingStatuses</a></li>
+                                <li><a href="../classes/CancellationFee.html">CancellationFee</a></li>
+                                <li><a href="../classes/Config.html">Config</a></li>
+                                <li><a href="../classes/ConfigError.html">ConfigError</a></li>
+                                <li><a href="../classes/Driver.html">Driver</a></li>
+                                <li><a href="../classes/Error.html">Error</a></li>
+                                <li><a href="../classes/ETAResult.html">ETAResult</a></li>
+                                <li><a href="../classes/ETAResultStatuses.html">ETAResultStatuses</a></li>
+                                <li><a href="../classes/GeoPoint.html">GeoPoint</a></li>
+                                <li><a href="../classes/InvalidParametersError.html">InvalidParametersError</a></li>
+                                <li><a href="../classes/Location.html">Location</a></li>
+                                <li><a href="../classes/MeetingPoint.html">MeetingPoint</a></li>
+                                <li><a href="../classes/PaymentMethod.html">PaymentMethod</a></li>
+                                <li><a href="../classes/Rider.html">Rider</a></li>
+                                <li><a href="../classes/RiderStatuses.html">RiderStatuses</a></li>
+                                <li><a href="../classes/ServiceClass.html">ServiceClass</a></li>
+                                <li><a href="../classes/SpecialArea.html">SpecialArea</a></li>
+                                <li><a href="../classes/SpecialAreaTypes.html">SpecialAreaTypes</a></li>
+                                <li><a href="../classes/TimestampedPoint.html">TimestampedPoint</a></li>
+                                <li><a href="../classes/Utils.html">Utils</a></li>
+                                <li><a href="../classes/Vehicle.html">Vehicle</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/SnapCarPlatform.html">SnapCarPlatform</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>SnapCarPlatform Module</h1>
+<div class="box clearfix meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/.._snapcar-platform-js_SnapCarPlatform.js.html#l2507"><code>..&#x2F;snapcar-platform-js&#x2F;SnapCarPlatform.js:2507</code></a>
+        </div>
+
+</div>
+
+
+<div class="box intro">
+    <p>This is the base SnapCarPlatform module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent of jQuery.</p>
+<p>The module parameters can be managed through the SnapCarPlatform.Config static class. Before using this module, you must initialize it with a user token by setting the SnapCarPlatform.Config.token property. Please refer to the general SnapCar API documentation for more information on how to obtain a user token : http://developer.snapcar.com/.</p>
+<p>The SnapCarPlatform SDK for JavaScript does not manage user authentication. The reason for this is that obtaining a user token is done through a request that requires your API secret value to be provided. The API secret value is sensitive information that should never be revealed to the user. However, setting it in the JavaScript SDK implies that your users can access it by digging into the source code. Which is why such work flow must be implemented on the server side. Once initialized with a token, the module allows you to perform actions such as making bookings or getting ETAs on behalf of the authenticated user.</p>
+<p>Basic API calls such as getting ETAs or allowed service classes can be performed through the SnapCarPlatform.Utils static class. In general, all methods that are in charge of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error occurs during the request, the promises are rejected with an instance of SnapCarPlatform.APIError (containing more info about the issue). Look at the examples below for a comprehensive vision of the work flow.</p>
+
+</div>
+
+    <div class="example">
+        <h4>Example:</h4>
+        <div class="example-content">
+            <pre class="code prettyprint"><code> // Setting the token before using the SDK
+ SnapCarPlatform.Config.token = &quot;3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O&quot;;</code></pre>
+<pre class="code prettyprint"><code> // Getting current closest drivers availability at a specific location
+ 
+ SnapCarPlatform.Utils.eta(48.859041, 2.327889).done(function (result) {
+      $.each(result, function (key, info) {
+          
+        // info is an instance of SnapCarPlatform.ETAResult
+        // you get info about eta.serviceClass
+        
+        if (info.status === SnapCarPlatform.ETAResultStatuses.OK) {
+            // an ETA is available and set in info.eta
+        } else if (info.status === SnapCarPlatform.ETAResultStatuses.UNAVAILABLE) {
+            // this service class is not available at the moment
+        }
+        
+      });
+ });</code></pre>
+<pre class="code prettyprint"><code> // Before making a booking, I want to know if there are meeting points at a specific area
+ 
+ SnapCarPlatform.Utils.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
+
+     // There's a special area at this location. 
+     // Check out the specialArea info (which is an instance of SnapCarPlatform.SpecialArea)
+
+ }).fail(function (error) {
+     if (error.code === 404) {
+         // No special area/meeting points at this location
+     } else {
+         // An other error occurred
+     }
+ });</code></pre>
+<pre class="code prettyprint"><code> // We want to get all user's active bookings and cancel them
+  
+ SnapCarPlatform.Utils.activeBookings().done(function (bookings) {
+ 
+        $.each(bookings, function(key, booking) {
+            
+            // For each booking, we want to know the cancellation price.
+            // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren't called. The failure callbacks are called instead.
+            // You may want to check if the cancellation is charged. Check out the SnapCarPlatform.CancellationFee reference for more information.
+            
+            booking.cancellationPrice().done(function (cancellationFee) {
+                booking.cancel().done(function () {
+                    // Booking properly cancelled
+                });
+            });
+        });
+ }); </code></pre>
+<pre class="code prettyprint"><code> // We want to get all user's past bookings
+  
+ SnapCarPlatform.Utils.bookingsHistory().done(function (history) {
+ 
+        $.each(history.history, function(key, booking) {
+            // booking is an instance of SnapCarPlatform.Booking
+        });
+        
+        // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()
+ }); </code></pre>
+<pre class="code prettyprint"><code> // Let's create a booking on demand (with no planned pick up date) and without flat price.
+ 
+ // First, we get the info about the authenticated user
+ SnapCarPlatform.Utils.user().done(function (user) {
+
+       // You may check the user.status value in order to know if he is allowed to make bookings
+       
+       // We fetch the allowed service classes
+       SnapCarPlatform.Utils.serviceClasses().done(function (servicesClasses) {
+
+           // We create a booking
+           var booking = new SnapCarPlatform.Booking();
+
+           // We define the rider and its pick up location
+           booking.rider = user;
+           booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+
+           // We also need to define the service class. Here we take one service class randomly.
+           // In real life, you may present the different service class names to the user for selection.
+           booking.serviceClass = servicesClasses[0];
+           
+           // We confirm the booking, this sends a request to the SnapCar platform
+           booking.confirm()
+           
+           // This handler is called when the booking is either accepted by a driver or cancelled
+           .done(function () {
+
+               if (booking.status === SnapCarPlatform.BookingStatuses.GOING_TO_GET) {
+                   // A driver has accepted the booking
+               }
+
+               else if (booking.status === SnapCarPlatform.BookingStatuses.CANCELLED) {
+                   // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCarPlatform.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.
+               }
+
+               else {
+                   // Other status, unlikely to happen unless the driver has switched to another status in the meantime.
+               }
+           
+           // This handler is called when the SnapCar platform confirms the booking creation
+           }).progress(function(error) {
+
+               // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.
+
+           // This handler is called upon error (ex: no driver available)
+           }).fail(function(error) {
+
+               if (error.message === &quot;no_driver&quot;) {
+                   // No driver is available for the required service class. You may try with another service class.
+               }
+
+               // Check out the documentation for a comprehensive list of error messages.
+
+           });
+       });
+   });</code></pre>
+<pre class="code prettyprint"><code> // Let's create a booking in the future (with a planned pick up date) and without flat price.
+ 
+ // First, we get the info about the authenticated user
+ SnapCarPlatform.Utils.user().done(function (user) {
+
+       // You may check the user.status value in order to know if he is allowed to make bookings
+       
+       // We fetch the allowed service classes
+       SnapCarPlatform.Utils.serviceClasses().done(function (servicesClasses) {
+
+           // We create a booking
+           var booking = new SnapCarPlatform.Booking();
+
+           // We define the rider and its pick up location
+           booking.rider = user;
+           booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+
+           // We define the date. Warning: you must ensure that the timezone is correct!
+           booking.plannedStartDate = new Date(&quot;2016-01-01 00:00:00&quot;);
+           
+           // We also need to define the service class. Here we take one service class randomly.
+           // In real life, you may present the different service class names to the user for selection.
+           booking.serviceClass = servicesClasses[0];
+           
+           // We confirm the booking, this sends a request to the SnapCar platform
+           booking.confirm()
+           
+           // This handler is called when the booking is confirmed
+           .done(function () {
+
+               if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
+                   // Your booking is waiting for dispatch in the future
+               }
+
+           // This handler is called upon error (ex: no driver available)
+           }).fail(function(error) {
+
+               // Check out the documentation for a comprehensive list of error messages.
+
+           });
+       });
+   });</code></pre>
+<pre class="code prettyprint"><code> // Let's create a booking in the future (with a planned pick up date) and with a flat price.
+ 
+ // First, we get the info about the authenticated user
+ SnapCarPlatform.Utils.user().done(function (user) {
+ 
+     // You may check the user.status value in order to know if he is allowed to make bookings
+ 
+     // We create a booking
+     var booking = new SnapCarPlatform.Booking();
+ 
+     // We define the rider and its pick up location
+     booking.rider = user;
+     booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+     booking.endLocation = new SnapCarPlatform.Location(48.855272, 2.345865, new SnapCarPlatform.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));
+     booking.driverInfo = &quot;Some useful info for you.&quot;;
+     booking.nameboard = true; // We want a nameboard, for the example
+     
+     // We define the date. Warning: you must ensure that the timezone is correct!
+     booking.plannedStartDate = new Date(&quot;2016-01-01 00:00:00&quot;);
+     
+     booking.flatPrices().done(function(prices) {
+ 
+         // We have several prices, we will confirm the first one.
+         // In real life, you may present the different prices for each service class to the user for selection.
+ 
+         // We confirm the booking, this sends a request to the SnapCar platform
+         prices[0].confirm()
+ 
+         // This handler is called when the booking is confirmed
+         .done(function () {
+ 
+             if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
+                 // Your booking is waiting for dispatch in the future
+             }
+ 
+         // This handler is called upon error (ex: no driver available)
+         }).fail(function(error) {
+ 
+             // Check out the documentation for a comprehensive list of error messages.
+ 
+         });        
+     });
+ });</code></pre>
+<pre class="code prettyprint"><code> // Let's create a booking on demand (without a planned pick up date) and with a flat price.
+ 
+ // First, we get the info about the authenticated user
+ SnapCarPlatform.Utils.user().done(function (user) {
+ 
+     // You may check the user.status value in order to know if he is allowed to make bookings
+ 
+     // We create a booking
+     var booking = new SnapCarPlatform.Booking();
+ 
+     // We define the rider and its pick up location
+     booking.rider = user;
+     booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+     booking.endLocation = new SnapCarPlatform.Location(48.855272, 2.345865, new SnapCarPlatform.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));
+     
+     booking.flatPrices().done(function(prices) {
+ 
+         // We have several prices, we will confirm the first one.
+         // In real life, you may present the different prices for each service class to the user for selection.
+ 
+         // We confirm the booking, this sends a request to the SnapCar platform
+         prices[0].confirm()
+ 
+         // This handler is called when the booking is either accepted by a driver or cancelled
+         .done(function () {
+ 
+             if (booking.status === SnapCarPlatform.BookingStatuses.GOING_TO_GET) {
+                 // A driver has accepted the booking
+             }
+ 
+             else if (booking.status === SnapCarPlatform.BookingStatuses.CANCELLED) {
+                 // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCarPlatform.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.
+             }
+ 
+             else {
+                 // Other status, unlikely to happen unless the driver has switched to another status in the meantime.
+             }
+ 
+         // This handler is called when the SnapCar platform confirms the booking creation
+         }).progress(function(error) {
+ 
+             // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.
+ 
+         // This handler is called upon error (ex: no driver available)
+         }).fail(function(error) {
+ 
+             if (error.message === &quot;no_driver&quot;) {
+                 // No driver is available for the required service class. You may try with another service class.
+             }
+ 
+             // Check out the documentation for a comprehensive list of error messages.
+ 
+         });       
+     });
+ });
+</code></pre>
+
+        </div>
+    </div>
+
+<div class="yui3-g">
+    <div class="yui3-u-1-2">
+            <p>This module provides the following classes:</p>
+
+            <ul class="module-classes">
+                <li class="module-class">
+                    <a href="../classes/Address.html">
+                        Address
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/APIError.html">
+                        APIError
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/BillingDocument.html">
+                        BillingDocument
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/BillingDocumentTypes.html">
+                        BillingDocumentTypes
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Booking.html">
+                        Booking
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/BookingCancellationReasons.html">
+                        BookingCancellationReasons
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/BookingHistory.html">
+                        BookingHistory
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/BookingPrice.html">
+                        BookingPrice
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/BookingStatuses.html">
+                        BookingStatuses
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/CancellationFee.html">
+                        CancellationFee
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Config.html">
+                        Config
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/ConfigError.html">
+                        ConfigError
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Driver.html">
+                        Driver
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Error.html">
+                        Error
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/ETAResult.html">
+                        ETAResult
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/ETAResultStatuses.html">
+                        ETAResultStatuses
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/GeoPoint.html">
+                        GeoPoint
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/InvalidParametersError.html">
+                        InvalidParametersError
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Location.html">
+                        Location
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/MeetingPoint.html">
+                        MeetingPoint
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/PaymentMethod.html">
+                        PaymentMethod
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Rider.html">
+                        Rider
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/RiderStatuses.html">
+                        RiderStatuses
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/ServiceClass.html">
+                        ServiceClass
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/SpecialArea.html">
+                        SpecialArea
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/SpecialAreaTypes.html">
+                        SpecialAreaTypes
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/TimestampedPoint.html">
+                        TimestampedPoint
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Utils.html">
+                        Utils
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Vehicle.html">
+                        Vehicle
+                    </a>
+                </li>
+            </ul>
+    </div>
+
+    <div class="yui3-u-1-2">
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
