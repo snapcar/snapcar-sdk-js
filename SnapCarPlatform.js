@@ -61,7 +61,7 @@
  *                 // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren't called. The failure callbacks are called instead.
  *                 // You may want to check if the cancellation is charged. Check out the SnapCarPlatform.CancellationFee reference for more information.
  *                 
- *                 booking.cancellationPrice().done(function (bookings) {
+ *                 booking.cancellationPrice().done(function (cancellationFee) {
  *                     booking.cancel().done(function () {
  *                         // Booking properly cancelled
  *                     });
