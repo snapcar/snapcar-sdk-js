@@ -1844,7 +1844,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
      * @param {Date} [plannedStartDate] The planned pick up date.
      * @param {Boolean} [nameboard] Set to true if the nameboard option is required
      * @param {String} [driverInfo] Additional pick up information to provide the driver with.
-     * @param {SnapCarPlatform.MeetingPoint} [meetingPoint] Meeting at which the rider will find its driver.
+     * @param {SnapCarPlatform.MeetingPoint} [meetingPoint] Meeting at which the rider will find his driver.
      */
 
     SnapCarPlatform.Booking = function (rider, startLocation, endLocation, plannedStartDate, nameboard, driverInfo, meetingPoint) {

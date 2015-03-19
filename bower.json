@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/snapcar/snapcar-platform-js",
   "description": "The SnapCar SDK for JavaScript allows communication between your Web application and the SnapCar platform. It allows your application to perform actions such as making bookings on behalf of your user.",
-  "main": "SnapCarPlatform.js",
+  "main": "src/SnapCarPlatform.js",
   "dependencies": {
     "jquery": ">=1.5"
   },
