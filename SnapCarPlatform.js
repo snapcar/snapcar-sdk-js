@@ -278,8 +278,19 @@
  *             });
  *      }); 
  *      
+ *   @example
+ *   
+ *      // We want to get all user's past bookings
  *       
- */
+ *      SnapCarPlatform.Utils.bookingsHistory().done(function (history) {
+ *      
+ *             $.each(history.history, function(key, booking) {
+ *                 // booking is an instance of SnapCarPlatform.Booking
+ *             });
+ *             
+ *             // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()
+ *      });
+  */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
