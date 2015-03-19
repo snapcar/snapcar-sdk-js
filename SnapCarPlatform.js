@@ -49,6 +49,41 @@
  *          }
  *      });
  *      
+ * @example
+ *   
+ *      // We want to get all user's active bookings and cancel them
+ *       
+ *      SnapCarPlatform.Utils.activeBookings().done(function (bookings) {
+ *      
+ *             $.each(bookings, function(key, booking) {
+ *                 
+ *                 // For each booking, we want to know the cancellation price.
+ *                 // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren't called. The failure callbacks are called instead.
+ *                 // You may want to check if the cancellation is charged. Check out the SnapCarPlatform.CancellationFee reference for more information.
+ *                 
+ *                 booking.cancellationPrice().done(function (bookings) {
+ *                     booking.cancel().done(function () {
+ *                         // Booking properly cancelled
+ *                     });
+ *                 });
+ *             });
+ *      }); 
+ *      
+ *      
+ * @example
+ *   
+ *      // We want to get all user's past bookings
+ *       
+ *      SnapCarPlatform.Utils.bookingsHistory().done(function (history) {
+ *      
+ *             $.each(history.history, function(key, booking) {
+ *                 // booking is an instance of SnapCarPlatform.Booking
+ *             });
+ *             
+ *             // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()
+ *      }); 
+ *      
+ *                  
  * @example     
  *      
  *      // Let's create a booking on demand (with no planned pick up date) and without flat price.
@@ -200,7 +235,7 @@
  *          });
  *      });
  *   
- *   @example
+ * @example
  *   
  *      // Let's create a booking on demand (without a planned pick up date) and with a flat price.
  *      
@@ -258,39 +293,7 @@
  *          });
  *      });
  *   
- *   @example
- *   
- *      // We want to get all user's active bookings and cancel them
- *       
- *      SnapCarPlatform.Utils.activeBookings().done(function (bookings) {
- *      
- *             $.each(bookings, function(key, booking) {
- *                 
- *                 // For each booking, we want to know the cancellation price.
- *                 // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren't called. The failure callbacks are called instead.
- *                 // You may want to check if the cancellation is charged. Check out the SnapCarPlatform.CancellationFee reference for more information.
- *                 
- *                 booking.cancellationPrice().done(function (bookings) {
- *                     booking.cancel().done(function () {
- *                         // Booking properly cancelled
- *                     });
- *                 });
- *             });
- *      }); 
- *      
- *   @example
- *   
- *      // We want to get all user's past bookings
- *       
- *      SnapCarPlatform.Utils.bookingsHistory().done(function (history) {
- *      
- *             $.each(history.history, function(key, booking) {
- *                 // booking is an instance of SnapCarPlatform.Booking
- *             });
- *             
- *             // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()
- *      });
-  */
+ */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
