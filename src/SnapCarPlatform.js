@@ -293,6 +293,70 @@
  *          });
  *      });
  *   
+ * @example
+ * 
+ *      // Let's create a booking in advance (with a planned pick up date) and without flat price. We make this booking only if we find specific meeting points at this location. 
+ *      // In real life, you would just check if there are meeting points and would propose the list to your user for selection but would make the booking anyway.
+ *      
+ *      SnapCarPlatform.Utils.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
+ *      
+ *         // There's a special area at this location. 
+ *      
+ *      	 // Let's create a booking on demand (with no planned pick up date) and without flat price.
+ *      	 
+ *      	 // First, we get the info about the authenticated user
+ *      	 SnapCarPlatform.Utils.user().done(function (user) {
+ *      
+ *      	       // You may check the user.status value in order to know if he is allowed to make bookings
+ *      	       
+ *      	       // We fetch the allowed service classes
+ *      	       SnapCarPlatform.Utils.serviceClasses().done(function (servicesClasses) {
+ *      
+ *      	           // We create a booking
+ *      	           var booking = new SnapCarPlatform.Booking();
+ *      
+ *      	           // We define the rider and its pick up location
+ *      	           booking.rider = user;
+ *      	           booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+ *      
+ *      	           // We define the date. Warning: you must ensure that the timezone is correct!
+ *      	           booking.plannedStartDate = new Date("2016-01-01 00:00:00");
+ *      
+ *      	           // We also need to define the service class. Here we take one service class randomly.
+ *      	           // In real life, you may present the different service class names to the user for selection.
+ *      	           booking.serviceClass = servicesClasses[0];
+ *      
+ *      	           // We define the first meeting point
+ *      	           // In real life, you may present the different meeting points to the user for selection.
+ *      	           booking.meetingPoint = specialArea.meetingPoints[0];
+ *      
+ *      	           // We confirm the booking, this sends a request to the SnapCar platform
+ *      	           booking.confirm()
+ *      	                 
+ *      	           // This handler is called when the booking is confirmed
+ *      	           .done(function () {
+ *      
+ *      	               if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {
+ *      	                   // Your booking is waiting for dispatch in the future
+ *      	               }
+ *      
+ *      	           // This handler is called upon error (ex: no driver available)
+ *      	           }).fail(function(error) {
+ *      
+ *      	               // Check out the documentation for a comprehensive list of error messages.
+ *      
+ *      	           });
+ *      
+ *      	       });
+ *      	   });
+ *      
+ *      }).fail(function (error) {
+ *         if (error.code === 404) {
+ *             // No special area/meeting points at this location
+ *         } else {
+ *             // An other error occurred
+ *         }
+ *      });
  */
 
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
