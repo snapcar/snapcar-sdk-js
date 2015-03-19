@@ -873,7 +873,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
     defineProperties(SnapCarPlatform.ETAResult, {
         
         /**
-         * Availability of the service class. Can be one of the SnapCarPlatform.ETAResultStatus object values.
+         * Availability of the service class. Can be one of the SnapCarPlatform.ETAResultStatuses object values.
          * 
          * @property status
          * @final
