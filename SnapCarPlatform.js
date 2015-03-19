@@ -1748,6 +1748,13 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
         history: {name: 'history'}
     });
 
+    /**
+     * Loads the next bookings in the history regarding the current offset in the pagination.
+     * 
+     * @method nextBookings
+     * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCarPlatform.BookingHistory as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error. 
+     */
+    
     SnapCarPlatform.BookingHistory.prototype.nextBookings = function () {
         if (this.moreBookingsAvailable()) {
             return SnapCarPlatform.bookingsHistory(this.offset + this.limit, this.limit);
@@ -1755,6 +1762,13 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
             throw new SnapCarPlatform.InvalidParametersError('no_more_bookings', 'There are no more bookings available in the history. Make sure that the moreBookingsAvailable method returns true before trying to load more bookings.');
         }
     };
+
+    /**
+     * Tells whether more bookings are available in the history regarding the current offset in the pagination and the total number of bookings. If yes, the SnapCarPlatform.BookingHistory.nextBookings method can be called.
+     * 
+     * @method moreBookingsAvailable
+     * @return {Boolean} Whether more bookings are available or not.
+     */
 
     SnapCarPlatform.BookingHistory.prototype.moreBookingsAvailable = function () {
         return (parseInt(this.offset) + parseInt(this.count)) < parseInt(this.total);
