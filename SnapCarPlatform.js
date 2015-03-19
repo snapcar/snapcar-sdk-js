@@ -281,8 +281,6 @@
  *       
  */
 
-
-
 var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     // Properties: browser compatibility
@@ -605,6 +603,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return getTextInLocale(val);
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.ServiceClass, {
@@ -649,6 +649,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return getTextInLocale(val);
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.MeetingPoint, {
@@ -711,6 +713,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     break;
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.SpecialArea, {
@@ -848,6 +852,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return SnapCarPlatform.ServiceClass.populateProperties(new SnapCarPlatform.ServiceClass(), val);
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.ETAResult, {
@@ -1007,6 +1013,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return SnapCarPlatform.PaymentMethod.populateProperties(new SnapCarPlatform.PaymentMethod(), val);
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.Rider, {
@@ -1134,6 +1142,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return new Date(parseInt(val) * 1000);
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.BookingPrice, {
@@ -1249,6 +1259,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.CancellationFee.populateProperties = function (context, payload) {
         processObjectPayload(context, payload);
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.CancellationFee, {
@@ -1317,6 +1329,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.Address.populateProperties = function (context, payload) {
         processObjectPayload(context, payload);
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.Address, {
@@ -1386,6 +1400,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return SnapCarPlatform.Address.populateProperties(new SnapCarPlatform.Address(), val);
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.Location, {
@@ -1435,6 +1451,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.GeoPoint.populateProperties = function (context, payload) {
         processObjectPayload(context, payload);
+        return context;
     };
 
     defineProperties(SnapCarPlatform.GeoPoint, {
@@ -1473,6 +1490,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.BillingDocument.populateProperties = function (context, payload) {
         processObjectPayload(context, payload);
+        return context;
     };
 
     defineProperties(SnapCarPlatform.BillingDocument, {
@@ -1563,6 +1581,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     break;
             }
         });
+        return context;
     };
 
     defineProperties(SnapCarPlatform.Vehicle, {
@@ -1621,6 +1640,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.Driver.populateProperties = function (context, payload) {
         processObjectPayload(context, payload);
+        return context;
     };
 
     defineProperties(SnapCarPlatform.Driver, {
@@ -1669,6 +1689,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
 
     SnapCarPlatform.TimestampedPoint.populateProperties = function (context, payload) {
         processObjectPayload(context, payload);
+        return context;
     };
 
     defineProperties(SnapCarPlatform.TimestampedPoint, {
@@ -1726,6 +1747,7 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     });
             }
         });
+        return context;
     };
 
     defineProperties(SnapCarPlatform.BookingHistory, {
@@ -1858,6 +1880,8 @@ var SnapCarPlatform = (function (SnapCarPlatform, $) {
                     return SnapCarPlatform.BookingPrice.populateProperties(new SnapCarPlatform.BookingPrice(), val);
             }
         });
+        
+        return context;
     };
 
     defineProperties(SnapCarPlatform.Booking, {
