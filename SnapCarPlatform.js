@@ -107,7 +107,7 @@
  *                // In real life, you may present the different service class names to the user for selection.
  *                booking.serviceClass = servicesClasses[0];
  *                
- *                // We confirme the booking, this sends a request to the SnapCar platform
+ *                // We confirm the booking, this sends a request to the SnapCar platform
  *                booking.confirm()
  *                
  *                // This handler is called when the booking is either accepted by a driver or cancelled
@@ -169,7 +169,7 @@
  *                // In real life, you may present the different service class names to the user for selection.
  *                booking.serviceClass = servicesClasses[0];
  *                
- *                // We confirme the booking, this sends a request to the SnapCar platform
+ *                // We confirm the booking, this sends a request to the SnapCar platform
  *                booking.confirm()
  *                
  *                // This handler is called when the booking is confirmed
