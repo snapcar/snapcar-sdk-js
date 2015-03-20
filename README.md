@@ -1,6 +1,6 @@
 # SnapCar SDK for JavaScript
 
-The official SnapCar SDK for JavaScript that allows communication between your browser application and the SnapCar platform through the SnapCar Public API. It lets you peform a bunch of actions such as making bookings or getting ETAs on behalf of a user.
+The official SnapCar SDK for JavaScript that allows communication between your browser application and the SnapCar platform through the SnapCar Public API. It lets you peform a bunch of actions such as making bookings or getting ETAs on behalf of a user. The API reference of this SDK can be found on the [SnapCar SDK for JavaScript project website](http://snapcar.github.io/snapcar-sdk-js/classes/SnapCar.html).
 
 ## Installing
 
