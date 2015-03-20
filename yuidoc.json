@@ -1,5 +1,5 @@
 {
-  "name": "SnapCar SDK for JavaScript",
+  "name": "snapcar-sdk-js",
   "description": "JavaScript implementation of the SnapCar Public API.",
   "version": "1.0.0",
   "url": "https://github.com/snapcar/snapcar-sdk-js",
