@@ -604,14 +604,14 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents an error created upon configuration issues such as trying to perform an API call with no token defined.
      *
-     * @class SnapCar.Error
+     * @class SnapCar.ConfigError
      * @extends SnapCar.Error
      * @param message {string} A key which defines more precisely the type of error.
      * @param description {string} A human readable text describing the error. Not to be displayed to the user.
      * @constructor
      */
     
-    SnapCar.Error = function (message, description) {
+    SnapCar.ConfigError = function (message, description) {
         processObjectPayload(this, {
             type: 'config',
             message: message,
@@ -619,7 +619,7 @@ var SnapCar = (function (SnapCar, $) {
         });
     };
 
-    SnapCar.Error.prototype = new SnapCar.Error();
+    SnapCar.ConfigError.prototype = new SnapCar.Error();
 
     /**
      * Represents an error created when trying to make API calls with invalid parameters.
@@ -675,7 +675,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.APIError.prototype = new SnapCar.Error();
 
-    defineProperties(SnapCar.Error, {
+    defineProperties(SnapCar.APIError, {
         
         /**
          * The type of error.
