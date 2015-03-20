@@ -38,7 +38,7 @@ For better performance, you can use the minified version:
 
 ### SDK documentation and examples
 
-A comprehensive documentation and many examples are available on the [SnapCar SDK for JavaScript project website](http://snapcar.github.io/snapcar-sdk-js/).
+A comprehensive documentation and many examples are available on the [SnapCar SDK for JavaScript project website](http://snapcar.github.io/snapcar-sdk-js/classes/SnapCar.html).
 
 ### SnapCar pubic API documentation
 
