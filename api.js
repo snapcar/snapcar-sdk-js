@@ -12,6 +12,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "SnapCar.BookingPrice",
         "SnapCar.BookingStatuses",
         "SnapCar.CancellationFee",
+        "SnapCar.ConfigError",
         "SnapCar.Driver",
         "SnapCar.ETAResult",
         "SnapCar.ETAResultStatuses",
@@ -27,8 +28,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "SnapCar.SpecialArea",
         "SnapCar.SpecialAreaTypes",
         "SnapCar.TimestampedPoint",
-        "SnapCar.Vehicle",
-        "SnapCarError"
+        "SnapCar.Vehicle"
     ],
     "modules": [],
     "allModules": []

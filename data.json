@@ -13,7 +13,7 @@
             "classes": {
                 "SnapCar": 1,
                 "SnapCar.Error": 1,
-                "SnapCarError": 1,
+                "SnapCar.ConfigError": 1,
                 "SnapCar.InvalidParametersError": 1,
                 "SnapCar.APIError": 1,
                 "SnapCar.ServiceClass": 1,
@@ -102,9 +102,9 @@
             ],
             "is_constructor": 1
         },
-        "SnapCarError": {
-            "name": "SnapCarError",
-            "shortname": "SnapCarError",
+        "SnapCar.ConfigError": {
+            "name": "SnapCar.ConfigError",
+            "shortname": "SnapCar.ConfigError",
             "classitems": [],
             "plugins": [],
             "extensions": [],

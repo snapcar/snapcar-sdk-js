@@ -29,7 +29,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/SnapCar", "classes/SnapCar.Address", "classes/SnapCar.APIError", "classes/SnapCar.BillingDocument", "classes/SnapCar.BillingDocumentTypes", "classes/SnapCar.Booking", "classes/SnapCar.BookingCancellationReasons", "classes/SnapCar.BookingHistory", "classes/SnapCar.BookingPrice", "classes/SnapCar.BookingStatuses", "classes/SnapCar.CancellationFee", "classes/SnapCar.Driver", "classes/SnapCar.Error", "classes/SnapCar.ETAResult", "classes/SnapCar.ETAResultStatuses", "classes/SnapCar.GeoPoint", "classes/SnapCar.InvalidParametersError", "classes/SnapCar.Location", "classes/SnapCar.MeetingPoint", "classes/SnapCar.PaymentMethod", "classes/SnapCar.Rider", "classes/SnapCar.RiderStatuses", "classes/SnapCar.ServiceClass", "classes/SnapCar.SpecialArea", "classes/SnapCar.SpecialAreaTypes", "classes/SnapCar.TimestampedPoint", "classes/SnapCar.Vehicle", "classes/SnapCarError"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/SnapCar", "classes/SnapCar.Address", "classes/SnapCar.APIError", "classes/SnapCar.BillingDocument", "classes/SnapCar.BillingDocumentTypes", "classes/SnapCar.Booking", "classes/SnapCar.BookingCancellationReasons", "classes/SnapCar.BookingHistory", "classes/SnapCar.BookingPrice", "classes/SnapCar.BookingStatuses", "classes/SnapCar.CancellationFee", "classes/SnapCar.ConfigError", "classes/SnapCar.Driver", "classes/SnapCar.Error", "classes/SnapCar.ETAResult", "classes/SnapCar.ETAResultStatuses", "classes/SnapCar.GeoPoint", "classes/SnapCar.InvalidParametersError", "classes/SnapCar.Location", "classes/SnapCar.MeetingPoint", "classes/SnapCar.PaymentMethod", "classes/SnapCar.Rider", "classes/SnapCar.RiderStatuses", "classes/SnapCar.ServiceClass", "classes/SnapCar.SpecialArea", "classes/SnapCar.SpecialAreaTypes", "classes/SnapCar.TimestampedPoint", "classes/SnapCar.Vehicle"]'>
         </form>
     </div>
 </div>
@@ -63,6 +63,8 @@
             
                 <li><a href="../classes/SnapCar.CancellationFee.html">SnapCar.CancellationFee</a></li>
             
+                <li><a href="../classes/SnapCar.ConfigError.html">SnapCar.ConfigError</a></li>
+            
                 <li><a href="../classes/SnapCar.Driver.html">SnapCar.Driver</a></li>
             
                 <li><a href="../classes/SnapCar.Error.html">SnapCar.Error</a></li>
@@ -94,8 +96,6 @@
                 <li><a href="../classes/SnapCar.TimestampedPoint.html">SnapCar.TimestampedPoint</a></li>
             
                 <li><a href="../classes/SnapCar.Vehicle.html">SnapCar.Vehicle</a></li>
-            
-                <li><a href="../classes/SnapCarError.html">SnapCarError</a></li>
             
         </ul>
     </div>
@@ -743,14 +743,14 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents an error created upon configuration issues such as trying to perform an API call with no token defined.
      *
-     * @class SnapCarError
+     * @class SnapCar.ConfigError
      * @extends SnapCar.Error
      * @param message {string} A key which defines more precisely the type of error.
      * @param description {string} A human readable text describing the error. Not to be displayed to the user.
      * @constructor
      */
     
-    SnapCarError = function (message, description) {
+    SnapCar.ConfigError = function (message, description) {
         processObjectPayload(this, {
             type: &#x27;config&#x27;,
             message: message,
@@ -758,7 +758,7 @@ var SnapCar = (function (SnapCar, $) {
         });
     };
 
-    SnapCarError.prototype = new SnapCar.Error();
+    SnapCar.ConfigError.prototype = new SnapCar.Error();
 
     /**
      * Represents an error created when trying to make API calls with invalid parameters.
@@ -814,7 +814,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.APIError.prototype = new SnapCar.Error();
 
-    defineProperties(SnapCar.Error, {
+    defineProperties(SnapCar.APIError, {
         
         /**
          * The type of error.
@@ -2730,7 +2730,7 @@ var SnapCar = (function (SnapCar, $) {
     // Config test 
 
     if (typeof $ === &#x27;undefined&#x27;) {
-        throw new SnapCarError(&#x27;missing_jquery&#x27;, &#x27;jQuery is required to run the SnapCar SDK.&#x27;);
+        throw new SnapCar.Error(&#x27;missing_jquery&#x27;, &#x27;jQuery is required to run the SnapCar SDK.&#x27;);
     }
 
     // API Calls
@@ -2738,7 +2738,7 @@ var SnapCar = (function (SnapCar, $) {
     var performAPICall = function (requestParams, resultProcessor) {
 
         if (typeof SnapCar.token === &#x27;undefined&#x27;) {
-            throw new SnapCarError(&#x27;missing_token&#x27;, &#x27;You have to provide a SnapCar API token in order to perform API calls.&#x27;);
+            throw new SnapCar.Error(&#x27;missing_token&#x27;, &#x27;You have to provide a SnapCar API token in order to perform API calls.&#x27;);
         }
 
         var deferred = $.Deferred();
