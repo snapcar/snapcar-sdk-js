@@ -1,7 +1,7 @@
 /**
  * # Introduction
  *
- * This is the main module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent on jQuery.
+ * This is the main module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent on jQuery. The [source code](https://github.com/snapcar/snapcar-sdk-js) is available on Github.
  * 
  * Before using this module, you must initialize it with a user token by setting the `SnapCar.token` property. Please refer to [the general SnapCar API documentation](http://developer.snapcar.com/) for more information on how to obtain a user token.
  * 
