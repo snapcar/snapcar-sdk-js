@@ -6,15 +6,16 @@
  * The SnapCar SDK for JavaScript does not manage user authentication. The reason for this is that obtaining a user token is done through a request that requires your API secret value to be provided. The API secret value is sensitive information that should never be revealed to the user. However, setting it in the JavaScript SDK implies that your users can access it by digging into the source code. Which is why such work flow must be implemented on the server side. Once initialized with a token, the module allows you to perform actions such as making bookings or getting ETAs on behalf of the authenticated user.
  * 
  * Basic API calls such as getting ETAs or allowed service classes can be performed through the SnapCar.Utils static class. In general, all methods that are in charge of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error occurs during the request, the promises are rejected with an instance of SnapCar.APIError (containing more info about the issue). Look at the examples below for a comprehensive vision of the work flow.
+ *
+ * ```
+ * // Setting the token before using the SDK
+ * SnapCar.Config.token = "3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O";
+ * ```
  * 
- * @module SnapCar
+ * @class SnapCar
  * @param {SnapCar} SnapCar itself.
  * @param {jQuery} $ The jQuery plugin.
  * 
- * @example
- *      // Setting the token before using the SDK
- *      SnapCar.Config.token = "3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O";
- *      
  * @example
  *      // Getting current closest drivers availability at a specific location
  *      
@@ -34,6 +35,7 @@
  *      });
  *      
  * @example
+
  *      // Before making a booking, I want to know if there are meeting points at a specific area
  *      
  *      SnapCar.Utils.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
@@ -375,7 +377,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Defines some basic API configuration.
      *
-     * @class Config
+     * @class SnapCar.Config
      * @static
      */
 
@@ -506,7 +508,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Error object that is created upon errors such as a wrong API call.
      *
-     * @class Error
+     * @class SnapCar.Error
      * @param type {String} The type of error.
      * @param message {String} A key which defines more precisely the type of error.
      * @param description {String} A human readable text describing the error. Not to be displayed to the user.
@@ -558,7 +560,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents an error created upon configuration issues such as trying to perform an API call with no token defined.
      *
-     * @class ConfigError
+     * @class SnapCar.ConfigError
      * @extends SnapCar.Error
      * @param message {String} A key which defines more precisely the type of error.
      * @param description {String} A human readable text describing the error. Not to be displayed to the user.
@@ -578,7 +580,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents an error created when trying to make API calls with invalid parameters.
      *
-     * @class InvalidParametersError
+     * @class SnapCar.InvalidParametersError
      * @extends SnapCar.Error
      * @param message {String} A key which defines more precisely the type of error.
      * @param description {String} A human readable text describing the error. Not to be displayed to the user.
@@ -598,7 +600,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents an error received from the API.
      *
-     * @class APIError
+     * @class SnapCar.APIError
      * @extends SnapCar.Error
      * @param data {Object} The jQuery object.
      * @constructor
@@ -666,7 +668,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents an error received from the API.
      *
-     * @class ServiceClass
+     * @class SnapCar.ServiceClass
      * @constructor
      */
 
@@ -711,7 +713,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Describes a meeting point that can optionnaly be attached to a booking for specific pick up location. It helps riders and drivers to find each other.
      *
-     * @class MeetingPoint
+     * @class SnapCar.MeetingPoint
      * @constructor
      */
 
@@ -768,7 +770,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Describes an area with specific meeting points that the rider may select to help him finding his driver at specific pick up locations.
      *
-     * @class SpecialArea
+     * @class SnapCar.SpecialArea
      * @constructor
      */
 
@@ -875,7 +877,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents special area type constants.
      * 
-     * @class SpecialAreaTypes
+     * @class SnapCar.SpecialAreaTypes
      * @static
      */
     SnapCar.SpecialAreaTypes = {
@@ -915,7 +917,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Status and ETA for a specific service class.
      * 
-     * @class ETAResult
+     * @class SnapCar.ETAResult
      * @constructor
      */
     
@@ -970,7 +972,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * The ETA possible statuses.
      * 
-     * @class ETAResultStatuses
+     * @class SnapCar.ETAResultStatuses
      * @static
      */
     
@@ -1003,7 +1005,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * A user payment method.
      * 
-     * @class PaymentMethod
+     * @class SnapCar.PaymentMethod
      * @constructor
      */
 
@@ -1076,7 +1078,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * A user who has the capability to make bookings.
      * 
-     * @class Rider
+     * @class SnapCar.Rider
      * @constructor
      */
 
@@ -1161,7 +1163,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * The rider account possible statuses.
      * 
-     * @class RiderStatuses
+     * @class SnapCar.RiderStatuses
      * @static
      */
     
@@ -1205,7 +1207,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * An order with a flat price which is created from booking information (ex. : start and end locations, service class, etc.) and that can be confirmed into a booking. 
      * 
-     * @class BookingPrice
+     * @class SnapCar.BookingPrice
      * @constructor
      */
 
@@ -1327,7 +1329,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Information about a booking cancellation fee.
      * 
-     * @class CancellationFee
+     * @class SnapCar.CancellationFee
      * @constructor
      */
     
@@ -1388,7 +1390,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * An address (typically for for pick up or drop off).
      * 
-     * @class Address
+     * @class SnapCar.Address
      * @constructor
      * @param {String} name The name of the address. Typically the number and street name.
      * @param {String} city The city.
@@ -1457,7 +1459,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * A location representing an address as well as its GPS coordinate.
      * 
-     * @class Location
+     * @class SnapCar.Location
      * @constructor
      * @param {float} lat The location latitude.
      * @param {float} lng The location longitude.
@@ -1519,7 +1521,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Represents GPS coordinate.
      * 
-     * @class GeoPoint
+     * @class SnapCar.GeoPoint
      * @constructor
      */
 
@@ -1558,7 +1560,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * A billing document such as a bill or a credit note.
      * 
-     * @class BillingDocument
+     * @class SnapCar.BillingDocument
      * @constructor
      */
 
@@ -1608,7 +1610,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * All possible types of billing documents.
      * 
-     * @class BillingDocumentTypes
+     * @class SnapCar.BillingDocumentTypes
      * @static
      */
     SnapCar.BillingDocumentTypes = {
@@ -1639,7 +1641,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * A vehicle in which a driver picks a rider up.
      * 
-     * @class Vehicle
+     * @class SnapCar.Vehicle
      * @constructor
      */
     
@@ -1708,7 +1710,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Driver information.
      * 
-     * @class Driver
+     * @class SnapCar.Driver
      * @constructor
      */
 
@@ -1757,7 +1759,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Dated GPS coordinate.
      * 
-     * @class TimestampedPoint
+     * @class SnapCar.TimestampedPoint
      * @constructor
      */
 
@@ -1806,7 +1808,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * A bookings list and its metadata.
      * 
-     * @class BookingHistory
+     * @class SnapCar.BookingHistory
      * @constructor
      * @param {int} [limit=20] The maximum number of elements to return.
      */
@@ -1900,7 +1902,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * A booking that represents a request by the user to be picked up.
      * 
-     * @class Booking
+     * @class SnapCar.Booking
      * @constructor
      * @param {SnapCar.Rider} [rider] The passenger of the booking. Typically the currently identifier user.
      * @param {SnapCar.Location} [startLocation] The location at which the rider needs to be picked up.
@@ -2403,7 +2405,7 @@ var SnapCar = (function (SnapCar, $) {
    /**
      * The possible booking statuses.
      * 
-     * @class BookingStatuses
+     * @class SnapCar.BookingStatuses
      * @static
      */
     
@@ -2479,7 +2481,7 @@ var SnapCar = (function (SnapCar, $) {
    /**
      * The possible booking cancellation reasons.
      * 
-     * @class BookingCancellationReasons
+     * @class SnapCar.BookingCancellationReasons
      * @static
      */
     
@@ -2571,7 +2573,7 @@ var SnapCar = (function (SnapCar, $) {
     /**
      * Defines basic API methods.
      *
-     * @class Utils
+     * @class SnapCar.Utils
      * @static
      */
 
