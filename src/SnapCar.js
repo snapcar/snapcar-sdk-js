@@ -1432,7 +1432,7 @@ var SnapCar = (function (SnapCar, $) {
     });
 
     /**
-     * An address (typically for for pick up or drop off).
+     * An address (typically for pick up or drop off).
      * 
      * @class SnapCar.Address
      * @constructor
