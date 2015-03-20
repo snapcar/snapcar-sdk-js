@@ -1,189 +1,87 @@
 {
-    "project": {},
+    "project": {
+        "name": "snapcar-sdk-js",
+        "description": "JavaScript implementation of the SnapCar Public API.",
+        "version": "1.0.0",
+        "url": "https://github.com/snapcar/snapcar-sdk-js",
+        "logo": "https://avatars1.githubusercontent.com/u/7704703?v=3&s=200"
+    },
     "files": {
-        "../snapcar-platform-js/bower_components/jquery/dist/jquery.js": {
-            "name": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
+        "src/SnapCar.js": {
+            "name": "src/SnapCar.js",
             "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "../snapcar-platform-js/bower_components/jquery/src/ajax/load.js": {
-            "name": "../snapcar-platform-js/bower_components/jquery/src/ajax/load.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "../snapcar-platform-js/bower_components/jquery/src/core/ready.js": {
-            "name": "../snapcar-platform-js/bower_components/jquery/src/core/ready.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "../snapcar-platform-js/bower_components/jquery/src/css/defaultDisplay.js": {
-            "name": "../snapcar-platform-js/bower_components/jquery/src/css/defaultDisplay.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "../snapcar-platform-js/bower_components/jquery/src/data/accepts.js": {
-            "name": "../snapcar-platform-js/bower_components/jquery/src/data/accepts.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js": {
-            "name": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "../snapcar-platform-js/bower_components/jquery/src/offset.js": {
-            "name": "../snapcar-platform-js/bower_components/jquery/src/offset.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "../snapcar-platform-js/SnapCarPlatform.js": {
-            "name": "../snapcar-platform-js/SnapCarPlatform.js",
-            "modules": {
-                "SnapCarPlatform": 1
-            },
             "classes": {
-                "Config": 1,
-                "Error": 1,
-                "ConfigError": 1,
-                "InvalidParametersError": 1,
-                "APIError": 1,
-                "ServiceClass": 1,
-                "MeetingPoint": 1,
-                "SpecialArea": 1,
-                "SpecialAreaTypes": 1,
-                "ETAResult": 1,
-                "ETAResultStatuses": 1,
-                "PaymentMethod": 1,
-                "Rider": 1,
-                "RiderStatuses": 1,
-                "BookingPrice": 1,
-                "CancellationFee": 1,
-                "Address": 1,
-                "Location": 1,
-                "GeoPoint": 1,
-                "BillingDocument": 1,
-                "BillingDocumentTypes": 1,
-                "Vehicle": 1,
-                "Driver": 1,
-                "TimestampedPoint": 1,
-                "BookingHistory": 1,
-                "Booking": 1,
-                "BookingStatuses": 1,
-                "BookingCancellationReasons": 1,
-                "Utils": 1
+                "SnapCar": 1,
+                "SnapCar.Error": 1,
+                "SnapCarError": 1,
+                "SnapCar.InvalidParametersError": 1,
+                "SnapCar.APIError": 1,
+                "SnapCar.ServiceClass": 1,
+                "SnapCar.MeetingPoint": 1,
+                "SnapCar.SpecialArea": 1,
+                "SnapCar.SpecialAreaTypes": 1,
+                "SnapCar.ETAResult": 1,
+                "SnapCar.ETAResultStatuses": 1,
+                "SnapCar.PaymentMethod": 1,
+                "SnapCar.Rider": 1,
+                "SnapCar.RiderStatuses": 1,
+                "SnapCar.BookingPrice": 1,
+                "SnapCar.CancellationFee": 1,
+                "SnapCar.Address": 1,
+                "SnapCar.Location": 1,
+                "SnapCar.GeoPoint": 1,
+                "SnapCar.BillingDocument": 1,
+                "SnapCar.BillingDocumentTypes": 1,
+                "SnapCar.Vehicle": 1,
+                "SnapCar.Driver": 1,
+                "SnapCar.TimestampedPoint": 1,
+                "SnapCar.BookingHistory": 1,
+                "SnapCar.Booking": 1,
+                "SnapCar.BookingStatuses": 1,
+                "SnapCar.BookingCancellationReasons": 1
             },
-            "fors": {},
+            "fors": {
+                "SnapCar": 1
+            },
             "namespaces": {}
         }
     },
-    "modules": {
-        "SnapCarPlatform": {
-            "name": "SnapCarPlatform",
-            "submodules": {},
-            "classes": {
-                "Config": 1,
-                "Error": 1,
-                "ConfigError": 1,
-                "InvalidParametersError": 1,
-                "APIError": 1,
-                "ServiceClass": 1,
-                "MeetingPoint": 1,
-                "SpecialArea": 1,
-                "SpecialAreaTypes": 1,
-                "ETAResult": 1,
-                "ETAResultStatuses": 1,
-                "PaymentMethod": 1,
-                "Rider": 1,
-                "RiderStatuses": 1,
-                "BookingPrice": 1,
-                "CancellationFee": 1,
-                "Address": 1,
-                "Location": 1,
-                "GeoPoint": 1,
-                "BillingDocument": 1,
-                "BillingDocumentTypes": 1,
-                "Vehicle": 1,
-                "Driver": 1,
-                "TimestampedPoint": 1,
-                "BookingHistory": 1,
-                "Booking": 1,
-                "BookingStatuses": 1,
-                "BookingCancellationReasons": 1,
-                "Utils": 1
-            },
-            "fors": {},
-            "namespaces": {},
-            "tag": "module",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2507,
-            "description": "This is the base SnapCarPlatform module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent of jQuery.\n\nThe module parameters can be managed through the SnapCarPlatform.Config static class. Before using this module, you must initialize it with a user token by setting the SnapCarPlatform.Config.token property. Please refer to the general SnapCar API documentation for more information on how to obtain a user token : http://developer.snapcar.com/.\n\nThe SnapCarPlatform SDK for JavaScript does not manage user authentication. The reason for this is that obtaining a user token is done through a request that requires your API secret value to be provided. The API secret value is sensitive information that should never be revealed to the user. However, setting it in the JavaScript SDK implies that your users can access it by digging into the source code. Which is why such work flow must be implemented on the server side. Once initialized with a token, the module allows you to perform actions such as making bookings or getting ETAs on behalf of the authenticated user.\n\nBasic API calls such as getting ETAs or allowed service classes can be performed through the SnapCarPlatform.Utils static class. In general, all methods that are in charge of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error occurs during the request, the promises are rejected with an instance of SnapCarPlatform.APIError (containing more info about the issue). Look at the examples below for a comprehensive vision of the work flow.",
+    "modules": {},
+    "classes": {
+        "SnapCar": {
+            "name": "SnapCar",
+            "shortname": "SnapCar",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/SnapCar.js",
+            "line": 1,
+            "description": "# Introduction\n\nThis is the main module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent on jQuery.\n\nBefore using this module, you must initialize it with a user token by setting the `SnapCar.token` property. Please refer to [the general SnapCar API documentation](http://developer.snapcar.com/) for more information on how to obtain a user token.\n\nThe SnapCar SDK for JavaScript does not manage user authentication. The reason for this is that obtaining a user token is done through a request that requires your API secret value to be provided. The API secret value is sensitive information that should never be revealed to the user. However, setting it in the JavaScript SDK implies that your users can access it by digging into the source code. Which is why such work flow must be implemented on the server side. Once initialized with a token, the module allows you to perform actions such as making bookings or getting ETAs on behalf of the authenticated user.\n\nIn general, all methods that are in charge of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error occurs during the request, the promises are rejected with an instance of `SnapCar.APIError` (containing more info about the issue). Look at the examples below for a comprehensive vision of the work flow.\n\n<br/> \n<br/> \n\n# Getting started and examples\n\n<br/> \n\n## Setting a user token\n\nAs explained above, you need to provide a token before using the SDK.\n\n```\nSnapCar.token = \"3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O\";\n```\n\n<br/> \n## Getting current closest drivers availability at a specific location \n\n```\nSnapCar.eta(48.859041, 2.327889).done(function (result) {\n     $.each(result, function (key, info) {\n         \n       // info is an instance of SnapCar.ETAResult\n       // you get info about eta.serviceClass\n       \n       if (info.status === SnapCar.ETAResultStatuses.OK) {\n           // an ETA is available and set in info.eta\n       } else if (info.status === SnapCar.ETAResultStatuses.UNAVAILABLE) {\n           // this service class is not available at the moment\n       }\n       \n     });\n});\n```\n\n<br/> \n## Getting meeting points\n\nYou can easily find if there are meeting points at a specific location (such as a train station or an airport).\n\n```\nSnapCar.meetingPoints(48.731010, 2.365823).done(function (specialArea) {\n\n    // There's a special area at this location. \n    // Check out the specialArea info (which is an instance of SnapCar.SpecialArea)\n\n}).fail(function (error) {\n    if (error.code === 404) {\n        // No special area/meeting points at this location\n    } else {\n        // An other error occurred\n    }\n});\n```\n \n\n\n<br/> \n## Let's get all user's active bookings and cancel them\n\n```\nSnapCar.activeBookings().done(function (bookings) {\n\n       $.each(bookings, function(key, booking) {\n           \n           // For each booking, we want to know the cancellation price.\n           // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren't called. The failure callbacks are called instead.\n           // You may want to check if the cancellation is charged. Check out the SnapCar.CancellationFee reference for more information.\n           \n           booking.cancellationPrice().done(function (cancellationFee) {\n               booking.cancel().done(function () {\n                   // Booking properly cancelled\n               });\n           });\n       });\n}); \n```\n\n\n\n\n<br/> \n## We want to get all user's past bookings\n\n\n```\nSnapCar.bookingsHistory().done(function (history) {\n\n       $.each(history.history, function(key, booking) {\n           // booking is an instance of SnapCar.Booking\n       });\n       \n       // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()\n}); \n```\n\n\n\n<br/> \n## Let's create a booking on demand (with no planned pick up date) and without flat price.\n\n```\n// First, we get the info about the authenticated user\nSnapCar.user().done(function (user) {\n\n      // You may check the user.status value in order to know if he is allowed to make bookings\n      \n      // We fetch the allowed service classes\n      SnapCar.serviceClasses().done(function (servicesClasses) {\n\n          // We create a booking\n          var booking = new SnapCar.Booking();\n\n          // We define the rider and its pick up location\n          booking.rider = user;\n          booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n\n          // We also need to define the service class. Here we take one service class randomly.\n          // In real life, you may present the different service class names to the user for selection.\n          booking.serviceClass = servicesClasses[0];\n          \n          // We confirm the booking, this sends a request to the SnapCar platform\n          booking.confirm()\n          \n          // This handler is called when the booking is either accepted by a driver or cancelled\n          .done(function () {\n\n              if (booking.status === SnapCar.BookingStatuses.GOING_TO_GET) {\n                  // A driver has accepted the booking\n              }\n\n              else if (booking.status === SnapCar.BookingStatuses.CANCELLED) {\n                  // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCar.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.\n              }\n\n              else {\n                  // Other status, unlikely to happen unless the driver has switched to another status in the meantime.\n              }\n          \n          // This handler is called when the SnapCar platform confirms the booking creation\n          }).progress(function(error) {\n\n              // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.\n\n          // This handler is called upon error (ex: no driver available)\n          }).fail(function(error) {\n\n              if (error.message === \"no_driver\") {\n                  // No driver is available for the required service class. You may try with another service class.\n              }\n\n              // Check out the documentation for a comprehensive list of error messages.\n\n          });\n      });\n  });\n```\n\n\n\n\n\n<br/> \n## Let's create a booking in the future (with a planned pick up date) and without flat price.\n\n```\n// First, we get the info about the authenticated user\nSnapCar.user().done(function (user) {\n\n      // You may check the user.status value in order to know if he is allowed to make bookings\n      \n      // We fetch the allowed service classes\n      SnapCar.serviceClasses().done(function (servicesClasses) {\n\n          // We create a booking\n          var booking = new SnapCar.Booking();\n\n          // We define the rider and its pick up location\n          booking.rider = user;\n          booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n\n          // We define the date. Warning: you must ensure that the timezone is correct!\n          booking.plannedStartDate = new Date(\"2016-01-01 00:00:00\");\n          \n          // We also need to define the service class. Here we take one service class randomly.\n          // In real life, you may present the different service class names to the user for selection.\n          booking.serviceClass = servicesClasses[0];\n          \n          // We confirm the booking, this sends a request to the SnapCar platform\n          booking.confirm()\n          \n          // This handler is called when the booking is confirmed\n          .done(function () {\n\n              if (booking.status === SnapCar.BookingStatuses.PENDING) {\n                  // Your booking is waiting for dispatch in the future\n              }\n\n          // This handler is called upon error (ex: no driver available)\n          }).fail(function(error) {\n\n              // Check out the documentation for a comprehensive list of error messages.\n\n          });\n      });\n  });\n```\n\n\n\n\n\n<br/> \n## Let's create a booking in the future (with a planned pick up date) and with a flat price.\n\n```\n// First, we get the info about the authenticated user\nSnapCar.user().done(function (user) {\n\n    // You may check the user.status value in order to know if he is allowed to make bookings\n\n    // We create a booking\n    var booking = new SnapCar.Booking();\n\n    // We define the rider and its pick up location\n    booking.rider = user;\n    booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n    booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));\n    booking.driverInfo = \"Some useful info for you.\";\n    booking.nameboard = true; // We want a nameboard, for the example\n    \n    // We define the date. Warning: you must ensure that the timezone is correct!\n    booking.plannedStartDate = new Date(\"2016-01-01 00:00:00\");\n    \n    booking.flatPrices().done(function(prices) {\n\n        // We have several prices, we will confirm the first one.\n        // In real life, you may present the different prices for each service class to the user for selection.\n\n        // We confirm the booking, this sends a request to the SnapCar platform\n        prices[0].confirm()\n\n        // This handler is called when the booking is confirmed\n        .done(function () {\n\n            if (booking.status === SnapCar.BookingStatuses.PENDING) {\n                // Your booking is waiting for dispatch in the future\n            }\n\n        // This handler is called upon error (ex: no driver available)\n        }).fail(function(error) {\n\n            // Check out the documentation for a comprehensive list of error messages.\n\n        });        \n    });\n});\n```\n\n\n\n\n\n<br/> \n## Let's create a booking on demand (without a planned pick up date) and with a flat price.\n\n```\n// First, we get the info about the authenticated user\nSnapCar.user().done(function (user) {\n\n    // You may check the user.status value in order to know if he is allowed to make bookings\n\n    // We create a booking\n    var booking = new SnapCar.Booking();\n\n    // We define the rider and its pick up location\n    booking.rider = user;\n    booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n    booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));\n    \n    booking.flatPrices().done(function(prices) {\n\n        // We have several prices, we will confirm the first one.\n        // In real life, you may present the different prices for each service class to the user for selection.\n\n        // We confirm the booking, this sends a request to the SnapCar platform\n        prices[0].confirm()\n\n        // This handler is called when the booking is either accepted by a driver or cancelled\n        .done(function () {\n\n            if (booking.status === SnapCar.BookingStatuses.GOING_TO_GET) {\n                // A driver has accepted the booking\n            }\n\n            else if (booking.status === SnapCar.BookingStatuses.CANCELLED) {\n                // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCar.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.\n            }\n\n            else {\n                // Other status, unlikely to happen unless the driver has switched to another status in the meantime.\n            }\n\n        // This handler is called when the SnapCar platform confirms the booking creation\n        }).progress(function(error) {\n\n            // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.\n\n        // This handler is called upon error (ex: no driver available)\n        }).fail(function(error) {\n\n            if (error.message === \"no_driver\") {\n                // No driver is available for the required service class. You may try with another service class.\n            }\n\n            // Check out the documentation for a comprehensive list of error messages.\n\n        });       \n    });\n});\n```\n\n\n\n\n<br/> \n## Let's create a booking in advance (with a planned pick up date), without flat price and with a meeting point.\n\nIn the example below, we make this booking only if we find specific meeting points at this location. In real life, you would just check if there are meeting points and would propose the list to your user for selection but would make the booking anyway.\n\n```\n\nSnapCar.meetingPoints(48.731010, 2.365823).done(function (specialArea) {\n\n  // There's a special area at this location. \n\n\t // Let's create a booking on demand (with no planned pick up date) and without flat price.\n\t \n\t // First, we get the info about the authenticated user\n\t SnapCar.user().done(function (user) {\n\n\t       // You may check the user.status value in order to know if he is allowed to make bookings\n\t       \n\t       // We fetch the allowed service classes\n\t       SnapCar.serviceClasses().done(function (servicesClasses) {\n\n\t           // We create a booking\n\t           var booking = new SnapCar.Booking();\n\n\t           // We define the rider and its pick up location\n\t           booking.rider = user;\n\t           booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n\n\t           // We define the date. Warning: you must ensure that the timezone is correct!\n\t           booking.plannedStartDate = new Date(\"2016-01-01 00:00:00\");\n\n\t           // We also need to define the service class. Here we take one service class randomly.\n\t           // In real life, you may present the different service class names to the user for selection.\n\t           booking.serviceClass = servicesClasses[0];\n\n\t           // We define the first meeting point\n\t           // In real life, you may present the different meeting points to the user for selection.\n\t           booking.meetingPoint = specialArea.meetingPoints[0];\n\n\t           // We confirm the booking, this sends a request to the SnapCar platform\n\t           booking.confirm()\n\t                 \n\t           // This handler is called when the booking is confirmed\n\t           .done(function () {\n\n\t               if (booking.status === SnapCar.BookingStatuses.PENDING) {\n\t                   // Your booking is waiting for dispatch in the future\n\t               }\n\n\t           // This handler is called upon error (ex: no driver available)\n\t           }).fail(function(error) {\n\n\t               // Check out the documentation for a comprehensive list of error messages.\n\n\t           });\n\n\t       });\n\t   });\n\n}).fail(function (error) {\n   if (error.code === 404) {\n       // No special area/meeting points at this location\n   } else {\n       // An other error occurred\n   }\n});\n```",
             "params": [
                 {
-                    "name": "SnapCarPlatform",
+                    "name": "SnapCar",
                     "description": "itself.",
-                    "type": "SnapCarPlatform"
+                    "type": "SnapCar"
                 },
                 {
                     "name": "$",
                     "description": "The jQuery plugin.",
                     "type": "JQuery"
                 }
-            ],
-            "example": [
-                "\n     // Setting the token before using the SDK\n     SnapCarPlatform.Config.token = \"3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O\";",
-                "\n     // Getting current closest drivers availability at a specific location\n     \n     SnapCarPlatform.Utils.eta(48.859041, 2.327889).done(function (result) {\n          $.each(result, function (key, info) {\n              \n            // info is an instance of SnapCarPlatform.ETAResult\n            // you get info about eta.serviceClass\n            \n            if (info.status === SnapCarPlatform.ETAResultStatuses.OK) {\n                // an ETA is available and set in info.eta\n            } else if (info.status === SnapCarPlatform.ETAResultStatuses.UNAVAILABLE) {\n                // this service class is not available at the moment\n            }\n            \n          });\n     });",
-                "\n     // Before making a booking, I want to know if there are meeting points at a specific area\n     \n     SnapCarPlatform.Utils.meetingPoints(48.731010, 2.365823).done(function (specialArea) {\n\n         // There's a special area at this location. \n         // Check out the specialArea info (which is an instance of SnapCarPlatform.SpecialArea)\n\n     }).fail(function (error) {\n         if (error.code === 404) {\n             // No special area/meeting points at this location\n         } else {\n             // An other error occurred\n         }\n     });",
-                "\n  \n     // We want to get all user's active bookings and cancel them\n      \n     SnapCarPlatform.Utils.activeBookings().done(function (bookings) {\n     \n            $.each(bookings, function(key, booking) {\n                \n                // For each booking, we want to know the cancellation price.\n                // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren't called. The failure callbacks are called instead.\n                // You may want to check if the cancellation is charged. Check out the SnapCarPlatform.CancellationFee reference for more information.\n                \n                booking.cancellationPrice().done(function (cancellationFee) {\n                    booking.cancel().done(function () {\n                        // Booking properly cancelled\n                    });\n                });\n            });\n     }); ",
-                "\n  \n     // We want to get all user's past bookings\n      \n     SnapCarPlatform.Utils.bookingsHistory().done(function (history) {\n     \n            $.each(history.history, function(key, booking) {\n                // booking is an instance of SnapCarPlatform.Booking\n            });\n            \n            // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()\n     }); ",
-                "     \n     \n     // Let's create a booking on demand (with no planned pick up date) and without flat price.\n     \n     // First, we get the info about the authenticated user\n     SnapCarPlatform.Utils.user().done(function (user) {\n\n           // You may check the user.status value in order to know if he is allowed to make bookings\n           \n           // We fetch the allowed service classes\n           SnapCarPlatform.Utils.serviceClasses().done(function (servicesClasses) {\n\n               // We create a booking\n               var booking = new SnapCarPlatform.Booking();\n\n               // We define the rider and its pick up location\n               booking.rider = user;\n               booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n\n               // We also need to define the service class. Here we take one service class randomly.\n               // In real life, you may present the different service class names to the user for selection.\n               booking.serviceClass = servicesClasses[0];\n               \n               // We confirm the booking, this sends a request to the SnapCar platform\n               booking.confirm()\n               \n               // This handler is called when the booking is either accepted by a driver or cancelled\n               .done(function () {\n\n                   if (booking.status === SnapCarPlatform.BookingStatuses.GOING_TO_GET) {\n                       // A driver has accepted the booking\n                   }\n\n                   else if (booking.status === SnapCarPlatform.BookingStatuses.CANCELLED) {\n                       // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCarPlatform.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.\n                   }\n\n                   else {\n                       // Other status, unlikely to happen unless the driver has switched to another status in the meantime.\n                   }\n               \n               // This handler is called when the SnapCar platform confirms the booking creation\n               }).progress(function(error) {\n\n                   // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.\n\n               // This handler is called upon error (ex: no driver available)\n               }).fail(function(error) {\n\n                   if (error.message === \"no_driver\") {\n                       // No driver is available for the required service class. You may try with another service class.\n                   }\n\n                   // Check out the documentation for a comprehensive list of error messages.\n\n               });\n           });\n       });",
-                "     \n     \n     // Let's create a booking in the future (with a planned pick up date) and without flat price.\n     \n     // First, we get the info about the authenticated user\n     SnapCarPlatform.Utils.user().done(function (user) {\n\n           // You may check the user.status value in order to know if he is allowed to make bookings\n           \n           // We fetch the allowed service classes\n           SnapCarPlatform.Utils.serviceClasses().done(function (servicesClasses) {\n\n               // We create a booking\n               var booking = new SnapCarPlatform.Booking();\n\n               // We define the rider and its pick up location\n               booking.rider = user;\n               booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n\n               // We define the date. Warning: you must ensure that the timezone is correct!\n               booking.plannedStartDate = new Date(\"2016-01-01 00:00:00\");\n               \n               // We also need to define the service class. Here we take one service class randomly.\n               // In real life, you may present the different service class names to the user for selection.\n               booking.serviceClass = servicesClasses[0];\n               \n               // We confirm the booking, this sends a request to the SnapCar platform\n               booking.confirm()\n               \n               // This handler is called when the booking is confirmed\n               .done(function () {\n\n                   if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {\n                       // Your booking is waiting for dispatch in the future\n                   }\n\n               // This handler is called upon error (ex: no driver available)\n               }).fail(function(error) {\n\n                   // Check out the documentation for a comprehensive list of error messages.\n\n               });\n           });\n       });",
-                "     \n     \n     // Let's create a booking in the future (with a planned pick up date) and with a flat price.\n     \n     // First, we get the info about the authenticated user\n     SnapCarPlatform.Utils.user().done(function (user) {\n     \n         // You may check the user.status value in order to know if he is allowed to make bookings\n     \n         // We create a booking\n         var booking = new SnapCarPlatform.Booking();\n     \n         // We define the rider and its pick up location\n         booking.rider = user;\n         booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n         booking.endLocation = new SnapCarPlatform.Location(48.855272, 2.345865, new SnapCarPlatform.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));\n         booking.driverInfo = \"Some useful info for you.\";\n         booking.nameboard = true; // We want a nameboard, for the example\n         \n         // We define the date. Warning: you must ensure that the timezone is correct!\n         booking.plannedStartDate = new Date(\"2016-01-01 00:00:00\");\n         \n         booking.flatPrices().done(function(prices) {\n     \n             // We have several prices, we will confirm the first one.\n             // In real life, you may present the different prices for each service class to the user for selection.\n     \n             // We confirm the booking, this sends a request to the SnapCar platform\n             prices[0].confirm()\n     \n             // This handler is called when the booking is confirmed\n             .done(function () {\n     \n                 if (booking.status === SnapCarPlatform.BookingStatuses.PENDING) {\n                     // Your booking is waiting for dispatch in the future\n                 }\n     \n             // This handler is called upon error (ex: no driver available)\n             }).fail(function(error) {\n     \n                 // Check out the documentation for a comprehensive list of error messages.\n     \n             });        \n         });\n     });",
-                "\n  \n     // Let's create a booking on demand (without a planned pick up date) and with a flat price.\n     \n     // First, we get the info about the authenticated user\n     SnapCarPlatform.Utils.user().done(function (user) {\n     \n         // You may check the user.status value in order to know if he is allowed to make bookings\n     \n         // We create a booking\n         var booking = new SnapCarPlatform.Booking();\n     \n         // We define the rider and its pick up location\n         booking.rider = user;\n         booking.startLocation = new SnapCarPlatform.Location(48.731010, 2.365823, new SnapCarPlatform.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));\n         booking.endLocation = new SnapCarPlatform.Location(48.855272, 2.345865, new SnapCarPlatform.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));\n         \n         booking.flatPrices().done(function(prices) {\n     \n             // We have several prices, we will confirm the first one.\n             // In real life, you may present the different prices for each service class to the user for selection.\n     \n             // We confirm the booking, this sends a request to the SnapCar platform\n             prices[0].confirm()\n     \n             // This handler is called when the booking is either accepted by a driver or cancelled\n             .done(function () {\n     \n                 if (booking.status === SnapCarPlatform.BookingStatuses.GOING_TO_GET) {\n                     // A driver has accepted the booking\n                 }\n     \n                 else if (booking.status === SnapCarPlatform.BookingStatuses.CANCELLED) {\n                     // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCarPlatform.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.\n                 }\n     \n                 else {\n                     // Other status, unlikely to happen unless the driver has switched to another status in the meantime.\n                 }\n     \n             // This handler is called when the SnapCar platform confirms the booking creation\n             }).progress(function(error) {\n     \n                 // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.\n     \n             // This handler is called upon error (ex: no driver available)\n             }).fail(function(error) {\n     \n                 if (error.message === \"no_driver\") {\n                     // No driver is available for the required service class. You may try with another service class.\n                 }\n     \n                 // Check out the documentation for a comprehensive list of error messages.\n     \n             });       \n         });\n     });\n  "
             ]
-        }
-    },
-    "classes": {
-        "Config": {
-            "name": "Config",
-            "shortname": "Config",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 311,
-            "description": "Defines some basic API configuration.",
-            "static": 1
         },
-        "Error": {
-            "name": "Error",
-            "shortname": "Error",
+        "SnapCar.Error": {
+            "name": "SnapCar.Error",
+            "shortname": "SnapCar.Error",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 442,
+            "file": "src/SnapCar.js",
+            "line": 552,
             "description": "Error object that is created upon errors such as a wrong API call.",
             "params": [
                 {
@@ -204,20 +102,18 @@
             ],
             "is_constructor": 1
         },
-        "ConfigError": {
-            "name": "ConfigError",
-            "shortname": "ConfigError",
+        "SnapCarError": {
+            "name": "SnapCarError",
+            "shortname": "SnapCarError",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 494,
+            "file": "src/SnapCar.js",
+            "line": 604,
             "description": "Represents an error created upon configuration issues such as trying to perform an API call with no token defined.",
-            "extends": "SnapCarPlatform.Error",
+            "extends": "SnapCar.Error",
             "params": [
                 {
                     "name": "message",
@@ -232,20 +128,18 @@
             ],
             "is_constructor": 1
         },
-        "InvalidParametersError": {
-            "name": "InvalidParametersError",
-            "shortname": "InvalidParametersError",
+        "SnapCar.InvalidParametersError": {
+            "name": "SnapCar.InvalidParametersError",
+            "shortname": "SnapCar.InvalidParametersError",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 514,
+            "file": "src/SnapCar.js",
+            "line": 624,
             "description": "Represents an error created when trying to make API calls with invalid parameters.",
-            "extends": "SnapCarPlatform.Error",
+            "extends": "SnapCar.Error",
             "params": [
                 {
                     "name": "message",
@@ -260,20 +154,18 @@
             ],
             "is_constructor": 1
         },
-        "APIError": {
-            "name": "APIError",
-            "shortname": "APIError",
+        "SnapCar.APIError": {
+            "name": "SnapCar.APIError",
+            "shortname": "SnapCar.APIError",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 534,
+            "file": "src/SnapCar.js",
+            "line": 644,
             "description": "Represents an error received from the API.",
-            "extends": "SnapCarPlatform.Error",
+            "extends": "SnapCar.Error",
             "params": [
                 {
                     "name": "data",
@@ -283,183 +175,159 @@
             ],
             "is_constructor": 1
         },
-        "ServiceClass": {
-            "name": "ServiceClass",
-            "shortname": "ServiceClass",
+        "SnapCar.ServiceClass": {
+            "name": "SnapCar.ServiceClass",
+            "shortname": "SnapCar.ServiceClass",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 602,
+            "file": "src/SnapCar.js",
+            "line": 712,
             "description": "Represents an error received from the API.",
             "is_constructor": 1
         },
-        "MeetingPoint": {
-            "name": "MeetingPoint",
-            "shortname": "MeetingPoint",
+        "SnapCar.MeetingPoint": {
+            "name": "SnapCar.MeetingPoint",
+            "shortname": "SnapCar.MeetingPoint",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 647,
+            "file": "src/SnapCar.js",
+            "line": 757,
             "description": "Describes a meeting point that can optionnaly be attached to a booking for specific pick up location. It helps riders and drivers to find each other.",
             "is_constructor": 1
         },
-        "SpecialArea": {
-            "name": "SpecialArea",
-            "shortname": "SpecialArea",
+        "SnapCar.SpecialArea": {
+            "name": "SnapCar.SpecialArea",
+            "shortname": "SnapCar.SpecialArea",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 704,
+            "file": "src/SnapCar.js",
+            "line": 814,
             "description": "Describes an area with specific meeting points that the rider may select to help him finding his driver at specific pick up locations.",
             "is_constructor": 1
         },
-        "SpecialAreaTypes": {
-            "name": "SpecialAreaTypes",
-            "shortname": "SpecialAreaTypes",
+        "SnapCar.SpecialAreaTypes": {
+            "name": "SnapCar.SpecialAreaTypes",
+            "shortname": "SnapCar.SpecialAreaTypes",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 811,
+            "file": "src/SnapCar.js",
+            "line": 921,
             "description": "Represents special area type constants.",
             "static": 1
         },
-        "ETAResult": {
-            "name": "ETAResult",
-            "shortname": "ETAResult",
+        "SnapCar.ETAResult": {
+            "name": "SnapCar.ETAResult",
+            "shortname": "SnapCar.ETAResult",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 851,
+            "file": "src/SnapCar.js",
+            "line": 961,
             "description": "Status and ETA for a specific service class.",
             "is_constructor": 1
         },
-        "ETAResultStatuses": {
-            "name": "ETAResultStatuses",
-            "shortname": "ETAResultStatuses",
+        "SnapCar.ETAResultStatuses": {
+            "name": "SnapCar.ETAResultStatuses",
+            "shortname": "SnapCar.ETAResultStatuses",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 906,
+            "file": "src/SnapCar.js",
+            "line": 1016,
             "description": "The ETA possible statuses.",
             "static": 1
         },
-        "PaymentMethod": {
-            "name": "PaymentMethod",
-            "shortname": "PaymentMethod",
+        "SnapCar.PaymentMethod": {
+            "name": "SnapCar.PaymentMethod",
+            "shortname": "SnapCar.PaymentMethod",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 939,
+            "file": "src/SnapCar.js",
+            "line": 1049,
             "description": "A user payment method.",
             "is_constructor": 1
         },
-        "Rider": {
-            "name": "Rider",
-            "shortname": "Rider",
+        "SnapCar.Rider": {
+            "name": "SnapCar.Rider",
+            "shortname": "SnapCar.Rider",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1012,
+            "file": "src/SnapCar.js",
+            "line": 1122,
             "description": "A user who has the capability to make bookings.",
             "is_constructor": 1
         },
-        "RiderStatuses": {
-            "name": "RiderStatuses",
-            "shortname": "RiderStatuses",
+        "SnapCar.RiderStatuses": {
+            "name": "SnapCar.RiderStatuses",
+            "shortname": "SnapCar.RiderStatuses",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1097,
+            "file": "src/SnapCar.js",
+            "line": 1207,
             "description": "The rider account possible statuses.",
             "static": 1
         },
-        "BookingPrice": {
-            "name": "BookingPrice",
-            "shortname": "BookingPrice",
+        "SnapCar.BookingPrice": {
+            "name": "SnapCar.BookingPrice",
+            "shortname": "SnapCar.BookingPrice",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1141,
+            "file": "src/SnapCar.js",
+            "line": 1251,
             "description": "An order with a flat price which is created from booking information (ex. : start and end locations, service class, etc.) and that can be confirmed into a booking.",
             "is_constructor": 1
         },
-        "CancellationFee": {
-            "name": "CancellationFee",
-            "shortname": "CancellationFee",
+        "SnapCar.CancellationFee": {
+            "name": "SnapCar.CancellationFee",
+            "shortname": "SnapCar.CancellationFee",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1263,
+            "file": "src/SnapCar.js",
+            "line": 1373,
             "description": "Information about a booking cancellation fee.",
             "is_constructor": 1
         },
-        "Address": {
-            "name": "Address",
-            "shortname": "Address",
+        "SnapCar.Address": {
+            "name": "SnapCar.Address",
+            "shortname": "SnapCar.Address",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1324,
+            "file": "src/SnapCar.js",
+            "line": 1434,
             "description": "An address (typically for for pick up or drop off).",
             "is_constructor": 1,
             "params": [
@@ -485,183 +353,165 @@
                 }
             ]
         },
-        "Location": {
-            "name": "Location",
-            "shortname": "Location",
+        "SnapCar.Location": {
+            "name": "SnapCar.Location",
+            "shortname": "SnapCar.Location",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1393,
+            "file": "src/SnapCar.js",
+            "line": 1503,
             "description": "A location representing an address as well as its GPS coordinate.",
             "is_constructor": 1,
             "params": [
                 {
                     "name": "lat",
                     "description": "The location latitude.",
-                    "type": "Float"
+                    "type": "Number"
                 },
                 {
                     "name": "lng",
                     "description": "The location longitude.",
-                    "type": "Float"
+                    "type": "Number"
                 },
                 {
                     "name": "address",
                     "description": "The location address.",
-                    "type": "SnapCarPlatform.Address"
+                    "type": "SnapCar.Address"
                 }
             ]
         },
-        "GeoPoint": {
-            "name": "GeoPoint",
-            "shortname": "GeoPoint",
+        "SnapCar.GeoPoint": {
+            "name": "SnapCar.GeoPoint",
+            "shortname": "SnapCar.GeoPoint",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1455,
+            "file": "src/SnapCar.js",
+            "line": 1565,
             "description": "Represents GPS coordinate.",
             "is_constructor": 1
         },
-        "BillingDocument": {
-            "name": "BillingDocument",
-            "shortname": "BillingDocument",
+        "SnapCar.BillingDocument": {
+            "name": "SnapCar.BillingDocument",
+            "shortname": "SnapCar.BillingDocument",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1494,
+            "file": "src/SnapCar.js",
+            "line": 1604,
             "description": "A billing document such as a bill or a credit note.",
             "is_constructor": 1
         },
-        "BillingDocumentTypes": {
-            "name": "BillingDocumentTypes",
-            "shortname": "BillingDocumentTypes",
+        "SnapCar.BillingDocumentTypes": {
+            "name": "SnapCar.BillingDocumentTypes",
+            "shortname": "SnapCar.BillingDocumentTypes",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1544,
+            "file": "src/SnapCar.js",
+            "line": 1654,
             "description": "All possible types of billing documents.",
             "static": 1
         },
-        "Vehicle": {
-            "name": "Vehicle",
-            "shortname": "Vehicle",
+        "SnapCar.Vehicle": {
+            "name": "SnapCar.Vehicle",
+            "shortname": "SnapCar.Vehicle",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1575,
+            "file": "src/SnapCar.js",
+            "line": 1685,
             "description": "A vehicle in which a driver picks a rider up.",
             "is_constructor": 1
         },
-        "Driver": {
-            "name": "Driver",
-            "shortname": "Driver",
+        "SnapCar.Driver": {
+            "name": "SnapCar.Driver",
+            "shortname": "SnapCar.Driver",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1644,
+            "file": "src/SnapCar.js",
+            "line": 1754,
             "description": "Driver information.",
             "is_constructor": 1
         },
-        "TimestampedPoint": {
-            "name": "TimestampedPoint",
-            "shortname": "TimestampedPoint",
+        "SnapCar.TimestampedPoint": {
+            "name": "SnapCar.TimestampedPoint",
+            "shortname": "SnapCar.TimestampedPoint",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1693,
+            "file": "src/SnapCar.js",
+            "line": 1803,
             "description": "Dated GPS coordinate.",
             "is_constructor": 1
         },
-        "BookingHistory": {
-            "name": "BookingHistory",
-            "shortname": "BookingHistory",
+        "SnapCar.BookingHistory": {
+            "name": "SnapCar.BookingHistory",
+            "shortname": "SnapCar.BookingHistory",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1742,
+            "file": "src/SnapCar.js",
+            "line": 1852,
             "description": "A bookings list and its metadata.",
             "is_constructor": 1,
             "params": [
                 {
                     "name": "limit",
                     "description": "The maximum number of elements to return.",
-                    "type": "Int",
+                    "type": "Number",
                     "optional": true,
                     "optdefault": "20"
                 }
             ]
         },
-        "Booking": {
-            "name": "Booking",
-            "shortname": "Booking",
+        "SnapCar.Booking": {
+            "name": "SnapCar.Booking",
+            "shortname": "SnapCar.Booking",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1836,
+            "file": "src/SnapCar.js",
+            "line": 1946,
             "description": "A booking that represents a request by the user to be picked up.",
             "is_constructor": 1,
             "params": [
                 {
                     "name": "rider",
                     "description": "The passenger of the booking. Typically the currently identifier user.",
-                    "type": "SnapCarPlatform.Rider",
+                    "type": "SnapCar.Rider",
                     "optional": true
                 },
                 {
                     "name": "startLocation",
                     "description": "The location at which the rider needs to be picked up.",
-                    "type": "SnapCarPlatform.Location",
+                    "type": "SnapCar.Location",
                     "optional": true
                 },
                 {
                     "name": "endLocation",
                     "description": "The location at which the rider needs to be dropped off.",
-                    "type": "SnapCarPlatform.Location",
+                    "type": "SnapCar.Location",
                     "optional": true
                 },
                 {
@@ -684,979 +534,375 @@
                 },
                 {
                     "name": "meetingPoint",
-                    "description": "Meeting at which the rider will find its driver.",
-                    "type": "SnapCarPlatform.MeetingPoint",
+                    "description": "Meeting at which the rider will find his driver.",
+                    "type": "SnapCar.MeetingPoint",
                     "optional": true
                 }
             ]
         },
-        "BookingStatuses": {
-            "name": "BookingStatuses",
-            "shortname": "BookingStatuses",
+        "SnapCar.BookingStatuses": {
+            "name": "SnapCar.BookingStatuses",
+            "shortname": "SnapCar.BookingStatuses",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2339,
+            "file": "src/SnapCar.js",
+            "line": 2449,
             "description": "The possible booking statuses.",
             "static": 1
         },
-        "BookingCancellationReasons": {
-            "name": "BookingCancellationReasons",
-            "shortname": "BookingCancellationReasons",
+        "SnapCar.BookingCancellationReasons": {
+            "name": "SnapCar.BookingCancellationReasons",
+            "shortname": "SnapCar.BookingCancellationReasons",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2415,
+            "file": "src/SnapCar.js",
+            "line": 2525,
             "description": "The possible booking cancellation reasons.",
-            "static": 1
-        },
-        "Utils": {
-            "name": "Utils",
-            "shortname": "Utils",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "SnapCarPlatform",
-            "namespace": "",
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2507,
-            "description": "Defines basic API methods.",
             "static": 1
         }
     },
     "classitems": [
         {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 853,
-            "description": "Create key-value caches of limited size",
-            "return": {
-                "description": "Returns the Object data after storing it on itself with\n\tproperty name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)\n\tdeleting the oldest entry",
-                "type": "Function(string, Object)"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 873,
-            "description": "Mark a function for special use by Sizzle",
-            "params": [
-                {
-                    "name": "fn",
-                    "description": "The function to mark",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 882,
-            "description": "Support testing using an element",
-            "params": [
-                {
-                    "name": "fn",
-                    "description": "Passed the created div and expects a boolean result",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 903,
-            "description": "Adds the same handler for all of the specified attrs",
-            "params": [
-                {
-                    "name": "attrs",
-                    "description": "Pipe-separated list of attributes",
-                    "type": "String"
-                },
-                {
-                    "name": "handler",
-                    "description": "The method that will be applied",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 917,
-            "description": "Checks document order of two siblings",
-            "params": [
-                {
-                    "name": "a",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "b",
-                    "description": "",
-                    "type": "Element"
-                }
-            ],
-            "return": {
-                "description": "Returns less than 0 if a precedes b, greater than 0 if a follows b",
-                "type": "Number"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 946,
-            "description": "Returns a function to use in pseudos for input types",
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 957,
-            "description": "Returns a function to use in pseudos for buttons",
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 968,
-            "description": "Returns a function to use in pseudos for positionals",
-            "params": [
-                {
-                    "name": "fn",
-                    "description": "",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 990,
-            "description": "Checks a node for validity as a Sizzle context",
-            "params": [
-                {
-                    "name": "context",
-                    "description": "",
-                    "type": "Element|Object="
-                }
-            ],
-            "return": {
-                "description": "The input node if acceptable, otherwise a falsy value",
-                "type": "Element|Object|Boolean"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 1002,
-            "description": "Detects XML nodes",
-            "params": [
-                {
-                    "name": "elem",
-                    "description": "An element or a document",
-                    "type": "Element|Object"
-                }
-            ],
-            "return": {
-                "description": "True iff elem is a non-HTML XML node",
-                "type": "Boolean"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 1014,
-            "description": "Sets document-related variables once based on the current document",
-            "params": [
-                {
-                    "name": "doc",
-                    "description": "An element or document object to use to set the document",
-                    "type": "Element|Object",
-                    "optional": true
-                }
-            ],
-            "return": {
-                "description": "Returns the current document",
-                "type": "Object"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 1456,
-            "description": "Document sorting and removing duplicates",
-            "params": [
-                {
-                    "name": "results",
-                    "description": "",
-                    "type": "ArrayLike"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 1489,
-            "description": "Utility function for retrieving the text value of an array of DOM nodes",
-            "params": [
-                {
-                    "name": "elem",
-                    "description": "",
-                    "type": "Array|Element"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 2462,
-            "description": "A low-level selection function that works with Sizzle's compiled\n selector functions",
-            "params": [
-                {
-                    "name": "selector",
-                    "description": "A selector or a pre-compiled\n selector function built with Sizzle.compile",
-                    "type": "String|Function"
-                },
-                {
-                    "name": "context",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "results",
-                    "description": "",
-                    "type": "Array",
-                    "optional": true
-                },
-                {
-                    "name": "seed",
-                    "description": "A set of elements to match against",
-                    "type": "Array",
-                    "optional": true
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 3422,
-            "description": "The ready event handler and self cleanup method",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 3515,
-            "description": "Determines whether an object can have data",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 5473,
-            "description": "Retrieve the actual display of a element",
-            "params": [
-                {
-                    "name": "name",
-                    "description": "nodeName of the element",
-                    "type": "String"
-                },
-                {
-                    "name": "doc",
-                    "description": "Document object",
-                    "type": "Object"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 5497,
-            "description": "Try to determine the default display value of an element",
-            "params": [
-                {
-                    "name": "nodeName",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 8825,
-            "description": "Load a url into a page",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/dist/jquery.js",
-            "line": 8909,
-            "description": "Gets a window from an element",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/ajax/load.js",
-            "line": 15,
-            "description": "Load a url into a page",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/core/ready.js",
-            "line": 61,
-            "description": "The ready event handler and self cleanup method",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/css/defaultDisplay.js",
-            "line": 9,
-            "description": "Retrieve the actual display of a element",
-            "params": [
-                {
-                    "name": "name",
-                    "description": "nodeName of the element",
-                    "type": "String"
-                },
-                {
-                    "name": "doc",
-                    "description": "Document object",
-                    "type": "Object"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/css/defaultDisplay.js",
-            "line": 33,
-            "description": "Try to determine the default display value of an element",
-            "params": [
-                {
-                    "name": "nodeName",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/data/accepts.js",
-            "line": 5,
-            "description": "Determines whether an object can have data",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 305,
-            "description": "Create key-value caches of limited size",
-            "return": {
-                "description": "Returns the Object data after storing it on itself with\n\tproperty name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)\n\tdeleting the oldest entry",
-                "type": "Function(string, Object)"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 325,
-            "description": "Mark a function for special use by Sizzle",
-            "params": [
-                {
-                    "name": "fn",
-                    "description": "The function to mark",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 334,
-            "description": "Support testing using an element",
-            "params": [
-                {
-                    "name": "fn",
-                    "description": "Passed the created div and expects a boolean result",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 355,
-            "description": "Adds the same handler for all of the specified attrs",
-            "params": [
-                {
-                    "name": "attrs",
-                    "description": "Pipe-separated list of attributes",
-                    "type": "String"
-                },
-                {
-                    "name": "handler",
-                    "description": "The method that will be applied",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 369,
-            "description": "Checks document order of two siblings",
-            "params": [
-                {
-                    "name": "a",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "b",
-                    "description": "",
-                    "type": "Element"
-                }
-            ],
-            "return": {
-                "description": "Returns less than 0 if a precedes b, greater than 0 if a follows b",
-                "type": "Number"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 398,
-            "description": "Returns a function to use in pseudos for input types",
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 409,
-            "description": "Returns a function to use in pseudos for buttons",
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 420,
-            "description": "Returns a function to use in pseudos for positionals",
-            "params": [
-                {
-                    "name": "fn",
-                    "description": "",
-                    "type": "Function"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 442,
-            "description": "Checks a node for validity as a Sizzle context",
-            "params": [
-                {
-                    "name": "context",
-                    "description": "",
-                    "type": "Element|Object="
-                }
-            ],
-            "return": {
-                "description": "The input node if acceptable, otherwise a falsy value",
-                "type": "Element|Object|Boolean"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 454,
-            "description": "Detects XML nodes",
-            "params": [
-                {
-                    "name": "elem",
-                    "description": "An element or a document",
-                    "type": "Element|Object"
-                }
-            ],
-            "return": {
-                "description": "True iff elem is a non-HTML XML node",
-                "type": "Boolean"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 466,
-            "description": "Sets document-related variables once based on the current document",
-            "params": [
-                {
-                    "name": "doc",
-                    "description": "An element or document object to use to set the document",
-                    "type": "Element|Object",
-                    "optional": true
-                }
-            ],
-            "return": {
-                "description": "Returns the current document",
-                "type": "Object"
-            },
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 908,
-            "description": "Document sorting and removing duplicates",
-            "params": [
-                {
-                    "name": "results",
-                    "description": "",
-                    "type": "ArrayLike"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 941,
-            "description": "Utility function for retrieving the text value of an array of DOM nodes",
-            "params": [
-                {
-                    "name": "elem",
-                    "description": "",
-                    "type": "Array|Element"
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js",
-            "line": 1914,
-            "description": "A low-level selection function that works with Sizzle's compiled\n selector functions",
-            "params": [
-                {
-                    "name": "selector",
-                    "description": "A selector or a pre-compiled\n selector function built with Sizzle.compile",
-                    "type": "String|Function"
-                },
-                {
-                    "name": "context",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "results",
-                    "description": "",
-                    "type": "Array",
-                    "optional": true
-                },
-                {
-                    "name": "seed",
-                    "description": "A set of elements to match against",
-                    "type": "Array",
-                    "optional": true
-                }
-            ],
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/bower_components/jquery/src/offset.js",
-            "line": 17,
-            "description": "Gets a window from an element",
-            "class": "Config"
-        },
-        {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 323,
+            "file": "src/SnapCar.js",
+            "line": 431,
             "description": "The web service base domain on which API calls are made. You can change this value in order to perform requests on demo/sandbox web services rather than the production one.",
             "itemtype": "property",
             "name": "baseDomain",
-            "type": "String",
+            "type": "string",
             "default": "\"https://api.snapcar.com/public\"",
-            "class": "Config",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 333,
+            "file": "src/SnapCar.js",
+            "line": 441,
             "description": "The user token. You must provide this value in order to be able to make API calls.",
             "itemtype": "property",
             "name": "token",
-            "type": "String",
-            "class": "Config",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 342,
+            "file": "src/SnapCar.js",
+            "line": 450,
             "description": "The user locale. As you may know, some information returned through the API are localized (ex. : the meeting point details). You need to set this value in order to receive data localized in the user language if supported. The fallbackLocale value is used otherwise.",
             "itemtype": "property",
             "name": "locale",
             "default": "\"en\"",
-            "type": "String",
-            "class": "Config",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "example": [
+                "\n    SnapCar.locale = \"fr\";"
+            ],
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 352,
+            "file": "src/SnapCar.js",
+            "line": 462,
             "description": "Locale used as a default in case you would provide a non supported locale value. Its value is \"en\".",
             "itemtype": "property",
             "name": "fallbackLocale",
-            "type": "String",
-            "class": "Config",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 462,
+            "file": "src/SnapCar.js",
+            "line": 572,
             "description": "The type of error.",
             "itemtype": "property",
             "name": "type",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "Error",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Error"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 472,
+            "file": "src/SnapCar.js",
+            "line": 582,
             "description": "A key which defines more precisely the type of error.",
             "itemtype": "property",
             "name": "message",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "Error",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Error"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 482,
+            "file": "src/SnapCar.js",
+            "line": 592,
             "description": "A human readable text describing the error. Not to be displayed to the user.",
             "itemtype": "property",
             "name": "description",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "Error",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Error"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 570,
+            "file": "src/SnapCar.js",
+            "line": 680,
             "description": "The type of error.",
             "itemtype": "property",
             "name": "code",
-            "type": "int",
+            "type": "number",
             "final": 1,
-            "class": "APIError",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.APIError"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 580,
+            "file": "src/SnapCar.js",
+            "line": 690,
             "description": "Additional details such as a list of invalid parameters. Refer to the API reference for more information.",
             "itemtype": "property",
             "name": "details",
             "type": "Object",
             "final": 1,
-            "class": "APIError",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.APIError"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 590,
+            "file": "src/SnapCar.js",
+            "line": 700,
             "description": "The server response body.",
             "itemtype": "property",
             "name": "serverResponse",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "APIError",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.APIError"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 626,
+            "file": "src/SnapCar.js",
+            "line": 736,
             "description": "The service class unique identifier.",
             "itemtype": "property",
             "name": "id",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "ServiceClass",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.ServiceClass"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 636,
+            "file": "src/SnapCar.js",
+            "line": 746,
             "description": "The localized service class name to display to the user.",
             "itemtype": "property",
             "name": "name",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "ServiceClass",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.ServiceClass"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 672,
+            "file": "src/SnapCar.js",
+            "line": 782,
             "description": "Unique meeting point identifier.",
             "itemtype": "property",
             "name": "id",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "MeetingPoint",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.MeetingPoint"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 692,
+            "file": "src/SnapCar.js",
+            "line": 802,
             "description": "Localized meeting point details that explain where the rider can meet his driver at the pick up location.",
             "itemtype": "property",
             "name": "rdvPoint",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "MeetingPoint",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.MeetingPoint"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 736,
+            "file": "src/SnapCar.js",
+            "line": 846,
             "description": "Unique identifier.",
             "itemtype": "property",
             "name": "id",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "SpecialArea",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.SpecialArea"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 746,
+            "file": "src/SnapCar.js",
+            "line": 856,
             "description": "Localized short name that briefly describes the area.",
             "itemtype": "property",
             "name": "name",
-            "type": "String",
+            "type": "string",
             "final": 1,
-            "class": "SpecialArea",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.SpecialArea"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 756,
+            "file": "src/SnapCar.js",
+            "line": 866,
             "description": "Localized short value that describes the kind of meeting points that can be selected.",
             "itemtype": "property",
             "name": "menuName",
-            "type": "String",
+            "type": "string",
             "example": [
                 "\n     \"Terminal\""
             ],
             "final": 1,
-            "class": "SpecialArea",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.SpecialArea"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 768,
+            "file": "src/SnapCar.js",
+            "line": 878,
             "description": "Indicates if the user is required to select a meeting point for this area.",
             "itemtype": "property",
             "name": "selectionRequired",
-            "type": "Boolean",
+            "type": "boolean",
             "final": 1,
-            "class": "SpecialArea",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.SpecialArea"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 778,
-            "description": "The type of special area. Can either be a station, an airport or a regular area. Refer to the SnapCarPlatform.SpecialAreaTypes values.",
+            "file": "src/SnapCar.js",
+            "line": 888,
+            "description": "The type of special area. Can either be a station, an airport or a regular area. Refer to the SnapCar.SpecialAreaTypes values.",
             "itemtype": "property",
             "name": "areaType",
-            "type": "String",
+            "type": "string",
             "example": [
                 "\n     \"airport\""
             ],
             "final": 1,
-            "class": "SpecialArea",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.SpecialArea"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 790,
+            "file": "src/SnapCar.js",
+            "line": 900,
             "description": "An array of meeting points in which the user can select his preferred one if the user hasn't enabled the nameboard option.",
             "itemtype": "property",
             "name": "meetingPoints",
-            "type": "Array",
+            "type": "Array<SnapCar.MeetingPoint>",
             "final": 1,
-            "class": "SpecialArea",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.SpecialArea"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 800,
+            "file": "src/SnapCar.js",
+            "line": 910,
             "description": "An array of meeting points in which the user can select his preferred one if the user has enabled the nameboard option.",
             "itemtype": "property",
             "name": "meetingPointsNameboard",
-            "type": "Array",
+            "type": "Array<SnapCar.MeetingPoint>",
             "final": 1,
-            "class": "SpecialArea",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.SpecialArea"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 818,
+            "file": "src/SnapCar.js",
+            "line": 928,
             "description": "Station area type constant. Its value is \"station\".",
             "itemtype": "property",
             "name": "STATION",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "SpecialAreaTypes",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.SpecialAreaTypes"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 828,
+            "file": "src/SnapCar.js",
+            "line": 938,
             "description": "Airport area type constant. Its value is \"airport\".",
             "itemtype": "property",
             "name": "AIRPORT",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "SpecialAreaTypes",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.SpecialAreaTypes"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 839,
+            "file": "src/SnapCar.js",
+            "line": 949,
             "description": "Normal area type constant. Its value is \"normal\".",
             "itemtype": "property",
             "name": "NORMAL",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "SpecialAreaTypes",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.SpecialAreaTypes"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 875,
-            "description": "Availability of the service class. Can be one of the SnapCarPlatform.ETAResultStatuses object values.",
+            "file": "src/SnapCar.js",
+            "line": 985,
+            "description": "Availability of the service class. Can be one of the SnapCar.ETAResultStatuses object values.",
             "itemtype": "property",
             "name": "status",
             "final": 1,
-            "type": "String",
-            "class": "ETAResult",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.ETAResult"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 885,
+            "file": "src/SnapCar.js",
+            "line": 995,
             "description": "If the service is available, holds the ETA in seconds.",
             "itemtype": "property",
             "name": "eta",
             "final": 1,
-            "type": "int",
-            "class": "ETAResult",
-            "module": "SnapCarPlatform"
+            "type": "number",
+            "class": "SnapCar.ETAResult"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 895,
+            "file": "src/SnapCar.js",
+            "line": 1005,
             "description": "The service class for which we want to know the ETA.",
             "itemtype": "property",
             "name": "serviceClass",
             "final": 1,
-            "type": "SnapCarPlatform.ServiceClass",
-            "class": "ETAResult",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.ServiceClass",
+            "class": "SnapCar.ETAResult"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 915,
+            "file": "src/SnapCar.js",
+            "line": 1025,
             "description": "Means that the service class is available. Therefore, an ETA is provided.",
             "itemtype": "property",
             "name": "OK",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "ETAResultStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.ETAResultStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 926,
+            "file": "src/SnapCar.js",
+            "line": 1036,
             "description": "Means that the service class is not available.",
             "itemtype": "property",
             "name": "UNAVAILABLE",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "ETAResultStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.ETAResultStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 957,
+            "file": "src/SnapCar.js",
+            "line": 1067,
             "description": "Payment method unique identifier.",
             "itemtype": "property",
             "name": "id",
             "final": 1,
-            "type": "String",
-            "class": "PaymentMethod",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.PaymentMethod"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 967,
+            "file": "src/SnapCar.js",
+            "line": 1077,
             "description": "The payment method's name, as set by the user.",
             "itemtype": "property",
             "name": "name",
             "final": 1,
-            "type": "String",
-            "class": "PaymentMethod",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.PaymentMethod"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 977,
+            "file": "src/SnapCar.js",
+            "line": 1087,
             "description": "The payment method's type. At that time, 'credit_card' is the only possible value.",
             "itemtype": "property",
             "name": "type",
             "final": 1,
-            "type": "String",
-            "class": "PaymentMethod",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.PaymentMethod"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 987,
+            "file": "src/SnapCar.js",
+            "line": 1097,
             "description": "Credit card's masked number.",
             "itemtype": "property",
             "name": "number",
@@ -1664,13 +910,12 @@
             "example": [
                 " \n        \"XXXXXXXXXXXX4987\""
             ],
-            "type": "String",
-            "class": "PaymentMethod",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.PaymentMethod"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 999,
+            "file": "src/SnapCar.js",
+            "line": 1109,
             "description": "Credit card brand.",
             "itemtype": "property",
             "name": "brand",
@@ -1678,137 +923,125 @@
             "example": [
                 " \n        \"VISA\""
             ],
-            "type": "String",
-            "class": "PaymentMethod",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.PaymentMethod"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1036,
+            "file": "src/SnapCar.js",
+            "line": 1146,
             "description": "The rider unique identifier.",
             "itemtype": "property",
             "name": "id",
             "final": 1,
-            "type": "String",
-            "class": "Rider",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Rider"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1046,
+            "file": "src/SnapCar.js",
+            "line": 1156,
             "description": "The rider's firstname.",
             "itemtype": "property",
             "name": "firstname",
             "final": 1,
-            "type": "String",
-            "class": "Rider",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Rider"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1056,
+            "file": "src/SnapCar.js",
+            "line": 1166,
             "description": "The rider's lastname.",
             "itemtype": "property",
             "name": "lastname",
             "final": 1,
-            "type": "String",
-            "class": "Rider",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Rider"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1066,
+            "file": "src/SnapCar.js",
+            "line": 1176,
             "description": "The rider's email.",
             "itemtype": "property",
             "name": "email",
             "final": 1,
-            "type": "String",
-            "class": "Rider",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Rider"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1076,
-            "description": "The rider account status. Its value is one of the SnapCarPlatform.RiderStatuses class properties. Check it out for more information.",
+            "file": "src/SnapCar.js",
+            "line": 1186,
+            "description": "The rider account status. Its value is one of the SnapCar.RiderStatuses class properties. Check it out for more information.",
             "itemtype": "property",
             "name": "status",
             "final": 1,
-            "type": "String",
-            "class": "Rider",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Rider"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1086,
+            "file": "src/SnapCar.js",
+            "line": 1196,
             "description": "The rider's payment method.",
             "itemtype": "property",
             "name": "payment_method",
             "final": 1,
-            "type": "SnapCarPlatform.PaymentMethod",
-            "class": "Rider",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.PaymentMethod",
+            "class": "SnapCar.Rider"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1106,
+            "file": "src/SnapCar.js",
+            "line": 1216,
             "description": "The user has the right to make bookings.",
             "itemtype": "property",
             "name": "BOOKING_ALLOWED",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "RiderStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.RiderStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1117,
+            "file": "src/SnapCar.js",
+            "line": 1227,
             "description": "The user is not allowed to make bookings.",
             "itemtype": "property",
             "name": "BOOKING_NOT_ALLOWED",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "RiderStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.RiderStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1128,
+            "file": "src/SnapCar.js",
+            "line": 1238,
             "description": "The user is suspended.",
             "itemtype": "property",
             "name": "SUSPENDED",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "RiderStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.RiderStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1165,
+            "file": "src/SnapCar.js",
+            "line": 1275,
             "description": "The booking price unique identifier.",
             "itemtype": "property",
             "name": "id",
             "final": 1,
-            "type": "String",
-            "class": "BookingPrice",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingPrice"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1175,
+            "file": "src/SnapCar.js",
+            "line": 1285,
             "description": "The price in the currency defined in the currency property.",
             "itemtype": "property",
             "name": "price",
             "final": 1,
             "type": "float",
-            "class": "BookingPrice",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.BookingPrice"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1185,
+            "file": "src/SnapCar.js",
+            "line": 1295,
             "description": "The currency.",
             "itemtype": "property",
             "name": "currency",
@@ -1816,889 +1049,811 @@
                 "\n           \"EUR\""
             ],
             "final": 1,
-            "type": "String",
-            "class": "BookingPrice",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingPrice"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1197,
+            "file": "src/SnapCar.js",
+            "line": 1307,
             "description": "A formatted string representing the price.",
             "itemtype": "property",
             "name": "formatted_price",
             "final": 1,
-            "type": "String",
-            "class": "BookingPrice",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingPrice"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1207,
+            "file": "src/SnapCar.js",
+            "line": 1317,
             "description": "The date of the validity date for the given price.",
             "itemtype": "property",
             "name": "expiry_date",
             "final": 1,
             "type": "Date",
-            "class": "BookingPrice",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.BookingPrice"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1217,
+            "file": "src/SnapCar.js",
+            "line": 1327,
             "description": "The ID of the service class for which the price is valid.",
             "itemtype": "property",
             "name": "service_class_id",
             "final": 1,
-            "type": "String",
-            "class": "BookingPrice",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingPrice"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1230,
+            "file": "src/SnapCar.js",
+            "line": 1340,
             "description": "Creates a booking by confirming the booking price.",
             "itemtype": "method",
             "name": "confirm",
             "return": {
-                "description": "A Promise object. Success/progress handlers are called with a SnapCarPlatform.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the \"pending\" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success/progress handlers are called with a SnapCar.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the \"pending\" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "BookingPrice",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.BookingPrice"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1282,
+            "file": "src/SnapCar.js",
+            "line": 1392,
             "description": "Whether a cancellation fee is charged.",
             "itemtype": "property",
             "name": "charged",
             "final": 1,
-            "type": "Boolean",
-            "class": "CancellationFee",
-            "module": "SnapCarPlatform"
+            "type": "boolean",
+            "class": "SnapCar.CancellationFee"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1292,
+            "file": "src/SnapCar.js",
+            "line": 1402,
             "description": "If charged, the cancellation amount.",
             "itemtype": "property",
             "name": "amount",
             "final": 1,
             "type": "float",
-            "class": "CancellationFee",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.CancellationFee"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1302,
+            "file": "src/SnapCar.js",
+            "line": 1412,
             "description": "If charged, the currency of the cancellation fee.",
             "itemtype": "property",
             "name": "currency",
             "final": 1,
-            "type": "String",
-            "class": "CancellationFee",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.CancellationFee"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1312,
+            "file": "src/SnapCar.js",
+            "line": 1422,
             "description": "If charged, the price formatted in the currency.",
             "itemtype": "property",
             "name": "formattedAmount",
             "final": 1,
-            "type": "String",
-            "class": "CancellationFee",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.CancellationFee"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1352,
+            "file": "src/SnapCar.js",
+            "line": 1462,
             "description": "The name of the address. Typically the number and street name.",
             "itemtype": "property",
             "name": "name",
             "final": 1,
-            "type": "String",
-            "class": "Address",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Address"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1362,
+            "file": "src/SnapCar.js",
+            "line": 1472,
             "description": "The postal code.",
             "itemtype": "property",
             "name": "postalCode",
             "final": 1,
-            "type": "String",
-            "class": "Address",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Address"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1372,
+            "file": "src/SnapCar.js",
+            "line": 1482,
             "description": "The city.",
             "itemtype": "property",
             "name": "city",
             "final": 1,
-            "type": "String",
-            "class": "Address",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Address"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1382,
+            "file": "src/SnapCar.js",
+            "line": 1492,
             "description": "The country.",
             "itemtype": "property",
             "name": "country",
             "final": 1,
-            "type": "String",
-            "class": "Address",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Address"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1423,
+            "file": "src/SnapCar.js",
+            "line": 1533,
             "description": "The location latitude.",
             "itemtype": "property",
             "name": "lat",
             "final": 1,
             "type": "float",
-            "class": "Location",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Location"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1433,
+            "file": "src/SnapCar.js",
+            "line": 1543,
             "description": "The location longitude.",
             "itemtype": "property",
             "name": "lng",
             "final": 1,
             "type": "float",
-            "class": "Location",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Location"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1444,
+            "file": "src/SnapCar.js",
+            "line": 1554,
             "description": "The location address.",
             "itemtype": "property",
             "name": "address",
             "final": 1,
-            "type": "String",
-            "class": "Location",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Location"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1473,
+            "file": "src/SnapCar.js",
+            "line": 1583,
             "description": "The point latitude.",
             "itemtype": "property",
             "name": "lat",
             "final": 1,
             "type": "float",
-            "class": "GeoPoint",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.GeoPoint"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1483,
+            "file": "src/SnapCar.js",
+            "line": 1593,
             "description": "The point longitude.",
             "itemtype": "property",
             "name": "lng",
             "final": 1,
             "type": "float",
-            "class": "GeoPoint",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.GeoPoint"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1512,
+            "file": "src/SnapCar.js",
+            "line": 1622,
             "description": "Billing document unique identifier.",
             "itemtype": "property",
             "name": "id",
             "final": 1,
-            "type": "String",
-            "class": "BillingDocument",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BillingDocument"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1522,
+            "file": "src/SnapCar.js",
+            "line": 1632,
             "description": "URL of to download the document.",
             "itemtype": "property",
             "name": "url",
             "final": 1,
-            "type": "String",
-            "class": "BillingDocument",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BillingDocument"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1532,
-            "description": "The type of document, refer to the SnapCarPlatform.BillingDocumentTypes properties.",
+            "file": "src/SnapCar.js",
+            "line": 1642,
+            "description": "The type of document, refer to the SnapCar.BillingDocumentTypes properties.",
             "itemtype": "property",
             "name": "type",
             "final": 1,
-            "type": "String",
-            "class": "BillingDocument",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BillingDocument"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1552,
+            "file": "src/SnapCar.js",
+            "line": 1662,
             "description": "Bill type. When the client is charged.",
             "itemtype": "property",
             "name": "BILL",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BillingDocumentTypes",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BillingDocumentTypes"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1563,
+            "file": "src/SnapCar.js",
+            "line": 1673,
             "description": "Credit note type. When the client is reimbursed.",
             "itemtype": "property",
             "name": "CREDIT_NOTE",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BillingDocumentTypes",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BillingDocumentTypes"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1603,
+            "file": "src/SnapCar.js",
+            "line": 1713,
             "description": "The vehile model.",
             "itemtype": "property",
             "name": "model",
             "final": 1,
-            "type": "String",
-            "class": "Vehicle",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Vehicle"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1613,
+            "file": "src/SnapCar.js",
+            "line": 1723,
             "description": "The localized vehile color.",
             "itemtype": "property",
             "name": "color",
             "final": 1,
-            "type": "String",
-            "class": "Vehicle",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Vehicle"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1623,
+            "file": "src/SnapCar.js",
+            "line": 1733,
             "description": "The current vehile position.",
             "itemtype": "property",
             "name": "position",
             "final": 1,
-            "type": "SnapCarPlatform.GeoPoint",
-            "class": "Vehicle",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.GeoPoint",
+            "class": "SnapCar.Vehicle"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1633,
+            "file": "src/SnapCar.js",
+            "line": 1743,
             "description": "The vehile plate number.",
             "itemtype": "property",
             "name": "plateNumber",
             "final": 1,
-            "type": "String",
-            "class": "Vehicle",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Vehicle"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1662,
+            "file": "src/SnapCar.js",
+            "line": 1772,
             "description": "The driver display name.",
             "itemtype": "property",
             "name": "name",
             "final": 1,
-            "type": "String",
-            "class": "Driver",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Driver"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1672,
+            "file": "src/SnapCar.js",
+            "line": 1782,
             "description": "The driver's phone number.",
             "itemtype": "property",
             "name": "phone",
             "final": 1,
-            "type": "String",
-            "class": "Driver",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Driver"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1682,
+            "file": "src/SnapCar.js",
+            "line": 1792,
             "description": "The driver unique identifier.",
             "itemtype": "property",
             "name": "id",
             "final": 1,
-            "type": "String",
-            "class": "Driver",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Driver"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1711,
+            "file": "src/SnapCar.js",
+            "line": 1821,
             "description": "The date at which the coordinate has been saved.",
             "itemtype": "property",
             "name": "date",
             "final": 1,
             "type": "Date",
-            "class": "TimestampedPoint",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.TimestampedPoint"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1721,
+            "file": "src/SnapCar.js",
+            "line": 1831,
             "description": "The coordinate latitude.",
             "itemtype": "property",
             "name": "lat",
             "final": 1,
             "type": "float",
-            "class": "TimestampedPoint",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.TimestampedPoint"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1731,
+            "file": "src/SnapCar.js",
+            "line": 1841,
             "description": "The coordinate longitude.",
             "itemtype": "property",
             "name": "lng",
             "final": 1,
             "type": "float",
-            "class": "TimestampedPoint",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.TimestampedPoint"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1769,
+            "file": "src/SnapCar.js",
+            "line": 1879,
             "description": "The total number of bookings in the history.",
             "itemtype": "property",
             "name": "total",
             "final": 1,
-            "type": "int",
-            "class": "BookingHistory",
-            "module": "SnapCarPlatform"
+            "type": "number",
+            "class": "SnapCar.BookingHistory"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1779,
+            "file": "src/SnapCar.js",
+            "line": 1889,
             "description": "The current position in the pagination.",
             "itemtype": "property",
             "name": "offset",
             "final": 1,
-            "type": "int",
-            "class": "BookingHistory",
-            "module": "SnapCarPlatform"
+            "type": "number",
+            "class": "SnapCar.BookingHistory"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1789,
+            "file": "src/SnapCar.js",
+            "line": 1899,
             "description": "The number of bookings fetched.",
             "itemtype": "property",
             "name": "count",
             "final": 1,
-            "type": "int",
-            "class": "BookingHistory",
-            "module": "SnapCarPlatform"
+            "type": "number",
+            "class": "SnapCar.BookingHistory"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1799,
-            "description": "The list of SnapCarPlatform.Booking fetched",
+            "file": "src/SnapCar.js",
+            "line": 1909,
+            "description": "The list of SnapCar.Booking fetched",
             "itemtype": "property",
             "name": "history",
             "final": 1,
-            "type": "Array",
-            "class": "BookingHistory",
-            "module": "SnapCarPlatform"
+            "type": "Array<SnapCar.Booking>",
+            "class": "SnapCar.BookingHistory"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1810,
+            "file": "src/SnapCar.js",
+            "line": 1920,
             "description": "Loads the next bookings in the history regarding the current offset in the pagination.",
             "itemtype": "method",
             "name": "nextBookings",
             "return": {
-                "description": "A Promise object. Success handlers are called with a SnapCarPlatform.BookingHistory as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with a SnapCar.BookingHistory as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "BookingHistory",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.BookingHistory"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1825,
-            "description": "Tells whether more bookings are available in the history regarding the current offset in the pagination and the total number of bookings. If yes, the SnapCarPlatform.BookingHistory.nextBookings method can be called.",
+            "file": "src/SnapCar.js",
+            "line": 1935,
+            "description": "Tells whether more bookings are available in the history regarding the current offset in the pagination and the total number of bookings. If yes, the SnapCar.BookingHistory.nextBookings method can be called.",
             "itemtype": "method",
             "name": "moreBookingsAvailable",
             "return": {
                 "description": "Whether more bookings are available or not.",
                 "type": "Boolean"
             },
-            "class": "BookingHistory",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.BookingHistory"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1903,
+            "file": "src/SnapCar.js",
+            "line": 2013,
             "description": "The booking unique identifier.",
             "itemtype": "property",
             "name": "id",
             "final": 1,
-            "type": "String",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1913,
+            "file": "src/SnapCar.js",
+            "line": 2023,
             "description": "The passenger of the booking.",
             "itemtype": "property",
             "name": "rider",
             "final": 1,
-            "type": "SnapCarPlatform.Rider",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.Rider",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1923,
+            "file": "src/SnapCar.js",
+            "line": 2033,
             "description": "The ordered service class for this booking.",
             "itemtype": "property",
             "name": "serviceClass",
             "final": 1,
-            "type": "SnapCarPlatform.ServiceClass",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.ServiceClass",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1933,
-            "description": "The booking status, refer to the SnapCarPlatform.BookingStatuses properties to have a comprehensive list of all possible statuses.",
+            "file": "src/SnapCar.js",
+            "line": 2043,
+            "description": "The booking status, refer to the SnapCar.BookingStatuses properties to have a comprehensive list of all possible statuses.",
             "itemtype": "property",
             "name": "status",
             "final": 1,
-            "type": "String",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1943,
+            "file": "src/SnapCar.js",
+            "line": 2053,
             "description": "The booking location's timezone.",
             "itemtype": "property",
             "name": "timezone",
             "final": 1,
-            "type": "String",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1953,
+            "file": "src/SnapCar.js",
+            "line": 2063,
             "description": "The planned pick up date.",
             "itemtype": "property",
             "name": "plannedStartDate",
             "final": 1,
             "type": "Date",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1963,
+            "file": "src/SnapCar.js",
+            "line": 2073,
             "description": "The booking creation date.",
             "itemtype": "property",
             "name": "creationDate",
             "final": 1,
             "type": "Date",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1973,
+            "file": "src/SnapCar.js",
+            "line": 2083,
             "description": "The driver arrival date at the pick up location.",
             "itemtype": "property",
             "name": "driverArrivalDate",
             "final": 1,
             "type": "Date",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1983,
+            "file": "src/SnapCar.js",
+            "line": 2093,
             "description": "The date at which the rider went on board.",
             "itemtype": "property",
             "name": "startDate",
             "final": 1,
             "type": "Date",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 1993,
+            "file": "src/SnapCar.js",
+            "line": 2103,
             "description": "Meeting at which the rider will find its driver.",
             "itemtype": "property",
             "name": "meetingPoint",
             "final": 1,
-            "type": "SnapCarPlatform.MeetingPoint",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.MeetingPoint",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2003,
+            "file": "src/SnapCar.js",
+            "line": 2113,
             "description": "The date at which the rider has been dropped off.",
             "itemtype": "property",
             "name": "history",
             "final": 1,
             "type": "Date",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2013,
+            "file": "src/SnapCar.js",
+            "line": 2123,
             "description": "The date at which the booking was cancelled (if relevant).",
             "itemtype": "property",
             "name": "cancellationDate",
             "final": 1,
             "type": "Date",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2023,
-            "description": "This code indicates the reason why the booking was cancelled. Check out the SnapCarPlatform.BookingCancellationReasons static class properties.",
+            "file": "src/SnapCar.js",
+            "line": 2133,
+            "description": "This code indicates the reason why the booking was cancelled. Check out the SnapCar.BookingCancellationReasons static class properties.",
             "itemtype": "property",
             "name": "cancellationReason",
             "final": 1,
-            "type": "String",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2033,
+            "file": "src/SnapCar.js",
+            "line": 2143,
             "description": "The pick up location.",
             "itemtype": "property",
             "name": "startLocation",
             "final": 1,
-            "type": "SnapCarPlatform.Location",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.Location",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2043,
+            "file": "src/SnapCar.js",
+            "line": 2153,
             "description": "The location at which the rider has been dropped off.",
             "itemtype": "property",
             "name": "endLocation",
             "final": 1,
-            "type": "SnapCarPlatform.Location",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.Location",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2053,
+            "file": "src/SnapCar.js",
+            "line": 2163,
             "description": "Additional pick-up information for the driver. Provided by the rider.",
             "itemtype": "property",
             "name": "driverInfo",
             "final": 1,
-            "type": "String",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2063,
+            "file": "src/SnapCar.js",
+            "line": 2173,
             "description": "The initial order information.",
             "itemtype": "property",
             "name": "bookingPrice",
             "final": 1,
-            "type": "SnapCarPlatform.BookingPrice",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.BookingPrice",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2073,
+            "file": "src/SnapCar.js",
+            "line": 2183,
             "description": "The total billed amount",
             "itemtype": "property",
             "name": "billedAmount",
             "final": 1,
             "type": "float",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2083,
+            "file": "src/SnapCar.js",
+            "line": 2193,
             "description": "The total VAT amount.",
             "itemtype": "property",
             "name": "vatAmount",
             "final": 1,
             "type": "float",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2093,
+            "file": "src/SnapCar.js",
+            "line": 2203,
             "description": "The tip given by the rider to the driver through the SnapCar application.",
             "itemtype": "property",
             "name": "tip",
             "final": 1,
             "type": "float",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2103,
-            "description": "A list of SnapCarPlatform.TimestampedPoint describing the driver route from the pick up location.",
+            "file": "src/SnapCar.js",
+            "line": 2213,
+            "description": "A list of dates points describing the driver route from the pick up location.",
             "itemtype": "property",
             "name": "route",
             "final": 1,
-            "type": "Array",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "Array<SnapCar.TimestampedPoint>",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2113,
-            "description": "The list of SnapCarPlatform.BillingDocument",
+            "file": "src/SnapCar.js",
+            "line": 2223,
+            "description": "The list of billing documents.",
             "itemtype": "property",
             "name": "documents",
             "final": 1,
-            "type": "Array",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "Array<SnapCar.BillingDocument>",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2123,
+            "file": "src/SnapCar.js",
+            "line": 2233,
             "description": "The vehicle used by the driver to pick the rider up.",
             "itemtype": "property",
             "name": "vehicle",
             "final": 1,
-            "type": "Array",
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "type": "SnapCar.Vehicle",
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2134,
+            "file": "src/SnapCar.js",
+            "line": 2244,
             "description": "Gets the booking cancellation price. Relevant only when the booking is either in the 'pending', 'going_to_get' or 'driver_waiting' state.",
             "itemtype": "method",
             "name": "cancellationPrice",
             "return": {
-                "description": "A Promise object. Success handlers are called with a SnapCarPlatform.CancellationFee as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with a SnapCar.CancellationFee as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2151,
-            "description": "Cancels the booking. You may want to check the cancellation price by using the SnapCarPlatform.Booking.cancellationPrice() method before doing so.",
+            "file": "src/SnapCar.js",
+            "line": 2261,
+            "description": "Cancels the booking. You may want to check the cancellation price by using the SnapCar.Booking.cancellationPrice() method before doing so.",
             "itemtype": "method",
             "name": "cancel",
             "return": {
-                "description": "A Promise object. Success handlers are called with the updated instance of SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with the updated instance of SnapCar.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2169,
+            "file": "src/SnapCar.js",
+            "line": 2279,
             "description": "Refreshes the booking information.",
             "itemtype": "method",
             "name": "refresh",
             "return": {
-                "description": "A Promise object. Success handlers are called with the updated instance of SnapCarPlatform.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with the updated instance of SnapCar.Booking as the single argument. Note that the initial instance itself is updated. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2254,
+            "file": "src/SnapCar.js",
+            "line": 2364,
             "description": "Confirms the booking (without flat price) to the SnapCar platform. Before calling this method, you have to provide at least a rider, a startLocation and the desired serviceClass.",
             "itemtype": "method",
             "name": "confirm",
             "return": {
-                "description": "A Promise object. Success/progress handlers are called with a SnapCarPlatform.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the \"pending\" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success/progress handlers are called with a SnapCar.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the \"pending\" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2301,
+            "file": "src/SnapCar.js",
+            "line": 2411,
             "description": "Calculates flat prices for all allowed service classes. Then, you may confirm one of these prices according to the service class selected by the user. The flat prices are based on the booking information (rider, planned start date, start location, end location, if the nameboard option is enabled). Before calling this method, you have to provide at least a rider, a startLocation and an endLocation which are the basic elements for price calculation. Flat prices cannot be calculated otherwise.",
             "itemtype": "method",
             "name": "flatPrices",
             "return": {
-                "description": "A Promise object. Success handlers are called with an array of SnapCarPlatform.BookingPrice as the single argument. Check the value of the SnapCarPlatform.BookingPrice.serviceClassId property in order to know to which service class a booking price is associated. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with an array of SnapCar.BookingPrice as the single argument. Check the value of the SnapCar.BookingPrice.serviceClassId property in order to know to which service class a booking price is associated. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Booking",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar.Booking"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2348,
+            "file": "src/SnapCar.js",
+            "line": 2458,
             "description": "When the booking is waiting for a driver to be attributed. Its value is \"pending\".",
             "itemtype": "property",
             "name": "PENDING",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2359,
+            "file": "src/SnapCar.js",
+            "line": 2469,
             "description": "When a driver has accepted a booking and is on his way to pick up the rider. Its value is \"going_to_get\".",
             "itemtype": "property",
             "name": "GOING_TO_GET",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2370,
+            "file": "src/SnapCar.js",
+            "line": 2480,
             "description": "When the driver has arrived at the pick up location and is waiting for the rider. Its value is \"driver_waiting\".",
             "itemtype": "property",
             "name": "DRIVER_WAITING",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2381,
+            "file": "src/SnapCar.js",
+            "line": 2491,
             "description": "When the rider is in the car. Its value is \"on_board\".",
             "itemtype": "property",
             "name": "ON_BOARD",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2392,
+            "file": "src/SnapCar.js",
+            "line": 2502,
             "description": "When the booking is ended, meaning that the rider has been dropped off. Its value is \"complete\".",
             "itemtype": "property",
             "name": "COMPLETE",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2403,
+            "file": "src/SnapCar.js",
+            "line": 2513,
             "description": "When the booking is cancelled. Its value is \"cancelled\".",
             "itemtype": "property",
             "name": "CANCELLED",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingStatuses",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingStatuses"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2424,
+            "file": "src/SnapCar.js",
+            "line": 2534,
             "description": "The booking has been cancelled by the rider, and not charged. Its value is \"rider_cancellation\".",
             "itemtype": "property",
             "name": "RIDER_CANCELLATION",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingCancellationReasons",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingCancellationReasons"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2435,
+            "file": "src/SnapCar.js",
+            "line": 2545,
             "description": "The booking has been cancelled by the rider, and has been charged a cancellation fee. Its value is \"rider_cancellation_charged\".",
             "itemtype": "property",
             "name": "RIDER_CANCELLATION_CHARGED",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingCancellationReasons",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingCancellationReasons"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2446,
+            "file": "src/SnapCar.js",
+            "line": 2556,
             "description": "The booking has been cancelled by SnapCar. Its value is \"system_cancellation\".",
             "itemtype": "property",
             "name": "SYSTEM_CANCELLATION",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingCancellationReasons",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingCancellationReasons"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2457,
+            "file": "src/SnapCar.js",
+            "line": 2567,
             "description": "The booking has been cancelled by SnapCar, and charged. Its value is \"system_cancellation_charged\".",
             "itemtype": "property",
             "name": "SYSTEM_CANCELLATION_CHARGED",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingCancellationReasons",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingCancellationReasons"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2468,
+            "file": "src/SnapCar.js",
+            "line": 2578,
             "description": "No driver was available for dispatch.",
             "itemtype": "property",
             "name": "NO_DRIVER",
             "static": 1,
             "final": 1,
-            "type": "String",
-            "class": "BookingCancellationReasons",
-            "module": "SnapCarPlatform"
+            "type": "string",
+            "class": "SnapCar.BookingCancellationReasons"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2516,
+            "file": "src/SnapCar.js",
+            "line": 2617,
             "description": "Retrieves current ETA and availability for each service class.",
             "itemtype": "method",
             "name": "eta",
@@ -2706,24 +1861,23 @@
                 {
                     "name": "lat",
                     "description": "Latitude of the position at which you want to get the current eta and availability.",
-                    "type": "Float"
+                    "type": "Number"
                 },
                 {
                     "name": "lng",
                     "description": "Longitude of the position at which you want to get the current eta and availability.",
-                    "type": "Float"
+                    "type": "Number"
                 }
             ],
             "return": {
-                "description": "A Promise object. Success handlers are called with an array of SnapCarPlatform.ETAResult as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with an array of SnapCar.ETAResult as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Utils",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2538,
+            "file": "src/SnapCar.js",
+            "line": 2640,
             "description": "Retrieves a list of all allowed service classes at a specific location.",
             "itemtype": "method",
             "name": "serviceClasses",
@@ -2731,24 +1885,23 @@
                 {
                     "name": "lat",
                     "description": "Latitude of the position at which you want to get the allowed service classes.",
-                    "type": "Float"
+                    "type": "Number"
                 },
                 {
                     "name": "lng",
                     "description": "Longitude of the position at which you want to get the allowed service classes.",
-                    "type": "Float"
+                    "type": "Number"
                 }
             ],
             "return": {
-                "description": "A Promise object. Success handlers are called with an array of SnapCarPlatform.ServiceClass as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with an array of SnapCar.ServiceClass as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Utils",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2560,
+            "file": "src/SnapCar.js",
+            "line": 2663,
             "description": "Retrieves meeting point information at a specific location.",
             "itemtype": "method",
             "name": "meetingPoints",
@@ -2756,297 +1909,91 @@
                 {
                     "name": "lat",
                     "description": "Latitude of the position at which you want to get the information.",
-                    "type": "Float"
+                    "type": "Number"
                 },
                 {
                     "name": "lng",
                     "description": "Longitude of the position at which you want to get the information.",
-                    "type": "Float"
+                    "type": "Number"
                 }
             ],
             "return": {
-                "description": "A Promise object. Success handlers are called with a SnapCarPlatform.SpecialArea as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error. Be aware that if no specific meeting point information is found at a location, the failure callback will be called with a SnapCarPlatform.APIError having a 404 code value.",
+                "description": "A Promise object. Success handlers are called with a SnapCar.SpecialArea as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error. Be aware that if no specific meeting point information is found at a location, the failure callback will be called with a SnapCar.APIError having a 404 code value.",
                 "type": "jQuery.Promise"
             },
-            "class": "Utils",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2580,
+            "file": "src/SnapCar.js",
+            "line": 2683,
             "description": "Gets the currently authenticated user information.",
             "itemtype": "method",
             "name": "user",
             "return": {
-                "description": "A Promise object. Success handlers are called with a SnapCarPlatform.Rider as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with a SnapCar.Rider as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Utils",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2597,
+            "file": "src/SnapCar.js",
+            "line": 2701,
             "description": "Gets the currently authentified rider's active bookings.",
             "itemtype": "method",
             "name": "activeBookings",
             "return": {
-                "description": "A Promise object. Success handlers are called with an array of SnapCarPlatform.Booking as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with an array of SnapCar.Booking as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
-            "class": "Utils",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2616,
+            "file": "src/SnapCar.js",
+            "line": 2721,
             "description": "Gets the currently authentified rider's bookings history.",
             "itemtype": "method",
             "name": "bookingsHistory",
             "return": {
-                "description": "A Promise object. Success handlers are called with a SnapCarPlatform.BookingHistory as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with a SnapCar.BookingHistory as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
             "params": [
                 {
                     "name": "offset",
                     "description": "The position of the first booking in the pagination.",
-                    "type": "Int",
+                    "type": "Number",
                     "optional": true,
                     "optdefault": "0"
                 },
                 {
                     "name": "limit",
                     "description": "The maximum number of bookings to return.",
-                    "type": "Int",
+                    "type": "Number",
                     "optional": true,
                     "optdefault": "20"
                 }
             ],
-            "class": "Utils",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         },
         {
-            "file": "../snapcar-platform-js/SnapCarPlatform.js",
-            "line": 2639,
+            "file": "src/SnapCar.js",
+            "line": 2745,
             "description": "Gets information about a specific booking.",
             "itemtype": "method",
             "name": "booking",
             "return": {
-                "description": "A Promise object. Success handlers are called with a SnapCarPlatform.Booking as the single argument. Failure handlers are called with a single SnapCarPlatform.APIError argument upon error.",
+                "description": "A Promise object. Success handlers are called with a SnapCar.Booking as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.",
                 "type": "jQuery.Promise"
             },
             "params": [
                 {
                     "name": "id",
                     "description": "The booking unique identifier.",
-                    "type": "Int"
+                    "type": "Number"
                 }
             ],
-            "class": "Utils",
-            "module": "SnapCarPlatform"
+            "class": "SnapCar"
         }
     ],
-    "warnings": [
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:853"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:917"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:990"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:1002"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:1014"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:305"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:369"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:442"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:454"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:466"
-        },
-        {
-            "message": "Missing item type\nCreate key-value caches of limited size",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:853"
-        },
-        {
-            "message": "Missing item type\nMark a function for special use by Sizzle",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:873"
-        },
-        {
-            "message": "Missing item type\nSupport testing using an element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:882"
-        },
-        {
-            "message": "Missing item type\nAdds the same handler for all of the specified attrs",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:903"
-        },
-        {
-            "message": "Missing item type\nChecks document order of two siblings",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:917"
-        },
-        {
-            "message": "Missing item type\nReturns a function to use in pseudos for input types",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:946"
-        },
-        {
-            "message": "Missing item type\nReturns a function to use in pseudos for buttons",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:957"
-        },
-        {
-            "message": "Missing item type\nReturns a function to use in pseudos for positionals",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:968"
-        },
-        {
-            "message": "Missing item type\nChecks a node for validity as a Sizzle context",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:990"
-        },
-        {
-            "message": "Missing item type\nDetects XML nodes",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:1002"
-        },
-        {
-            "message": "Missing item type\nSets document-related variables once based on the current document",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:1014"
-        },
-        {
-            "message": "Missing item type\nDocument sorting and removing duplicates",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:1456"
-        },
-        {
-            "message": "Missing item type\nUtility function for retrieving the text value of an array of DOM nodes",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:1489"
-        },
-        {
-            "message": "Missing item type\nA low-level selection function that works with Sizzle's compiled\n selector functions",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:2462"
-        },
-        {
-            "message": "Missing item type\nThe ready event handler and self cleanup method",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:3422"
-        },
-        {
-            "message": "Missing item type\nDetermines whether an object can have data",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:3515"
-        },
-        {
-            "message": "Missing item type\nRetrieve the actual display of a element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:5473"
-        },
-        {
-            "message": "Missing item type\nTry to determine the default display value of an element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:5497"
-        },
-        {
-            "message": "Missing item type\nLoad a url into a page",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:8825"
-        },
-        {
-            "message": "Missing item type\nGets a window from an element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/dist/jquery.js:8909"
-        },
-        {
-            "message": "Missing item type\nLoad a url into a page",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/ajax/load.js:15"
-        },
-        {
-            "message": "Missing item type\nThe ready event handler and self cleanup method",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/core/ready.js:61"
-        },
-        {
-            "message": "Missing item type\nRetrieve the actual display of a element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/css/defaultDisplay.js:9"
-        },
-        {
-            "message": "Missing item type\nTry to determine the default display value of an element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/css/defaultDisplay.js:33"
-        },
-        {
-            "message": "Missing item type\nDetermines whether an object can have data",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/data/accepts.js:5"
-        },
-        {
-            "message": "Missing item type\nCreate key-value caches of limited size",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:305"
-        },
-        {
-            "message": "Missing item type\nMark a function for special use by Sizzle",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:325"
-        },
-        {
-            "message": "Missing item type\nSupport testing using an element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:334"
-        },
-        {
-            "message": "Missing item type\nAdds the same handler for all of the specified attrs",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:355"
-        },
-        {
-            "message": "Missing item type\nChecks document order of two siblings",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:369"
-        },
-        {
-            "message": "Missing item type\nReturns a function to use in pseudos for input types",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:398"
-        },
-        {
-            "message": "Missing item type\nReturns a function to use in pseudos for buttons",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:409"
-        },
-        {
-            "message": "Missing item type\nReturns a function to use in pseudos for positionals",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:420"
-        },
-        {
-            "message": "Missing item type\nChecks a node for validity as a Sizzle context",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:442"
-        },
-        {
-            "message": "Missing item type\nDetects XML nodes",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:454"
-        },
-        {
-            "message": "Missing item type\nSets document-related variables once based on the current document",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:466"
-        },
-        {
-            "message": "Missing item type\nDocument sorting and removing duplicates",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:908"
-        },
-        {
-            "message": "Missing item type\nUtility function for retrieving the text value of an array of DOM nodes",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:941"
-        },
-        {
-            "message": "Missing item type\nA low-level selection function that works with Sizzle's compiled\n selector functions",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/sizzle/dist/sizzle.js:1914"
-        },
-        {
-            "message": "Missing item type\nGets a window from an element",
-            "line": " ../snapcar-platform-js/bower_components/jquery/src/offset.js:17"
-        }
-    ]
+    "warnings": []
 }
