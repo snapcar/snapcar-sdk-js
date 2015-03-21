@@ -2576,7 +2576,7 @@ var SnapCar = (function (SnapCar, $) {
         SYSTEM_CANCELLATION_CHARGED: 'system_cancellation_charged',
         
         /**
-         * No driver was available for dispatch.
+         * No driver was available for dispatch. Its value is "no_driver".
          * 
          * @property NO_DRIVER
          * @static
