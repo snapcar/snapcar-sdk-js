@@ -328,7 +328,7 @@
             "extension_for": [],
             "file": "src/SnapCar.js",
             "line": 1434,
-            "description": "An address (typically for for pick up or drop off).",
+            "description": "An address (typically for pick up or drop off).",
             "is_constructor": 1,
             "params": [
                 {
@@ -1643,7 +1643,7 @@
         {
             "file": "src/SnapCar.js",
             "line": 2213,
-            "description": "A list of dates points describing the driver route from the pick up location.",
+            "description": "A list of timestamped points describing the driver route from the pick up location.",
             "itemtype": "property",
             "name": "route",
             "final": 1,
@@ -1843,7 +1843,7 @@
         {
             "file": "src/SnapCar.js",
             "line": 2578,
-            "description": "No driver was available for dispatch.",
+            "description": "No driver was available for dispatch. Its value is \"no_driver\".",
             "itemtype": "property",
             "name": "NO_DRIVER",
             "static": 1,
