@@ -2211,7 +2211,7 @@ var SnapCar = (function (SnapCar, $) {
         tip: {name: 'tip'},
 
         /**
-         * A list of dates points describing the driver route from the pick up location.
+         * A list of timestamped points describing the driver route from the pick up location.
          * 
          * @property route
          * @final
