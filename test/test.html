@@ -1,0 +1,26 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../src/SnapCar.js"></script>
+  <script src="config.js"></script>
+  <script src="config.mocha.js"></script>
+  <script src="config.snapcar.js"></script>
+  <script src="test.base.js"></script>
+  <script>
+
+    var expect = chai.expect;
+
+    mocha.checkLeaks();
+    mocha.globals(['jQuery']);
+    mocha.run();
+  </script>
+</body>
+</html>
