@@ -1331,7 +1331,7 @@
             "line": 1782,
             "description": "The driver's phone number.",
             "itemtype": "property",
-            "name": "phone",
+            "name": "phoneNumber",
             "final": 1,
             "type": "string",
             "class": "SnapCar.Driver"
