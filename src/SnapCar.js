@@ -1782,12 +1782,12 @@ var SnapCar = (function (SnapCar, $) {
         /**
          * The driver's phone number.
          * 
-         * @property phone
+         * @property phoneNumber
          * @final
          * @type string
          */
                 
-        phone: {name: 'phone'},
+        phone_number: {name: 'phoneNumber'},
 
         /**
          * The driver unique identifier.
