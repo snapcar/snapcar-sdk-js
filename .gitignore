@@ -3,3 +3,5 @@ node_modules
 apidocs
 
 npm-debug.log
+
+test/config.js

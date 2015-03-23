@@ -6,7 +6,9 @@
   "devDependencies": {
     "gh-pages": "~0.2.0",
     "yuidoc-lucid-theme": "~0.1.1",
-    "yuidocjs": "~0.3.50"
+    "yuidocjs": "~0.3.50",
+    "mocha": "~2.2.1",
+    "chai": "~2.1.2"
   },
   "scripts": {
     "postpublish": "npm run publish-yuidoc",

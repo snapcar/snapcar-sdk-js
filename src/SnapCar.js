@@ -1432,7 +1432,7 @@ var SnapCar = (function (SnapCar, $) {
     });
 
     /**
-     * An address (typically for for pick up or drop off).
+     * An address (typically for pick up or drop off).
      * 
      * @class SnapCar.Address
      * @constructor
@@ -1782,12 +1782,12 @@ var SnapCar = (function (SnapCar, $) {
         /**
          * The driver's phone number.
          * 
-         * @property phone
+         * @property phoneNumber
          * @final
          * @type string
          */
                 
-        phone: {name: 'phone'},
+        phone_number: {name: 'phoneNumber'},
 
         /**
          * The driver unique identifier.
@@ -2211,7 +2211,7 @@ var SnapCar = (function (SnapCar, $) {
         tip: {name: 'tip'},
 
         /**
-         * A list of dates points describing the driver route from the pick up location.
+         * A list of timestamped points describing the driver route from the pick up location.
          * 
          * @property route
          * @final
@@ -2576,7 +2576,7 @@ var SnapCar = (function (SnapCar, $) {
         SYSTEM_CANCELLATION_CHARGED: 'system_cancellation_charged',
         
         /**
-         * No driver was available for dispatch.
+         * No driver was available for dispatch. Its value is "no_driver".
          * 
          * @property NO_DRIVER
          * @static
