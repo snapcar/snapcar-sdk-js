@@ -981,7 +981,7 @@
             "line": 1196,
             "description": "The rider's payment method.",
             "itemtype": "property",
-            "name": "payment_method",
+            "name": "paymentMethod",
             "final": 1,
             "type": "SnapCar.PaymentMethod",
             "class": "SnapCar.Rider"
