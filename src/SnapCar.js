@@ -1196,12 +1196,12 @@ var SnapCar = (function (SnapCar, $) {
         /**
          * The rider's payment method.
          * 
-         * @property payment_method
+         * @property paymentMethod
          * @final
          * @type SnapCar.PaymentMethod
          */
         
-        payment_method: {name: 'payment_method'}
+        payment_method: {name: 'paymentMethod'}
     });
 
     /**
