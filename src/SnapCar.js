@@ -416,16 +416,16 @@ var SnapCar = (function (SnapCar, $) {
 
     // Properties: browser compatibility
 
-    var canDefineProperty = (typeof Object.defineProperty === 'function');
-    if (canDefineProperty) {
+    SnapCar.canDefineProperty = (typeof Object.defineProperty === 'function');
+    if (SnapCar.canDefineProperty) {
         try {
             Object.defineProperty({}, 'x', {});
         } catch (e) {
-            canDefineProperty = false;
+            SnapCar.canDefineProperty = false;
         }
     }
 
-    if (canDefineProperty) {
+    if (SnapCar.canDefineProperty) {
         Object.defineProperties(SnapCar, {
             
             /**
@@ -478,7 +478,7 @@ var SnapCar = (function (SnapCar, $) {
 
     // Define property helper
 
-    function defineProperties(object, properties) {
+    SnapCar.defineProperties = function(object, properties) {
 
         $.each(properties, function (interfaceProperty, propertyConfig) {
             properties[interfaceProperty].propertyDescriptors = $.extend({}, {enumerable: true, writable: false, configurable: false}, propertyConfig.propertyDescriptors || {});
@@ -486,7 +486,7 @@ var SnapCar = (function (SnapCar, $) {
 
         object.mapping = $.extend({}, object.mapping || {}, properties);
 
-        if (canDefineProperty) {
+        if (SnapCar.canDefineProperty) {
             var propConfig = {};
 
             $.each(properties, function (key, val) {
@@ -500,11 +500,11 @@ var SnapCar = (function (SnapCar, $) {
 
     // Helper
 
-    var getTextInLocale = function (payload) {
+    SnapCar.getTextInLocale = function (payload) {
         return payload[SnapCar.locale] || payload[SnapCar.fallbackLocale];
     };
 
-    var processObjectPayload = function (instance, payload, specialValueCallback) {
+    SnapCar.processObjectPayload = function (instance, payload, specialValueCallback) {
         var propertyConfig = [];
         $.each(payload || {}, function (key, val) {
             if (typeof instance.constructor.mapping === 'object') {
@@ -514,7 +514,7 @@ var SnapCar = (function (SnapCar, $) {
                     value = typeof specialValueCallback !== 'undefined' ? (specialValueCallback(key, val) || val) : val;
 
                     // Property is writable, value can directly be set
-                    if (!canDefineProperty || mapping.propertyDescriptors.writable) {
+                    if (!SnapCar.canDefineProperty || mapping.propertyDescriptors.writable) {
                         instance[mapping.name] = value;
                     }
 
@@ -531,13 +531,13 @@ var SnapCar = (function (SnapCar, $) {
             }
         });
 
-        if (canDefineProperty) {
+        if (SnapCar.canDefineProperty) {
             Object.defineProperties(instance, propertyConfig);
         }
     };
 
-    var bootstrapInstanceProperties = function (instance) {
-        if (canDefineProperty) {
+    SnapCar.bootstrapInstanceProperties = function (instance) {
+        if (SnapCar.canDefineProperty) {
             var propertyConfig = [];
             $.each(instance.constructor.mapping, function (key, val) {
                 propertyConfig[val.name] = $.extend({}, true, val.propertyDescriptors.clone, {
@@ -560,14 +560,14 @@ var SnapCar = (function (SnapCar, $) {
      */
     
     SnapCar.Error = function (type, message, description) {
-        processObjectPayload(this, {
+        SnapCar.processObjectPayload(this, {
             type: type,
             message: message,
             description: description
         });
     };
 
-    defineProperties(SnapCar.Error, {
+    SnapCar.defineProperties(SnapCar.Error, {
         
         /**
          * The type of error.
@@ -612,7 +612,7 @@ var SnapCar = (function (SnapCar, $) {
      */
     
     SnapCar.ConfigError = function (message, description) {
-        processObjectPayload(this, {
+        SnapCar.processObjectPayload(this, {
             type: 'config',
             message: message,
             description: description
@@ -632,7 +632,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.InvalidParametersError = function (message, description) {
-        processObjectPayload(this, {
+        SnapCar.processObjectPayload(this, {
             type: 'invalid_parameters',
             message: message,
             description: description
@@ -659,12 +659,12 @@ var SnapCar = (function (SnapCar, $) {
         }
 
         if (typeof payload === 'object') {
-            processObjectPayload(this, $.extend({}, payload, {
+            SnapCar.processObjectPayload(this, $.extend({}, payload, {
                 description: 'An API error occurred. Check the message parameter for more details.',
                 type: 'api'
             }));
         } else {
-            processObjectPayload(this, $.extend({}, payload, {
+            SnapCar.processObjectPayload(this, $.extend({}, payload, {
                 message: 'other',
                 description: 'An error occurred while sending the request.',
                 server_response: payload,
@@ -675,7 +675,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.APIError.prototype = new SnapCar.Error();
 
-    defineProperties(SnapCar.APIError, {
+    SnapCar.defineProperties(SnapCar.APIError, {
         
         /**
          * The type of error.
@@ -717,21 +717,21 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.ServiceClass = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.ServiceClass.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'name':
-                    return getTextInLocale(val);
+                    return SnapCar.getTextInLocale(val);
             }
         });
         
         return context;
     };
 
-    defineProperties(SnapCar.ServiceClass, {
+    SnapCar.defineProperties(SnapCar.ServiceClass, {
         
         /**
          * The service class unique identifier.
@@ -762,22 +762,22 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.MeetingPoint = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.MeetingPoint.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'name':
                 case 'rdv_point':
-                    return getTextInLocale(val);
+                    return SnapCar.getTextInLocale(val);
             }
         });
         
         return context;
     };
 
-    defineProperties(SnapCar.MeetingPoint, {
+    SnapCar.defineProperties(SnapCar.MeetingPoint, {
        
         /**
          * Unique meeting point identifier.
@@ -819,15 +819,15 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.SpecialArea = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.SpecialArea.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'name':
                 case 'menu_name':
-                    return getTextInLocale(val);
+                    return SnapCar.getTextInLocale(val);
                     break;
                 case 'meeting_points':
                 case 'meeting_points_nameboard':
@@ -841,7 +841,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.SpecialArea, {
+    SnapCar.defineProperties(SnapCar.SpecialArea, {
        
         /**
          * Unique identifier.
@@ -966,11 +966,11 @@ var SnapCar = (function (SnapCar, $) {
      */
     
     SnapCar.ETAResult = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.ETAResult.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'service_class':
                     return SnapCar.ServiceClass.populateProperties(new SnapCar.ServiceClass(), val);
@@ -980,7 +980,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.ETAResult, {
+    SnapCar.defineProperties(SnapCar.ETAResult, {
         
         /**
          * Availability of the service class. Can be one of the SnapCar.ETAResultStatuses object values.
@@ -1054,15 +1054,15 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.PaymentMethod = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.PaymentMethod.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload);
+        SnapCar.processObjectPayload(context, payload);
         return context;
     };
     
-    defineProperties(SnapCar.PaymentMethod, {
+    SnapCar.defineProperties(SnapCar.PaymentMethod, {
         
         /**
          * Payment method unique identifier.
@@ -1127,11 +1127,11 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.Rider = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.Rider.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'payment_method':
                     return SnapCar.PaymentMethod.populateProperties(new SnapCar.PaymentMethod(), val);
@@ -1141,7 +1141,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.Rider, {
+    SnapCar.defineProperties(SnapCar.Rider, {
         
         /**
          * The rider unique identifier.
@@ -1256,11 +1256,11 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.BookingPrice = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.BookingPrice.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'expiry_date':
                     return new Date(parseInt(val) * 1000);
@@ -1270,7 +1270,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.BookingPrice, {
+    SnapCar.defineProperties(SnapCar.BookingPrice, {
         
         /**
          * The booking price unique identifier.
@@ -1358,7 +1358,7 @@ var SnapCar = (function (SnapCar, $) {
 
         var booking = this.booking;
         
-        var promise = performAPICall({
+        var promise = SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings/prices/" + this.id + "/confirm",
             method: 'POST',
             data: additionalParameters
@@ -1378,16 +1378,16 @@ var SnapCar = (function (SnapCar, $) {
      */
     
     SnapCar.CancellationFee = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.CancellationFee.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload);
+        SnapCar.processObjectPayload(context, payload);
         
         return context;
     };
 
-    defineProperties(SnapCar.CancellationFee, {
+    SnapCar.defineProperties(SnapCar.CancellationFee, {
         
         /**
          * Whether a cancellation fee is charged. 
@@ -1443,7 +1443,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.Address = function (name, city, postalCode, country) {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
 
         this.name = name;
         this.city = city;
@@ -1452,12 +1452,12 @@ var SnapCar = (function (SnapCar, $) {
     };
 
     SnapCar.Address.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload);
+        SnapCar.processObjectPayload(context, payload);
         
         return context;
     };
 
-    defineProperties(SnapCar.Address, {
+    SnapCar.defineProperties(SnapCar.Address, {
         
         /**
          * The name of the address. Typically the number and street name.
@@ -1511,14 +1511,14 @@ var SnapCar = (function (SnapCar, $) {
      */
     
     SnapCar.Location = function (lat, lng, address) {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
         this.lat = lat;        
         this.lng = lng;
         this.address = address;
     };
 
     SnapCar.Location.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'address':
                     return SnapCar.Address.populateProperties(new SnapCar.Address(), val);
@@ -1528,7 +1528,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.Location, {
+    SnapCar.defineProperties(SnapCar.Location, {
         
         /**
          * The location latitude.
@@ -1570,15 +1570,15 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.GeoPoint = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.GeoPoint.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload);
+        SnapCar.processObjectPayload(context, payload);
         return context;
     };
 
-    defineProperties(SnapCar.GeoPoint, {
+    SnapCar.defineProperties(SnapCar.GeoPoint, {
         
         /**
          * The point latitude.
@@ -1609,15 +1609,15 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.BillingDocument = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.BillingDocument.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload);
+        SnapCar.processObjectPayload(context, payload);
         return context;
     };
 
-    defineProperties(SnapCar.BillingDocument, {
+    SnapCar.defineProperties(SnapCar.BillingDocument, {
         
         /**
          * Billing document unique identifier.
@@ -1690,15 +1690,15 @@ var SnapCar = (function (SnapCar, $) {
      */
     
     SnapCar.Vehicle = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.Vehicle.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'model':
                 case 'color':
-                    return getTextInLocale(val);
+                    return SnapCar.getTextInLocale(val);
                     break;
                 case 'position':
                     return SnapCar.GeoPoint.populateProperties(new SnapCar.GeoPoint(), val);
@@ -1708,7 +1708,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.Vehicle, {
+    SnapCar.defineProperties(SnapCar.Vehicle, {
 
         /**
          * The vehile model.
@@ -1759,15 +1759,15 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.Driver = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.Driver.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload);
+        SnapCar.processObjectPayload(context, payload);
         return context;
     };
 
-    defineProperties(SnapCar.Driver, {
+    SnapCar.defineProperties(SnapCar.Driver, {
 
         /**
          * The driver display name.
@@ -1808,15 +1808,15 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.TimestampedPoint = function () {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.TimestampedPoint.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload);
+        SnapCar.processObjectPayload(context, payload);
         return context;
     };
 
-    defineProperties(SnapCar.TimestampedPoint, {
+    SnapCar.defineProperties(SnapCar.TimestampedPoint, {
 
         /**
          * The date at which the coordinate has been saved.
@@ -1859,11 +1859,11 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.BookingHistory = function (limit) {
         this.limit = limit || 20;
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
     };
 
     SnapCar.BookingHistory.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'history':
                     return $.map(val, function (payload) {
@@ -1874,7 +1874,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.BookingHistory, {
+    SnapCar.defineProperties(SnapCar.BookingHistory, {
 
         /**
          * The total number of bookings in the history.
@@ -1958,7 +1958,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.Booking = function (rider, startLocation, endLocation, plannedStartDate, nameboard, driverInfo, meetingPoint) {
-        bootstrapInstanceProperties(this);
+        SnapCar.bootstrapInstanceProperties(this);
 
         this.rider = rider;
         this.startLocation = startLocation;
@@ -1970,7 +1970,7 @@ var SnapCar = (function (SnapCar, $) {
     };
 
     SnapCar.Booking.populateProperties = function (context, payload) {
-        processObjectPayload(context, payload, function (key, val) {
+        SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
                 case 'planned_start_date':
                 case 'creation_date':
@@ -2008,7 +2008,7 @@ var SnapCar = (function (SnapCar, $) {
         return context;
     };
 
-    defineProperties(SnapCar.Booking, {
+    SnapCar.defineProperties(SnapCar.Booking, {
 
         /**
          * The booking unique identifier.
@@ -2113,7 +2113,7 @@ var SnapCar = (function (SnapCar, $) {
         /**
          * The date at which the rider has been dropped off.
          * 
-         * @property endDate
+         * @property history
          * @final
          * @type Date
          */
@@ -2249,7 +2249,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.Booking.prototype.cancellationPrice = function () {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings/" + this.id + "/cancellation_price"
         }, function (data) {
             var result = new SnapCar.CancellationFee();
@@ -2267,7 +2267,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.Booking.prototype.cancel = function () {
         var booking = this;
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings/" + this.id + "/cancel",
             method: 'POST'
         }, function (data) {
@@ -2285,7 +2285,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.Booking.prototype.refresh = function () {
         var booking = this;
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings/" + booking.id
         }, function (data) {
             booking.constructor.populateProperties(booking, data);
@@ -2396,7 +2396,7 @@ var SnapCar = (function (SnapCar, $) {
 
         var booking = this;
         
-        var promise = performAPICall({
+        var promise = SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings",
             method: 'POST',
             data: parameters
@@ -2433,7 +2433,7 @@ var SnapCar = (function (SnapCar, $) {
 
         var booking = this;
 
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings/prices",
             method: 'POST',
             data: parameters
@@ -2596,9 +2596,9 @@ var SnapCar = (function (SnapCar, $) {
 
     // API Calls
 
-    var performAPICall = function (requestParams, resultProcessor) {
+    SnapCar.performAPICall = function (requestParams, resultProcessor, checkToken) {
 
-        if (typeof SnapCar.token === 'undefined') {
+        if ((typeof checkToken === 'undefined' || checkToken) && typeof SnapCar.token === 'undefined') {
             throw new SnapCar.Error('missing_token', 'You have to provide a SnapCar API token in order to perform API calls.');
         }
 
@@ -2625,7 +2625,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.eta = function (lat, lng) {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/info/eta",
             data: {lat: lat, lng: lng}
         }, function (data) {
@@ -2648,7 +2648,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.serviceClasses = function (lat, lng) {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/info/service_classes",
             data: {lat: lat, lng: lng}
         }, function (data) {
@@ -2670,7 +2670,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.meetingPoints = function (lat, lng) {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/info/meeting_points",
             data: {lat: lat, lng: lng}
         }, function (data) {
@@ -2689,7 +2689,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.user = function () {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/users/me"
         }, function (data) {
             var result = new SnapCar.Rider(data);
@@ -2707,7 +2707,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.activeBookings = function () {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings"
         }, function (data) {
             return $.map(data, function (payload) {
@@ -2729,7 +2729,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.bookingsHistory = function (offset, limit) {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings/history",
             data: {
                 offset: offset || 0,
@@ -2752,7 +2752,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.booking = function (id) {
-        return performAPICall({
+        return SnapCar.performAPICall({
             url: SnapCar.baseDomain + "/bookings/" + id
         }, function (data) {
             var result = new SnapCar.Booking();
