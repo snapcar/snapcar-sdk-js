@@ -91,7 +91,8 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['sync', 'clean', 'concat', 'uglify', 'prompt', 'create-config', 'mocha']);
+  grunt.registerTask('test', ['prompt', 'create-config', 'mocha']);
+  grunt.registerTask('default', ['sync', 'clean', 'concat', 'uglify', 'test']);
   grunt.registerTask('doc', ['default', 'yuidoc']);
   grunt.registerTask('deploy-doc', ['doc', 'gh-pages']);
 
