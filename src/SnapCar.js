@@ -2127,7 +2127,7 @@ console.log(SnapCar.APIError.mapping);
         /**
          * The date at which the rider has been dropped off.
          * 
-         * @property history
+         * @property endDate
          * @final
          * @type Date
          */
