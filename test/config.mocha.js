@@ -1,4 +1,4 @@
 mocha.setup({
 	ui:"bdd", 
-	timeout:3000
+	timeout:10000
 });

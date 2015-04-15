@@ -1,7 +1,9 @@
 bower_components
 node_modules
-apidocs
+docs
 
 npm-debug.log
 
 test/config.js
+
+.grunt

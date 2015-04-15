@@ -1,19 +1,23 @@
 {
   "name": "snapcar-sdk-js",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "main": "dist/SnapCar.min.js",
   "description": "The official SnapCar SDK for JavaScript that allows communication between your browser application and the SnapCar platform through the SnapCar Public API.",
   "dependencies": {},
   "devDependencies": {
-    "gh-pages": "~0.2.0",
-    "yuidoc-lucid-theme": "~0.1.1",
-    "yuidocjs": "~0.3.50",
+    "chai": "~2.1.2",
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-yuidoc": "^0.5.2",
+    "grunt-gh-pages": "~0.6.0",
+    "grunt-mocha": "^0.4.12",
+    "grunt-prompt": "^1.3.0",
+    "grunt-sync-pkg": "^0.1.2",
+    "matchdep": "~0.1.2",
     "mocha": "~2.2.1",
-    "chai": "~2.1.2"
-  },
-  "scripts": {
-    "postpublish": "npm run publish-yuidoc",
-    "yuidoc": "yuidoc",
-    "publish-yuidoc": "npm run yuidoc && node ./scripts/publish-docs.js"
+    "yuidoc-lucid-theme": "~0.1.1"
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,5 @@
   "bugs": {
     "url": "https://github.com/snapcar/snapcar-sdk-js/issues"
   },
-  "homepage": "http://snapcar.github.io/snapcar-sdk-js/"
+  "homepage": "http://snapcar.github.io/snapcar-sdk-js/classes/SnapCar.html"
 }
