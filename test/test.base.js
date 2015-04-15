@@ -30,6 +30,10 @@ describe("SnapCar", function() {
     it('Should return bookings history', function(done){
       
       SnapCar.bookingsHistory().done(function(results) {
+        expect(results).to.be.an.instanceof(SnapCar.BookingHistory);
+        expect(results).to.have.property("count");
+        expect(results).to.have.property("offset");
+        expect(results).to.have.property("total");
         expect(results.history).to.be.an.instanceof(Array);
 
         $.each(results.history, function (key, result) {
