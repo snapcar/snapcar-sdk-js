@@ -1,4 +1,48 @@
+var checkBooking = function (booking) {
+  expect(booking).to.be.an.instanceof(SnapCar.Booking);
+  expect(booking).to.have.property("id").and.to.be.not.empty;
+  expect(booking).to.have.property("driverInfo");
+  expect(booking).to.have.property("nameboard").and.to.be.a('boolean');
+  expect(booking).to.have.property("creationDate").and.to.be.an.instanceof(Date);
+}
+
 describe("SnapCar", function() {
+
+  describe('#activeBookings()', function(){
+    it('Should return active bookings', function(done){
+      
+      SnapCar.activeBookings().done(function(results) {
+        expect(results).to.be.an.instanceof(Array);
+
+        $.each(results, function (key, result) {
+          checkBooking(result);
+        });
+
+        done();
+      }).fail(function(error) {
+        done(error);
+      });
+
+    });
+  });
+
+  describe('#bookingsHistory()', function(){
+    it('Should return bookings history', function(done){
+      
+      SnapCar.bookingsHistory().done(function(results) {
+        expect(results.history).to.be.an.instanceof(Array);
+
+        $.each(results.history, function (key, result) {
+          checkBooking(result);
+        });
+
+        done();
+      }).fail(function(error) {
+        done(error);
+      });
+
+    });
+  });
 
   describe('#user()', function(){
     it('Should return the user', function(done){
@@ -83,7 +127,6 @@ describe("SnapCar", function() {
 
     });    
   });  
-
 
   describe("Set locale", function() {
     it("Locale should be set", function() {
