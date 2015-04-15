@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SnapCar - snapcar-sdk-js</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="snapcar-sdk-js" src="https://avatars1.githubusercontent.com/u/7704703?v=3&amp;s=200" style="max-height: 65%;" title="snapcar-sdk-js">
+        
+            snapcar-sdk-js
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.1.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/SnapCar", "classes/SnapCar.Address", "classes/SnapCar.APIError", "classes/SnapCar.BillingDocument", "classes/SnapCar.BillingDocumentTypes", "classes/SnapCar.Booking", "classes/SnapCar.BookingCancellationReasons", "classes/SnapCar.BookingHistory", "classes/SnapCar.BookingPrice", "classes/SnapCar.BookingStatuses", "classes/SnapCar.CancellationFee", "classes/SnapCar.ConfigError", "classes/SnapCar.Driver", "classes/SnapCar.Error", "classes/SnapCar.ETAResult", "classes/SnapCar.ETAResultStatuses", "classes/SnapCar.GeoPoint", "classes/SnapCar.InvalidParametersError", "classes/SnapCar.Location", "classes/SnapCar.MeetingPoint", "classes/SnapCar.PaymentMethod", "classes/SnapCar.Rider", "classes/SnapCar.RiderStatuses", "classes/SnapCar.ServiceClass", "classes/SnapCar.SpecialArea", "classes/SnapCar.SpecialAreaTypes", "classes/SnapCar.TimestampedPoint", "classes/SnapCar.Vehicle"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/SnapCar.html">SnapCar</a></li>
+            
+                <li><a href="../classes/SnapCar.Address.html">SnapCar.Address</a></li>
+            
+                <li><a href="../classes/SnapCar.APIError.html">SnapCar.APIError</a></li>
+            
+                <li><a href="../classes/SnapCar.BillingDocument.html">SnapCar.BillingDocument</a></li>
+            
+                <li><a href="../classes/SnapCar.BillingDocumentTypes.html">SnapCar.BillingDocumentTypes</a></li>
+            
+                <li><a href="../classes/SnapCar.Booking.html">SnapCar.Booking</a></li>
+            
+                <li><a href="../classes/SnapCar.BookingCancellationReasons.html">SnapCar.BookingCancellationReasons</a></li>
+            
+                <li><a href="../classes/SnapCar.BookingHistory.html">SnapCar.BookingHistory</a></li>
+            
+                <li><a href="../classes/SnapCar.BookingPrice.html">SnapCar.BookingPrice</a></li>
+            
+                <li><a href="../classes/SnapCar.BookingStatuses.html">SnapCar.BookingStatuses</a></li>
+            
+                <li><a href="../classes/SnapCar.CancellationFee.html">SnapCar.CancellationFee</a></li>
+            
+                <li><a href="../classes/SnapCar.ConfigError.html">SnapCar.ConfigError</a></li>
+            
+                <li><a href="../classes/SnapCar.Driver.html">SnapCar.Driver</a></li>
+            
+                <li><a href="../classes/SnapCar.Error.html">SnapCar.Error</a></li>
+            
+                <li><a href="../classes/SnapCar.ETAResult.html">SnapCar.ETAResult</a></li>
+            
+                <li><a href="../classes/SnapCar.ETAResultStatuses.html">SnapCar.ETAResultStatuses</a></li>
+            
+                <li><a href="../classes/SnapCar.GeoPoint.html">SnapCar.GeoPoint</a></li>
+            
+                <li><a href="../classes/SnapCar.InvalidParametersError.html">SnapCar.InvalidParametersError</a></li>
+            
+                <li><a href="../classes/SnapCar.Location.html">SnapCar.Location</a></li>
+            
+                <li><a href="../classes/SnapCar.MeetingPoint.html">SnapCar.MeetingPoint</a></li>
+            
+                <li><a href="../classes/SnapCar.PaymentMethod.html">SnapCar.PaymentMethod</a></li>
+            
+                <li><a href="../classes/SnapCar.Rider.html">SnapCar.Rider</a></li>
+            
+                <li><a href="../classes/SnapCar.RiderStatuses.html">SnapCar.RiderStatuses</a></li>
+            
+                <li><a href="../classes/SnapCar.ServiceClass.html">SnapCar.ServiceClass</a></li>
+            
+                <li><a href="../classes/SnapCar.SpecialArea.html">SnapCar.SpecialArea</a></li>
+            
+                <li><a href="../classes/SnapCar.SpecialAreaTypes.html">SnapCar.SpecialAreaTypes</a></li>
+            
+                <li><a href="../classes/SnapCar.TimestampedPoint.html">SnapCar.TimestampedPoint</a></li>
+            
+                <li><a href="../classes/SnapCar.Vehicle.html">SnapCar.Vehicle</a></li>
+            
+        </ul>
+    </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>SnapCar</h1>
+</div>
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+<div class="yuidoc-class-description">
+<h1 id="introduction">Introduction</h1>
+<p>This is the main module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent on jQuery. The <a href="https://github.com/snapcar/snapcar-sdk-js">source code</a> is available on Github.</p>
+<p>Before using this module, you must initialize it with a user token by setting the <code>SnapCar.token</code> property. Please refer to <a href="http://developer.snapcar.com/">the general SnapCar API documentation</a> for more information on how to obtain a user token.</p>
+<p>The SnapCar SDK for JavaScript does not manage user authentication. The reason for this is that obtaining a user token is done through a request that requires your API secret value to be provided. The API secret value is sensitive information that should never be revealed to the user. However, setting it in the JavaScript SDK implies that your users can access it by digging into the source code. Which is why such work flow must be implemented on the server side. Once initialized with a token, the module allows you to perform actions such as making bookings or getting ETAs on behalf of the authenticated user.</p>
+<p>In general, all methods that are in charge of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error occurs during the request, the promises are rejected with an instance of <code>SnapCar.APIError</code> (containing more info about the issue). Look at the examples below for a comprehensive vision of the work flow.</p>
+<p><br/> 
+<br/> </p>
+<h1 id="getting-started-and-examples">Getting started and examples</h1>
+<p><br/> </p>
+<h2 id="setting-a-user-token">Setting a user token</h2>
+<p>As explained above, you need to provide a token before using the SDK.</p>
+<pre class="code prettyprint"><code>SnapCar.token = "3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O";</code></pre>
+<p><br/> </p>
+<h2 id="getting-current-closest-drivers-availability-at-a-specific-location">Getting current closest drivers availability at a specific location</h2>
+<pre class="code prettyprint"><code>SnapCar.eta(48.859041, 2.327889).done(function (result) {
+     $.each(result, function (key, info) {
+
+       // info is an instance of SnapCar.ETAResult
+       // you get info about eta.serviceClass
+
+       if (info.status === SnapCar.ETAResultStatuses.OK) {
+           // an ETA is available and set in info.eta
+       } else if (info.status === SnapCar.ETAResultStatuses.UNAVAILABLE) {
+           // this service class is not available at the moment
+       }
+
+     });
+});</code></pre>
+<p><br/> </p>
+<h2 id="getting-meeting-points">Getting meeting points</h2>
+<p>You can easily find if there are meeting points at a specific location (such as a train station or an airport).</p>
+<pre class="code prettyprint"><code>SnapCar.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
+
+    // There&#39;s a special area at this location. 
+    // Check out the specialArea info (which is an instance of SnapCar.SpecialArea)
+
+}).fail(function (error) {
+    if (error.code === 404) {
+        // No special area/meeting points at this location
+    } else {
+        // An other error occurred
+    }
+});</code></pre>
+<p><br/> </p>
+<h2 id="let-s-get-all-user-s-active-bookings-and-cancel-them">Let&#39;s get all user&#39;s active bookings and cancel them</h2>
+<pre class="code prettyprint"><code>SnapCar.activeBookings().done(function (bookings) {
+
+       $.each(bookings, function(key, booking) {
+
+           // For each booking, we want to know the cancellation price.
+           // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren&#39;t called. The failure callbacks are called instead.
+           // You may want to check if the cancellation is charged. Check out the SnapCar.CancellationFee reference for more information.
+
+           booking.cancellationPrice().done(function (cancellationFee) {
+               booking.cancel().done(function () {
+                   // Booking properly cancelled
+               });
+           });
+       });
+});</code></pre>
+<p><br/> </p>
+<h2 id="we-want-to-get-all-user-s-past-bookings">We want to get all user&#39;s past bookings</h2>
+<pre class="code prettyprint"><code>SnapCar.bookingsHistory().done(function (history) {
+
+       $.each(history.history, function(key, booking) {
+           // booking is an instance of SnapCar.Booking
+       });
+
+       // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()
+});</code></pre>
+<p><br/> </p>
+<h2 id="let-s-create-a-booking-on-demand-with-no-planned-pick-up-date-and-without-flat-price-">Let&#39;s create a booking on demand (with no planned pick up date) and without flat price.</h2>
+<pre class="code prettyprint"><code>// First, we get the info about the authenticated user
+SnapCar.user().done(function (user) {
+
+      // You may check the user.status value in order to know if he is allowed to make bookings
+
+      // We fetch the allowed service classes
+      SnapCar.serviceClasses().done(function (servicesClasses) {
+
+          // We create a booking
+          var booking = new SnapCar.Booking();
+
+          // We define the rider and its pick up location
+          booking.rider = user;
+          booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#39;Aéroport de Paris-Orly&#39;, &#39;Orly&#39;, &#39;94390&#39;, &#39;France&#39;));
+
+          // We also need to define the service class. Here we take one service class randomly.
+          // In real life, you may present the different service class names to the user for selection.
+          booking.serviceClass = servicesClasses[0];
+
+          // We confirm the booking, this sends a request to the SnapCar platform
+          booking.confirm()
+
+          // This handler is called when the booking is either accepted by a driver or cancelled
+          .done(function () {
+
+              if (booking.status === SnapCar.BookingStatuses.GOING_TO_GET) {
+                  // A driver has accepted the booking
+              }
+
+              else if (booking.status === SnapCar.BookingStatuses.CANCELLED) {
+                  // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCar.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.
+              }
+
+              else {
+                  // Other status, unlikely to happen unless the driver has switched to another status in the meantime.
+              }
+
+          // This handler is called when the SnapCar platform confirms the booking creation
+          }).progress(function(error) {
+
+              // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.
+
+          // This handler is called upon error (ex: no driver available)
+          }).fail(function(error) {
+
+              if (error.message === "no_driver") {
+                  // No driver is available for the required service class. You may try with another service class.
+              }
+
+              // Check out the documentation for a comprehensive list of error messages.
+
+          });
+      });
+  });</code></pre>
+<p><br/> </p>
+<h2 id="let-s-create-a-booking-in-the-future-with-a-planned-pick-up-date-and-without-flat-price-">Let&#39;s create a booking in the future (with a planned pick up date) and without flat price.</h2>
+<pre class="code prettyprint"><code>// First, we get the info about the authenticated user
+SnapCar.user().done(function (user) {
+
+      // You may check the user.status value in order to know if he is allowed to make bookings
+
+      // We fetch the allowed service classes
+      SnapCar.serviceClasses().done(function (servicesClasses) {
+
+          // We create a booking
+          var booking = new SnapCar.Booking();
+
+          // We define the rider and its pick up location
+          booking.rider = user;
+          booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#39;Aéroport de Paris-Orly&#39;, &#39;Orly&#39;, &#39;94390&#39;, &#39;France&#39;));
+
+          // We define the date. Warning: you must ensure that the timezone is correct!
+          booking.plannedStartDate = new Date("2016-01-01 00:00:00");
+
+          // We also need to define the service class. Here we take one service class randomly.
+          // In real life, you may present the different service class names to the user for selection.
+          booking.serviceClass = servicesClasses[0];
+
+          // We confirm the booking, this sends a request to the SnapCar platform
+          booking.confirm()
+
+          // This handler is called when the booking is confirmed
+          .done(function () {
+
+              if (booking.status === SnapCar.BookingStatuses.PENDING) {
+                  // Your booking is waiting for dispatch in the future
+              }
+
+          // This handler is called upon error (ex: no driver available)
+          }).fail(function(error) {
+
+              // Check out the documentation for a comprehensive list of error messages.
+
+          });
+      });
+  });</code></pre>
+<p><br/> </p>
+<h2 id="let-s-create-a-booking-in-the-future-with-a-planned-pick-up-date-and-with-a-flat-price-">Let&#39;s create a booking in the future (with a planned pick up date) and with a flat price.</h2>
+<pre class="code prettyprint"><code>// First, we get the info about the authenticated user
+SnapCar.user().done(function (user) {
+
+    // You may check the user.status value in order to know if he is allowed to make bookings
+
+    // We create a booking
+    var booking = new SnapCar.Booking();
+
+    // We define the rider and its pick up location
+    booking.rider = user;
+    booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#39;Aéroport de Paris-Orly&#39;, &#39;Orly&#39;, &#39;94390&#39;, &#39;France&#39;));
+    booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address(&#39;3 Boulevard du Palais&#39;, &#39;Paris&#39;, &#39;75001&#39;, &#39;France&#39;));
+    booking.driverInfo = "Some useful info for you.";
+    booking.nameboard = true; // We want a nameboard, for the example
+
+    // We define the date. Warning: you must ensure that the timezone is correct!
+    booking.plannedStartDate = new Date("2016-01-01 00:00:00");
+
+    booking.flatPrices().done(function(prices) {
+
+        // We have several prices, we will confirm the first one.
+        // In real life, you may present the different prices for each service class to the user for selection.
+
+        // We confirm the booking, this sends a request to the SnapCar platform
+        prices[0].confirm()
+
+        // This handler is called when the booking is confirmed
+        .done(function () {
+
+            if (booking.status === SnapCar.BookingStatuses.PENDING) {
+                // Your booking is waiting for dispatch in the future
+            }
+
+        // This handler is called upon error (ex: no driver available)
+        }).fail(function(error) {
+
+            // Check out the documentation for a comprehensive list of error messages.
+
+        });        
+    });
+});</code></pre>
+<p><br/> </p>
+<h2 id="let-s-create-a-booking-on-demand-without-a-planned-pick-up-date-and-with-a-flat-price-">Let&#39;s create a booking on demand (without a planned pick up date) and with a flat price.</h2>
+<pre class="code prettyprint"><code>// First, we get the info about the authenticated user
+SnapCar.user().done(function (user) {
+
+    // You may check the user.status value in order to know if he is allowed to make bookings
+
+    // We create a booking
+    var booking = new SnapCar.Booking();
+
+    // We define the rider and its pick up location
+    booking.rider = user;
+    booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#39;Aéroport de Paris-Orly&#39;, &#39;Orly&#39;, &#39;94390&#39;, &#39;France&#39;));
+    booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address(&#39;3 Boulevard du Palais&#39;, &#39;Paris&#39;, &#39;75001&#39;, &#39;France&#39;));
+
+    booking.flatPrices().done(function(prices) {
+
+        // We have several prices, we will confirm the first one.
+        // In real life, you may present the different prices for each service class to the user for selection.
+
+        // We confirm the booking, this sends a request to the SnapCar platform
+        prices[0].confirm()
+
+        // This handler is called when the booking is either accepted by a driver or cancelled
+        .done(function () {
+
+            if (booking.status === SnapCar.BookingStatuses.GOING_TO_GET) {
+                // A driver has accepted the booking
+            }
+
+            else if (booking.status === SnapCar.BookingStatuses.CANCELLED) {
+                // Booking is cancelled, check out the booking.reason property to know why. It is probably set as SnapCar.BookingCancellationReasons.NO_DRIVER which means that no driver could accept the booking.
+            }
+
+            else {
+                // Other status, unlikely to happen unless the driver has switched to another status in the meantime.
+            }
+
+        // This handler is called when the SnapCar platform confirms the booking creation
+        }).progress(function(error) {
+
+            // Booking creation confirmed by the platform. Dispatch in progress, waiting for driver acceptance.
+
+        // This handler is called upon error (ex: no driver available)
+        }).fail(function(error) {
+
+            if (error.message === "no_driver") {
+                // No driver is available for the required service class. You may try with another service class.
+            }
+
+            // Check out the documentation for a comprehensive list of error messages.
+
+        });       
+    });
+});</code></pre>
+<p><br/> </p>
+<h2 id="let-s-create-a-booking-in-advance-with-a-planned-pick-up-date-without-flat-price-and-with-a-meeting-point-">Let&#39;s create a booking in advance (with a planned pick up date), without flat price and with a meeting point.</h2>
+<p>In the example below, we make this booking only if we find specific meeting points at this location. In real life, you would just check if there are meeting points and would propose the list to your user for selection but would make the booking anyway.</p>
+<pre class="code prettyprint"><code>
+SnapCar.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
+
+  // There&#39;s a special area at this location. 
+
+     // Let&#39;s create a booking on demand (with no planned pick up date) and without flat price.
+
+     // First, we get the info about the authenticated user
+     SnapCar.user().done(function (user) {
+
+           // You may check the user.status value in order to know if he is allowed to make bookings
+
+           // We fetch the allowed service classes
+           SnapCar.serviceClasses().done(function (servicesClasses) {
+
+               // We create a booking
+               var booking = new SnapCar.Booking();
+
+               // We define the rider and its pick up location
+               booking.rider = user;
+               booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#39;Aéroport de Paris-Orly&#39;, &#39;Orly&#39;, &#39;94390&#39;, &#39;France&#39;));
+
+               // We define the date. Warning: you must ensure that the timezone is correct!
+               booking.plannedStartDate = new Date("2016-01-01 00:00:00");
+
+               // We also need to define the service class. Here we take one service class randomly.
+               // In real life, you may present the different service class names to the user for selection.
+               booking.serviceClass = servicesClasses[0];
+
+               // We define the first meeting point
+               // In real life, you may present the different meeting points to the user for selection.
+               booking.meetingPoint = specialArea.meetingPoints[0];
+
+               // We confirm the booking, this sends a request to the SnapCar platform
+               booking.confirm()
+
+               // This handler is called when the booking is confirmed
+               .done(function () {
+
+                   if (booking.status === SnapCar.BookingStatuses.PENDING) {
+                       // Your booking is waiting for dispatch in the future
+                   }
+
+               // This handler is called upon error (ex: no driver available)
+               }).fail(function(error) {
+
+                   // Check out the documentation for a comprehensive list of error messages.
+
+               });
+
+           });
+       });
+
+}).fail(function (error) {
+   if (error.code === 404) {
+       // No special area/meeting points at this location
+   } else {
+       // An other error occurred
+   }
+});</code></pre>
+
+</div>
+
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				
+				
+				<li><a href="#method-activeBookings"><span class="im">activeBookings</span>()</a></li>
+				
+				
+				
+				<li><a href="#method-booking"><span class="im">booking</span>(<span class="ia">id</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-bookingsHistory"><span class="im">bookingsHistory</span>(<span class="ia">offset</span><span class="ia">limit</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-eta"><span class="im">eta</span>(<span class="ia">lat</span><span class="ia">lng</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-meetingPoints"><span class="im">meetingPoints</span>(<span class="ia">lat</span><span class="ia">lng</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-serviceClasses"><span class="im">serviceClasses</span>(<span class="ia">lat</span><span class="ia">lng</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-user"><span class="im">user</span>()</a></li>
+				
+				
+			</ul>
+		</li>
+		
+
+		
+		<li>
+			<strong>Properties</strong>
+			<ul>
+				
+				<li><a href="#prop-baseDomain"><span class="ip">baseDomain</span></a></li>
+				
+				<li><a href="#prop-fallbackLocale"><span class="ip">fallbackLocale</span></a></li>
+				
+				<li><a href="#prop-locale"><span class="ip">locale</span></a></li>
+				
+				<li><a href="#prop-token"><span class="ip">token</span></a></li>
+				
+			</ul>
+		</li>
+		
+
+		
+
+		
+	</ul>
+</div>
+
+<!-- details -->
+
+
+
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+       		
+        	
+            <div id="method-activeBookings" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>activeBookings</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+		<span class="returns-inline">
+			<span class="type">jQuery.Promise</span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_SnapCar.js.html#l2701"><code>src&#x2F;SnapCar.js:2701</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Gets the currently authentified rider&#39;s active bookings.</p>
+</div>
+	
+
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type">jQuery.Promise</span>:
+					
+					<p>A Promise object. Success handlers are called with an array of SnapCar.Booking as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+            <div id="method-booking" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>booking</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>id</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type">jQuery.Promise</span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_SnapCar.js.html#l2745"><code>src&#x2F;SnapCar.js:2745</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Gets information about a specific booking.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">id</code>
+						<span class="type">Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The booking unique identifier.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type">jQuery.Promise</span>:
+					
+					<p>A Promise object. Success handlers are called with a SnapCar.Booking as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+            <div id="method-bookingsHistory" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>bookingsHistory</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code class="optional">offset=0</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">limit=20</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type">jQuery.Promise</span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_SnapCar.js.html#l2721"><code>src&#x2F;SnapCar.js:2721</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Gets the currently authentified rider&#39;s bookings history.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name optional">[offset=0]</code>
+						<span class="type">Number</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The position of the first booking in the pagination.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[limit=20]</code>
+						<span class="type">Number</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The maximum number of bookings to return.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type">jQuery.Promise</span>:
+					
+					<p>A Promise object. Success handlers are called with a SnapCar.BookingHistory as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+            <div id="method-eta" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>eta</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>lat</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>lng</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type">jQuery.Promise</span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_SnapCar.js.html#l2617"><code>src&#x2F;SnapCar.js:2617</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Retrieves current ETA and availability for each service class.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">lat</code>
+						<span class="type">Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Latitude of the position at which you want to get the current eta and availability.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">lng</code>
+						<span class="type">Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Longitude of the position at which you want to get the current eta and availability.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type">jQuery.Promise</span>:
+					
+					<p>A Promise object. Success handlers are called with an array of SnapCar.ETAResult as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+            <div id="method-meetingPoints" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>meetingPoints</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>lat</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>lng</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type">jQuery.Promise</span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_SnapCar.js.html#l2663"><code>src&#x2F;SnapCar.js:2663</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Retrieves meeting point information at a specific location.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">lat</code>
+						<span class="type">Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Latitude of the position at which you want to get the information.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">lng</code>
+						<span class="type">Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Longitude of the position at which you want to get the information.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type">jQuery.Promise</span>:
+					
+					<p>A Promise object. Success handlers are called with a SnapCar.SpecialArea as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error. Be aware that if no specific meeting point information is found at a location, the failure callback will be called with a SnapCar.APIError having a 404 code value.</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+            <div id="method-serviceClasses" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>serviceClasses</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>lat</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>lng</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type">jQuery.Promise</span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_SnapCar.js.html#l2640"><code>src&#x2F;SnapCar.js:2640</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Retrieves a list of all allowed service classes at a specific location.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">lat</code>
+						<span class="type">Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Latitude of the position at which you want to get the allowed service classes.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">lng</code>
+						<span class="type">Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Longitude of the position at which you want to get the allowed service classes.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type">jQuery.Promise</span>:
+					
+					<p>A Promise object. Success handlers are called with an array of SnapCar.ServiceClass as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+            <div id="method-user" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>user</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+		<span class="returns-inline">
+			<span class="type">jQuery.Promise</span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_SnapCar.js.html#l2683"><code>src&#x2F;SnapCar.js:2683</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Gets the currently authenticated user information.</p>
+</div>
+	
+
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type">jQuery.Promise</span>:
+					
+					<p>A Promise object. Success handlers are called with a SnapCar.Rider as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        </div>
+    </div>
+
+
+
+    <div id="properties" class="page-section">
+        <h2 class="off-left">Properties</h2>
+
+        <div class="item-list">
+        
+            <div id="prop-baseDomain" class="property item">
+    <h3 class="name"><code>baseDomain</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_SnapCar.js.html#l431"><code>src&#x2F;SnapCar.js:431</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The web service base domain on which API calls are made. You can change this value in order to perform requests on demo/sandbox web services rather than the production one.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> &quot;https://api.snapcar.com/public&quot;</p>
+    
+
+    
+
+    
+</div>
+
+        
+            <div id="prop-fallbackLocale" class="property item">
+    <h3 class="name"><code>fallbackLocale</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_SnapCar.js.html#l462"><code>src&#x2F;SnapCar.js:462</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Locale used as a default in case you would provide a non supported locale value. Its value is "en".</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+        
+            <div id="prop-locale" class="property item">
+    <h3 class="name"><code>locale</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_SnapCar.js.html#l450"><code>src&#x2F;SnapCar.js:450</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The user locale. As you may know, some information returned through the API are localized (ex. : the meeting point details). You need to set this value in order to receive data localized in the user language if supported. The fallbackLocale value is used otherwise.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> &quot;en&quot;</p>
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>SnapCar.locale = "fr";</code></pre>
+
+            </div>
+        </div>
+    
+
+    
+</div>
+
+        
+            <div id="prop-token" class="property item">
+    <h3 class="name"><code>token</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_SnapCar.js.html#l441"><code>src&#x2F;SnapCar.js:441</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The user token. You must provide this value in order to be able to make API calls.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+        
+        </div>
+    </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
