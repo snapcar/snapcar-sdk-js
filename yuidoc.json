@@ -1,7 +1,7 @@
 {
   "name": "snapcar-sdk-js",
   "description": "JavaScript implementation of the SnapCar Public API.",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "url": "https://github.com/snapcar/snapcar-sdk-js",
   "logo": "https://avatars1.githubusercontent.com/u/7704703?v=3&s=200",
   "options": {
