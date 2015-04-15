@@ -484,7 +484,20 @@ var SnapCar = (function (SnapCar, $) {
             properties[interfaceProperty].propertyDescriptors = $.extend({}, {enumerable: true, writable: false, configurable: false}, propertyConfig.propertyDescriptors || {});
         });
 
-        object.mapping = $.extend({}, object.mapping || {}, properties);
+        var mapping = $.extend({}, object.prototype._mapping || {}, properties);
+
+        if (SnapCar.canDefineProperty) {
+            Object.defineProperties(object.prototype, {
+            	"_mapping": {
+            		enumerable: false,
+            		configurable: false,
+            		writable: false,
+            		value: mapping
+            	}
+            });
+				} else {
+        	object.prototype._mapping = mapping;
+				}
 
         if (SnapCar.canDefineProperty) {
             var propConfig = {};
@@ -507,8 +520,8 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.processObjectPayload = function (instance, payload, specialValueCallback) {
         var propertyConfig = [];
         $.each(payload || {}, function (key, val) {
-            if (typeof instance.constructor.mapping === 'object') {
-                var mapping = instance.constructor.mapping[key];
+            if (typeof instance._mapping === 'object') {
+                var mapping = instance._mapping[key];
 
                 if (typeof mapping === 'object') {
                     value = typeof specialValueCallback !== 'undefined' ? (specialValueCallback(key, val) || val) : val;
@@ -539,7 +552,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.bootstrapInstanceProperties = function (instance) {
         if (SnapCar.canDefineProperty) {
             var propertyConfig = [];
-            $.each(instance.constructor.mapping, function (key, val) {
+            $.each(instance._mapping, function (key, val) {
                 propertyConfig[val.name] = $.extend({}, true, val.propertyDescriptors.clone, {
                     writable: true,
                     configurable: true
@@ -708,6 +721,7 @@ var SnapCar = (function (SnapCar, $) {
         server_response: {name: 'serverResponse'}
     });
 
+console.log(SnapCar.APIError.mapping);
 
     /**
      * Represents an error received from the API.
