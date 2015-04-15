@@ -17,9 +17,18 @@
   <script>
 
     var expect = chai.expect;
+    chai.should();
 
     mocha.checkLeaks();
     mocha.globals(['jQuery']);
+
+    function hashValues(hash) {
+      var array_values = new Array();
+      for (var key in hash) {
+          array_values.push(hash[key]);
+      }
+      return array_values;
+    }
 
     if (navigator.userAgent.indexOf('PhantomJS') < 0) {
       mocha.run();

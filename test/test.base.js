@@ -1,5 +1,25 @@
 describe("SnapCar", function() {
 
+  describe('#user()', function(){
+    it('Should return the user', function(done){
+      
+      SnapCar.user().done(function(result) {
+        expect(result).to.be.an.instanceof(SnapCar.Rider);
+        expect(result).to.have.property("email").and.to.be.not.empty;
+        expect(result).to.have.property("firstname").and.to.be.not.empty;
+        expect(result).to.have.property("lastname").and.to.be.not.empty;
+        expect(result).to.have.property("id").and.to.be.not.empty;
+        expect(result).to.have.property("status").and.to.be.not.empty;
+        expect(hashValues(SnapCar.RiderStatuses)).to.include.members([result.status]);
+
+        done();
+      }).fail(function(error) {
+        done(error);
+      });
+
+    });
+  });
+
   describe('#eta()', function(){
     it('Should return ETA', function(done){
       
@@ -39,11 +59,22 @@ describe("SnapCar", function() {
         expect(specialArea.areaType).to.equal(SnapCar.SpecialAreaTypes.AIRPORT);
         expect(specialArea.meetingPoints).to.be.an.instanceof(Array);
         expect(specialArea.meetingPointsNameboard).to.be.an.instanceof(Array);
-        expect(specialArea.menuName).to.be.a('string');
-        expect(specialArea.name).to.be.a('string');
-        expect(specialArea.menuName).to.not.be.empty;
-        expect(specialArea.name).to.not.be.empty;
+        expect(specialArea.menuName).to.be.a('string').and.to.not.be.empty;
+        expect(specialArea.name).to.be.a('string').and.to.not.be.empty;
         expect(specialArea.selectionRequired).to.be.a('boolean');
+
+        expect(specialArea.meetingPoints).to.have.length.above(0);
+        expect(specialArea.meetingPointsNameboard).to.have.length.above(0);
+
+        $.each(specialArea.meetingPoints, function (key, meetingPoint) {
+          expect(meetingPoint).to.be.an.instanceof(SnapCar.MeetingPoint);
+          expect(meetingPoint.id).to.be.a('string');
+          expect(meetingPoint.id).to.not.be.empty;
+          expect(meetingPoint).to.be.an.instanceof(SnapCar.MeetingPoint);
+          expect(meetingPoint.rdvPoint).to.be.a('string');
+          expect(meetingPoint.rdvPoint).to.not.be.empty;
+        });
+
 
         done();
       }).fail(function(error) {
@@ -52,19 +83,6 @@ describe("SnapCar", function() {
 
     });    
   });  
-
-SnapCar.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
-
-    // There's a special area at this location. 
-    // Check out the specialArea info (which is an instance of SnapCar.SpecialArea)
-
-}).fail(function (error) {
-    if (error.code === 404) {
-        // No special area/meeting points at this location
-    } else {
-        // An other error occurred
-    }
-});  
 
 
   describe("Set locale", function() {
