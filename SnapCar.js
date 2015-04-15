@@ -1,172 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>src/SnapCar.js - snapcar-sdk-js</title>
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="stylesheet" href="../assets/css/custom.css">
-    <link rel="stylesheet" href="../assets/css/lucid.css">
-    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-</head>
-<body class="yui3-skin-sam">
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-        
-	    <img alt="snapcar-sdk-js" src="https://avatars1.githubusercontent.com/u/7704703?v=3&amp;s=200" style="max-height: 65%;" title="snapcar-sdk-js">
-        
-            snapcar-sdk-js
-        </h1>
-	<div class="nav">
-            <li class="divider-vertical"></li>
-            <li>
-                <p class="navbar-text">
-                    API Docs for Version: <b>0.1.0</b>
-                </p>
-            </li>
-        </div>
-        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/SnapCar", "classes/SnapCar.Address", "classes/SnapCar.APIError", "classes/SnapCar.BillingDocument", "classes/SnapCar.BillingDocumentTypes", "classes/SnapCar.Booking", "classes/SnapCar.BookingCancellationReasons", "classes/SnapCar.BookingHistory", "classes/SnapCar.BookingPrice", "classes/SnapCar.BookingStatuses", "classes/SnapCar.CancellationFee", "classes/SnapCar.ConfigError", "classes/SnapCar.Driver", "classes/SnapCar.Error", "classes/SnapCar.ETAResult", "classes/SnapCar.ETAResultStatuses", "classes/SnapCar.GeoPoint", "classes/SnapCar.InvalidParametersError", "classes/SnapCar.Location", "classes/SnapCar.MeetingPoint", "classes/SnapCar.PaymentMethod", "classes/SnapCar.Rider", "classes/SnapCar.RiderStatuses", "classes/SnapCar.ServiceClass", "classes/SnapCar.SpecialArea", "classes/SnapCar.SpecialAreaTypes", "classes/SnapCar.TimestampedPoint", "classes/SnapCar.Vehicle"]'>
-        </form>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="span3">
-	    <div>
-    <div id="sidebar">
-    <div id="classes">
-        <ul id="api-classes" class="nav nav-list">
-            
-                <li><a href="../classes/SnapCar.html">SnapCar</a></li>
-            
-                <li><a href="../classes/SnapCar.Address.html">SnapCar.Address</a></li>
-            
-                <li><a href="../classes/SnapCar.APIError.html">SnapCar.APIError</a></li>
-            
-                <li><a href="../classes/SnapCar.BillingDocument.html">SnapCar.BillingDocument</a></li>
-            
-                <li><a href="../classes/SnapCar.BillingDocumentTypes.html">SnapCar.BillingDocumentTypes</a></li>
-            
-                <li><a href="../classes/SnapCar.Booking.html">SnapCar.Booking</a></li>
-            
-                <li><a href="../classes/SnapCar.BookingCancellationReasons.html">SnapCar.BookingCancellationReasons</a></li>
-            
-                <li><a href="../classes/SnapCar.BookingHistory.html">SnapCar.BookingHistory</a></li>
-            
-                <li><a href="../classes/SnapCar.BookingPrice.html">SnapCar.BookingPrice</a></li>
-            
-                <li><a href="../classes/SnapCar.BookingStatuses.html">SnapCar.BookingStatuses</a></li>
-            
-                <li><a href="../classes/SnapCar.CancellationFee.html">SnapCar.CancellationFee</a></li>
-            
-                <li><a href="../classes/SnapCar.ConfigError.html">SnapCar.ConfigError</a></li>
-            
-                <li><a href="../classes/SnapCar.Driver.html">SnapCar.Driver</a></li>
-            
-                <li><a href="../classes/SnapCar.Error.html">SnapCar.Error</a></li>
-            
-                <li><a href="../classes/SnapCar.ETAResult.html">SnapCar.ETAResult</a></li>
-            
-                <li><a href="../classes/SnapCar.ETAResultStatuses.html">SnapCar.ETAResultStatuses</a></li>
-            
-                <li><a href="../classes/SnapCar.GeoPoint.html">SnapCar.GeoPoint</a></li>
-            
-                <li><a href="../classes/SnapCar.InvalidParametersError.html">SnapCar.InvalidParametersError</a></li>
-            
-                <li><a href="../classes/SnapCar.Location.html">SnapCar.Location</a></li>
-            
-                <li><a href="../classes/SnapCar.MeetingPoint.html">SnapCar.MeetingPoint</a></li>
-            
-                <li><a href="../classes/SnapCar.PaymentMethod.html">SnapCar.PaymentMethod</a></li>
-            
-                <li><a href="../classes/SnapCar.Rider.html">SnapCar.Rider</a></li>
-            
-                <li><a href="../classes/SnapCar.RiderStatuses.html">SnapCar.RiderStatuses</a></li>
-            
-                <li><a href="../classes/SnapCar.ServiceClass.html">SnapCar.ServiceClass</a></li>
-            
-                <li><a href="../classes/SnapCar.SpecialArea.html">SnapCar.SpecialArea</a></li>
-            
-                <li><a href="../classes/SnapCar.SpecialAreaTypes.html">SnapCar.SpecialAreaTypes</a></li>
-            
-                <li><a href="../classes/SnapCar.TimestampedPoint.html">SnapCar.TimestampedPoint</a></li>
-            
-                <li><a href="../classes/SnapCar.Vehicle.html">SnapCar.Vehicle</a></li>
-            
-        </ul>
-    </div>
-    </div>
-</div>
-
-        </div>
-        <div class="span9">
-                <form id="options-form" class="form-inline pull-right">
-        Show:
-        <label for="api-show-inherited" class="checkbox">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected" class="checkbox">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private" class="checkbox">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated" class="checkbox">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </form>
-
-
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <div class="page-header">
-    <h1>src/SnapCar.js <small>File</small></h1>
-</div>
-
-<div class="file">
-    <pre class="prettyprint linenums">
 /**
  * # Introduction
  *
  * This is the main module that allows communication between your web application and the SnapCar platform through the SnapCar Public API. This module is dependent on jQuery. The [source code](https://github.com/snapcar/snapcar-sdk-js) is available on Github.
  * 
- * Before using this module, you must initialize it with a user token by setting the &#x60;SnapCar.token&#x60; property. Please refer to [the general SnapCar API documentation](http://developer.snapcar.com/) for more information on how to obtain a user token.
+ * Before using this module, you must initialize it with a user token by setting the `SnapCar.token` property. Please refer to [the general SnapCar API documentation](http://developer.snapcar.com/) for more information on how to obtain a user token.
  * 
  * The SnapCar SDK for JavaScript does not manage user authentication. The reason for this is that obtaining a user token is done through a request that requires your API secret value to be provided. The API secret value is sensitive information that should never be revealed to the user. However, setting it in the JavaScript SDK implies that your users can access it by digging into the source code. Which is why such work flow must be implemented on the server side. Once initialized with a token, the module allows you to perform actions such as making bookings or getting ETAs on behalf of the authenticated user.
  * 
- * In general, all methods that are in charge of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error occurs during the request, the promises are rejected with an instance of &#x60;SnapCar.APIError&#x60; (containing more info about the issue). Look at the examples below for a comprehensive vision of the work flow.
+ * In general, all methods that are in charge of performing an API request always return a jQuery promise. The promises are resolved with the desired resources which depend on the performed request. If an error occurs during the request, the promises are rejected with an instance of `SnapCar.APIError` (containing more info about the issue). Look at the examples below for a comprehensive vision of the work flow.
  *
- * &lt;br/&gt; 
- * &lt;br/&gt; 
+ * <br/> 
+ * <br/> 
  *
  * # Getting started and examples
  *
- * &lt;br/&gt; 
+ * <br/> 
  *
  * ## Setting a user token
  *
  * As explained above, you need to provide a token before using the SDK.
  *
- * &#x60;&#x60;&#x60;
- * SnapCar.token = &quot;3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O&quot;;
- * &#x60;&#x60;&#x60;
+ * ```
+ * SnapCar.token = "3xI121nd93N7rhOFT7yk76I4B80PJA23J2fpaspLuy7saVFQxApt97Fv161s1F7O";
+ * ```
  * 
- * &lt;br/&gt; 
+ * <br/> 
  * ## Getting current closest drivers availability at a specific location 
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * SnapCar.eta(48.859041, 2.327889).done(function (result) {
  *      $.each(result, function (key, info) {
  *          
@@ -181,17 +42,17 @@
  *        
  *      });
  * });
- * &#x60;&#x60;&#x60;
+ * ```
  * 
- * &lt;br/&gt; 
+ * <br/> 
  * ## Getting meeting points
  *
  * You can easily find if there are meeting points at a specific location (such as a train station or an airport).
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * SnapCar.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
  *
- *     // There&#x27;s a special area at this location. 
+ *     // There's a special area at this location. 
  *     // Check out the specialArea info (which is an instance of SnapCar.SpecialArea)
  *
  * }).fail(function (error) {
@@ -201,20 +62,20 @@
  *         // An other error occurred
  *     }
  * });
- * &#x60;&#x60;&#x60;
+ * ```
  *  
  * 
  * 
- * &lt;br/&gt; 
- * ## Let&#x27;s get all user&#x27;s active bookings and cancel them
+ * <br/> 
+ * ## Let's get all user's active bookings and cancel them
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * SnapCar.activeBookings().done(function (bookings) {
  * 
  *        $.each(bookings, function(key, booking) {
  *            
  *            // For each booking, we want to know the cancellation price.
- *            // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren&#x27;t called. The failure callbacks are called instead.
+ *            // If the booking cannot be cancelled (basically because the rider is already picked up), the done callbacks aren't called. The failure callbacks are called instead.
  *            // You may want to check if the cancellation is charged. Check out the SnapCar.CancellationFee reference for more information.
  *            
  *            booking.cancellationPrice().done(function (cancellationFee) {
@@ -224,16 +85,16 @@
  *            });
  *        });
  * }); 
- * &#x60;&#x60;&#x60;
+ * ```
  * 
  * 
  * 
  * 
- * &lt;br/&gt; 
- * ## We want to get all user&#x27;s past bookings
+ * <br/> 
+ * ## We want to get all user's past bookings
  * 
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * SnapCar.bookingsHistory().done(function (history) {
  * 
  *        $.each(history.history, function(key, booking) {
@@ -242,14 +103,14 @@
  *        
  *        // Check out the history.moreBookingsAvailable() value to know if you can call history.nextBookings()
  * }); 
- * &#x60;&#x60;&#x60;
+ * ```
  * 
  * 
  * 
- * &lt;br/&gt; 
- * ## Let&#x27;s create a booking on demand (with no planned pick up date) and without flat price.
+ * <br/> 
+ * ## Let's create a booking on demand (with no planned pick up date) and without flat price.
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * // First, we get the info about the authenticated user
  * SnapCar.user().done(function (user) {
  *
@@ -263,7 +124,7 @@
  *
  *           // We define the rider and its pick up location
  *           booking.rider = user;
- *           booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#x27;Aéroport de Paris-Orly&#x27;, &#x27;Orly&#x27;, &#x27;94390&#x27;, &#x27;France&#x27;));
+ *           booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
  *
  *           // We also need to define the service class. Here we take one service class randomly.
  *           // In real life, you may present the different service class names to the user for selection.
@@ -295,7 +156,7 @@
  *           // This handler is called upon error (ex: no driver available)
  *           }).fail(function(error) {
  *
- *               if (error.message === &quot;no_driver&quot;) {
+ *               if (error.message === "no_driver") {
  *                   // No driver is available for the required service class. You may try with another service class.
  *               }
  *
@@ -304,16 +165,16 @@
  *           });
  *       });
  *   });
- * &#x60;&#x60;&#x60;
+ * ```
  * 
  * 
  * 
  * 
  * 
- * &lt;br/&gt; 
- * ## Let&#x27;s create a booking in the future (with a planned pick up date) and without flat price.
+ * <br/> 
+ * ## Let's create a booking in the future (with a planned pick up date) and without flat price.
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * // First, we get the info about the authenticated user
  * SnapCar.user().done(function (user) {
  *
@@ -327,10 +188,10 @@
  *
  *           // We define the rider and its pick up location
  *           booking.rider = user;
- *           booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#x27;Aéroport de Paris-Orly&#x27;, &#x27;Orly&#x27;, &#x27;94390&#x27;, &#x27;France&#x27;));
+ *           booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
  *
  *           // We define the date. Warning: you must ensure that the timezone is correct!
- *           booking.plannedStartDate = new Date(&quot;2016-01-01 00:00:00&quot;);
+ *           booking.plannedStartDate = new Date("2016-01-01 00:00:00");
  *           
  *           // We also need to define the service class. Here we take one service class randomly.
  *           // In real life, you may present the different service class names to the user for selection.
@@ -354,16 +215,16 @@
  *           });
  *       });
  *   });
- * &#x60;&#x60;&#x60;
+ * ```
  *
  * 
  * 
  * 
  * 
- * &lt;br/&gt; 
- * ## Let&#x27;s create a booking in the future (with a planned pick up date) and with a flat price.
+ * <br/> 
+ * ## Let's create a booking in the future (with a planned pick up date) and with a flat price.
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * // First, we get the info about the authenticated user
  * SnapCar.user().done(function (user) {
  * 
@@ -374,13 +235,13 @@
  * 
  *     // We define the rider and its pick up location
  *     booking.rider = user;
- *     booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#x27;Aéroport de Paris-Orly&#x27;, &#x27;Orly&#x27;, &#x27;94390&#x27;, &#x27;France&#x27;));
- *     booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address(&#x27;3 Boulevard du Palais&#x27;, &#x27;Paris&#x27;, &#x27;75001&#x27;, &#x27;France&#x27;));
- *     booking.driverInfo = &quot;Some useful info for you.&quot;;
+ *     booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+ *     booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));
+ *     booking.driverInfo = "Some useful info for you.";
  *     booking.nameboard = true; // We want a nameboard, for the example
  *     
  *     // We define the date. Warning: you must ensure that the timezone is correct!
- *     booking.plannedStartDate = new Date(&quot;2016-01-01 00:00:00&quot;);
+ *     booking.plannedStartDate = new Date("2016-01-01 00:00:00");
  *     
  *     booking.flatPrices().done(function(prices) {
  * 
@@ -405,16 +266,16 @@
  *         });        
  *     });
  * });
- * &#x60;&#x60;&#x60;
+ * ```
  * 
  * 
  * 
  * 
  * 
- * &lt;br/&gt; 
- * ## Let&#x27;s create a booking on demand (without a planned pick up date) and with a flat price.
+ * <br/> 
+ * ## Let's create a booking on demand (without a planned pick up date) and with a flat price.
  * 
- * &#x60;&#x60;&#x60;
+ * ```
  * // First, we get the info about the authenticated user
  * SnapCar.user().done(function (user) {
  * 
@@ -425,8 +286,8 @@
  * 
  *     // We define the rider and its pick up location
  *     booking.rider = user;
- *     booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#x27;Aéroport de Paris-Orly&#x27;, &#x27;Orly&#x27;, &#x27;94390&#x27;, &#x27;France&#x27;));
- *     booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address(&#x27;3 Boulevard du Palais&#x27;, &#x27;Paris&#x27;, &#x27;75001&#x27;, &#x27;France&#x27;));
+ *     booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
+ *     booking.endLocation = new SnapCar.Location(48.855272, 2.345865, new SnapCar.Address('3 Boulevard du Palais', 'Paris', '75001', 'France'));
  *     
  *     booking.flatPrices().done(function(prices) {
  * 
@@ -459,7 +320,7 @@
  *         // This handler is called upon error (ex: no driver available)
  *         }).fail(function(error) {
  * 
- *             if (error.message === &quot;no_driver&quot;) {
+ *             if (error.message === "no_driver") {
  *                 // No driver is available for the required service class. You may try with another service class.
  *             }
  * 
@@ -468,23 +329,23 @@
  *         });       
  *     });
  * });
- * &#x60;&#x60;&#x60;
+ * ```
  * 
  * 
  * 
  * 
- * &lt;br/&gt; 
- * ## Let&#x27;s create a booking in advance (with a planned pick up date), without flat price and with a meeting point.
+ * <br/> 
+ * ## Let's create a booking in advance (with a planned pick up date), without flat price and with a meeting point.
  * 
  * In the example below, we make this booking only if we find specific meeting points at this location. In real life, you would just check if there are meeting points and would propose the list to your user for selection but would make the booking anyway.
  *
- * &#x60;&#x60;&#x60;
+ * ```
  * 
  * SnapCar.meetingPoints(48.731010, 2.365823).done(function (specialArea) {
  * 
- *   // There&#x27;s a special area at this location. 
+ *   // There's a special area at this location. 
  * 
- * 	 // Let&#x27;s create a booking on demand (with no planned pick up date) and without flat price.
+ * 	 // Let's create a booking on demand (with no planned pick up date) and without flat price.
  * 	 
  * 	 // First, we get the info about the authenticated user
  * 	 SnapCar.user().done(function (user) {
@@ -499,10 +360,10 @@
  * 
  * 	           // We define the rider and its pick up location
  * 	           booking.rider = user;
- * 	           booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address(&#x27;Aéroport de Paris-Orly&#x27;, &#x27;Orly&#x27;, &#x27;94390&#x27;, &#x27;France&#x27;));
+ * 	           booking.startLocation = new SnapCar.Location(48.731010, 2.365823, new SnapCar.Address('Aéroport de Paris-Orly', 'Orly', '94390', 'France'));
  * 
  * 	           // We define the date. Warning: you must ensure that the timezone is correct!
- * 	           booking.plannedStartDate = new Date(&quot;2016-01-01 00:00:00&quot;);
+ * 	           booking.plannedStartDate = new Date("2016-01-01 00:00:00");
  * 
  * 	           // We also need to define the service class. Here we take one service class randomly.
  * 	           // In real life, you may present the different service class names to the user for selection.
@@ -539,7 +400,7 @@
  *        // An other error occurred
  *    }
  * });
- * &#x60;&#x60;&#x60;
+ * ```
  * 
  * 
  * @class SnapCar
@@ -555,10 +416,10 @@ var SnapCar = (function (SnapCar, $) {
 
     // Properties: browser compatibility
 
-    SnapCar.canDefineProperty = (typeof Object.defineProperty === &#x27;function&#x27;);
+    SnapCar.canDefineProperty = (typeof Object.defineProperty === 'function');
     if (SnapCar.canDefineProperty) {
         try {
-            Object.defineProperty({}, &#x27;x&#x27;, {});
+            Object.defineProperty({}, 'x', {});
         } catch (e) {
             SnapCar.canDefineProperty = false;
         }
@@ -572,10 +433,10 @@ var SnapCar = (function (SnapCar, $) {
              *
              * @property baseDomain
              * @type string
-             * @default &quot;https://api.snapcar.com/public&quot;
+             * @default "https://api.snapcar.com/public"
              */
             
-            baseDomain: {enumerable: true, writable: true, value: &#x27;https://api.snapcar.com/public&#x27;},
+            baseDomain: {enumerable: true, writable: true, value: 'https://api.snapcar.com/public'},
 
             /**
              * The user token. You must provide this value in order to be able to make API calls.
@@ -590,29 +451,29 @@ var SnapCar = (function (SnapCar, $) {
              * The user locale. As you may know, some information returned through the API are localized (ex. : the meeting point details). You need to set this value in order to receive data localized in the user language if supported. The fallbackLocale value is used otherwise.
              *
              * @property locale
-             * @default &quot;en&quot;
+             * @default "en"
              * @type string
              * @example
-             *     SnapCar.locale = &quot;fr&quot;;
+             *     SnapCar.locale = "fr";
              */
             
-            locale: {enumerable: true, writable: true, value: &#x27;en&#x27;},
+            locale: {enumerable: true, writable: true, value: 'en'},
 
             /**
-             * Locale used as a default in case you would provide a non supported locale value. Its value is &quot;en&quot;.
+             * Locale used as a default in case you would provide a non supported locale value. Its value is "en".
              *
              * @property fallbackLocale
              * @type string
              */
             
-            fallbackLocale: {enumerable: true, writable: false, value: &#x27;en&#x27;}
+            fallbackLocale: {enumerable: true, writable: false, value: 'en'}
         });
     }
 
     else {
-        SnapCar.baseDomain = &#x27;https://api.snapcar.com/public&#x27;;
-        SnapCar.locale = &#x27;fr&#x27;;
-        SnapCar.fallbackLocale = &#x27;fr&#x27;;
+        SnapCar.baseDomain = 'https://api.snapcar.com/public';
+        SnapCar.locale = 'fr';
+        SnapCar.fallbackLocale = 'fr';
     }
 
     // Define property helper
@@ -646,11 +507,11 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.processObjectPayload = function (instance, payload, specialValueCallback) {
         var propertyConfig = [];
         $.each(payload || {}, function (key, val) {
-            if (typeof instance.constructor.mapping === &#x27;object&#x27;) {
+            if (typeof instance.constructor.mapping === 'object') {
                 var mapping = instance.constructor.mapping[key];
 
-                if (typeof mapping === &#x27;object&#x27;) {
-                    value = typeof specialValueCallback !== &#x27;undefined&#x27; ? (specialValueCallback(key, val) || val) : val;
+                if (typeof mapping === 'object') {
+                    value = typeof specialValueCallback !== 'undefined' ? (specialValueCallback(key, val) || val) : val;
 
                     // Property is writable, value can directly be set
                     if (!SnapCar.canDefineProperty || mapping.propertyDescriptors.writable) {
@@ -716,7 +577,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        type: {name: &#x27;type&#x27;},
+        type: {name: 'type'},
 
         /**
          * A key which defines more precisely the type of error.
@@ -726,7 +587,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        message: {name: &#x27;message&#x27;},
+        message: {name: 'message'},
 
         /**
          * A human readable text describing the error. Not to be displayed to the user.
@@ -736,7 +597,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        description: {name: &#x27;description&#x27;}
+        description: {name: 'description'}
     });
 
 
@@ -752,7 +613,7 @@ var SnapCar = (function (SnapCar, $) {
     
     SnapCar.ConfigError = function (message, description) {
         SnapCar.processObjectPayload(this, {
-            type: &#x27;config&#x27;,
+            type: 'config',
             message: message,
             description: description
         });
@@ -772,7 +633,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.InvalidParametersError = function (message, description) {
         SnapCar.processObjectPayload(this, {
-            type: &#x27;invalid_parameters&#x27;,
+            type: 'invalid_parameters',
             message: message,
             description: description
         });
@@ -793,21 +654,21 @@ var SnapCar = (function (SnapCar, $) {
 
         var payload;
         
-        if (typeof data.responseJSON !== &#x27;undefined&#x27;) {
+        if (typeof data.responseJSON !== 'undefined') {
             payload = data.responseJSON;
         }
 
-        if (typeof payload === &#x27;object&#x27;) {
+        if (typeof payload === 'object') {
             SnapCar.processObjectPayload(this, $.extend({}, payload, {
-                description: &#x27;An API error occurred. Check the message parameter for more details.&#x27;,
-                type: &#x27;api&#x27;
+                description: 'An API error occurred. Check the message parameter for more details.',
+                type: 'api'
             }));
         } else {
             SnapCar.processObjectPayload(this, $.extend({}, payload, {
-                message: &#x27;other&#x27;,
-                description: &#x27;An error occurred while sending the request.&#x27;,
+                message: 'other',
+                description: 'An error occurred while sending the request.',
                 server_response: payload,
-                type: &#x27;api&#x27;
+                type: 'api'
             }));
         }
     };
@@ -824,7 +685,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        code: {name: &#x27;code&#x27;},
+        code: {name: 'code'},
 
         /**
          * Additional details such as a list of invalid parameters. Refer to the API reference for more information.
@@ -834,7 +695,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        details: {name: &#x27;details&#x27;},
+        details: {name: 'details'},
 
         /**
          * The server response body.
@@ -844,7 +705,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        server_response: {name: &#x27;serverResponse&#x27;}
+        server_response: {name: 'serverResponse'}
     });
 
 
@@ -862,7 +723,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.ServiceClass.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;name&#x27;:
+                case 'name':
                     return SnapCar.getTextInLocale(val);
             }
         });
@@ -880,7 +741,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
         
         /**
          * The localized service class name to display to the user.
@@ -890,7 +751,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
         
-        name: {name: &#x27;name&#x27;}
+        name: {name: 'name'}
     });
 
     /**
@@ -907,8 +768,8 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.MeetingPoint.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;name&#x27;:
-                case &#x27;rdv_point&#x27;:
+                case 'name':
+                case 'rdv_point':
                     return SnapCar.getTextInLocale(val);
             }
         });
@@ -926,7 +787,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
 
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
         
         /*
          * Localized short name that briefly describes the meeting point. 
@@ -936,7 +797,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
 
-        name: {name: &#x27;name&#x27;},
+        name: {name: 'name'},
         
         /**
          * Localized meeting point details that explain where the rider can meet his driver at the pick up location.
@@ -946,7 +807,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
 
-        rdv_point: {name: &#x27;rdvPoint&#x27;}
+        rdv_point: {name: 'rdvPoint'}
     });
 
 
@@ -964,12 +825,12 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.SpecialArea.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;name&#x27;:
-                case &#x27;menu_name&#x27;:
+                case 'name':
+                case 'menu_name':
                     return SnapCar.getTextInLocale(val);
                     break;
-                case &#x27;meeting_points&#x27;:
-                case &#x27;meeting_points_nameboard&#x27;:
+                case 'meeting_points':
+                case 'meeting_points_nameboard':
                     return $.map(val, function (payload) {
                         return SnapCar.MeetingPoint.populateProperties(new SnapCar.MeetingPoint(), payload);
                     });
@@ -990,7 +851,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
 
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
       
         /**
          * Localized short name that briefly describes the area.
@@ -1000,7 +861,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
 
-        name: {name: &#x27;name&#x27;},
+        name: {name: 'name'},
        
         /**
          * Localized short value that describes the kind of meeting points that can be selected.
@@ -1008,11 +869,11 @@ var SnapCar = (function (SnapCar, $) {
          * @property menuName
          * @type string
          * @example
-         *      &quot;Terminal&quot;
+         *      "Terminal"
          * @final
          */
 
-        menu_name: {name: &#x27;menuName&#x27;},
+        menu_name: {name: 'menuName'},
         
         /**
          * Indicates if the user is required to select a meeting point for this area.
@@ -1022,7 +883,7 @@ var SnapCar = (function (SnapCar, $) {
          * @final
          */
 
-        selection_required: {name: &#x27;selectionRequired&#x27;},
+        selection_required: {name: 'selectionRequired'},
 
         /**
          * The type of special area. Can either be a station, an airport or a regular area. Refer to the SnapCar.SpecialAreaTypes values.
@@ -1030,31 +891,31 @@ var SnapCar = (function (SnapCar, $) {
          * @property areaType
          * @type string
          * @example
-         *      &quot;airport&quot;
+         *      "airport"
          * @final
          */
         
-        area_type: {name: &#x27;areaType&#x27;},
+        area_type: {name: 'areaType'},
 
         /**
-         * An array of meeting points in which the user can select his preferred one if the user hasn&#x27;t enabled the nameboard option.
+         * An array of meeting points in which the user can select his preferred one if the user hasn't enabled the nameboard option.
          *
          * @property meetingPoints
-         * @type Array&lt;SnapCar.MeetingPoint&gt;
+         * @type Array<SnapCar.MeetingPoint>
          * @final
          */
         
-        meeting_points: {name: &#x27;meetingPoints&#x27;},
+        meeting_points: {name: 'meetingPoints'},
         
         /**
          * An array of meeting points in which the user can select his preferred one if the user has enabled the nameboard option.
          *
          * @property meetingPointsNameboard
-         * @type Array&lt;SnapCar.MeetingPoint&gt;
+         * @type Array<SnapCar.MeetingPoint>
          * @final
          */        
         
-        meeting_points_nameboard: {name: &#x27;meetingPointsNameboard&#x27;}
+        meeting_points_nameboard: {name: 'meetingPointsNameboard'}
     });
 
     /**
@@ -1065,17 +926,17 @@ var SnapCar = (function (SnapCar, $) {
      */
     SnapCar.SpecialAreaTypes = {
         /**
-         * Station area type constant. Its value is &quot;station&quot;.
+         * Station area type constant. Its value is "station".
          * 
          * @property STATION
          * @static
          * @final
          * @type string
          */
-        STATION: &#x27;station&#x27;,
+        STATION: 'station',
 
         /**
-         * Airport area type constant. Its value is &quot;airport&quot;.
+         * Airport area type constant. Its value is "airport".
          * 
          * @property AIRPORT
          * @static
@@ -1083,10 +944,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        AIRPORT: &#x27;airport&#x27;,
+        AIRPORT: 'airport',
 
         /**
-         * Normal area type constant. Its value is &quot;normal&quot;.
+         * Normal area type constant. Its value is "normal".
          * 
          * @property NORMAL
          * @static
@@ -1094,7 +955,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */        
         
-        NORMAL: &#x27;normal&#x27;
+        NORMAL: 'normal'
     };
 
     /**
@@ -1111,7 +972,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.ETAResult.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;service_class&#x27;:
+                case 'service_class':
                     return SnapCar.ServiceClass.populateProperties(new SnapCar.ServiceClass(), val);
             }
         });
@@ -1129,7 +990,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */        
         
-        status: {name: &#x27;status&#x27;},
+        status: {name: 'status'},
 
         /**
          * If the service is available, holds the ETA in seconds.
@@ -1139,7 +1000,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type number
          */        
         
-        eta: {name: &#x27;eta&#x27;},
+        eta: {name: 'eta'},
         
         /**
          * The service class for which we want to know the ETA.
@@ -1149,7 +1010,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.ServiceClass
          */        
         
-        service_class: {name: &#x27;serviceClass&#x27;}
+        service_class: {name: 'serviceClass'}
     });
 
     /**
@@ -1170,7 +1031,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        OK: &#x27;ok&#x27;,
+        OK: 'ok',
 
         /**
          * Means that the service class is not available.
@@ -1181,7 +1042,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        UNAVAILABLE: &#x27;unavailable&#x27;
+        UNAVAILABLE: 'unavailable'
 
     };
 
@@ -1211,39 +1072,39 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
 
         /**
-         * The payment method&#x27;s name, as set by the user.
+         * The payment method's name, as set by the user.
          * 
          * @property name
          * @final
          * @type string
          */
         
-        name: {name: &#x27;name&#x27;},
+        name: {name: 'name'},
         
         /**
-         * The payment method&#x27;s type. At that time, &#x27;credit_card&#x27; is the only possible value.
+         * The payment method's type. At that time, 'credit_card' is the only possible value.
          * 
          * @property type
          * @final
          * @type string
          */
         
-        type: {name: &#x27;type&#x27;},
+        type: {name: 'type'},
         
         /**
-         * Credit card&#x27;s masked number.
+         * Credit card's masked number.
          * 
          * @property number
          * @final
          * @example 
-         &quot;XXXXXXXXXXXX4987&quot;
+         "XXXXXXXXXXXX4987"
          * @type string
          */
         
-        number: {name: &#x27;number&#x27;},
+        number: {name: 'number'},
         
         /**
          * Credit card brand.
@@ -1251,11 +1112,11 @@ var SnapCar = (function (SnapCar, $) {
          * @property brand
          * @final
          * @example 
-         &quot;VISA&quot;
+         "VISA"
          * @type string
          */
         
-        brand: {name: &#x27;brand&#x27;}
+        brand: {name: 'brand'}
     });
 
     /**
@@ -1272,7 +1133,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.Rider.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;payment_method&#x27;:
+                case 'payment_method':
                     return SnapCar.PaymentMethod.populateProperties(new SnapCar.PaymentMethod(), val);
             }
         });
@@ -1290,37 +1151,37 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
 
         /**
-         * The rider&#x27;s firstname.
+         * The rider's firstname.
          * 
          * @property firstname
          * @final
          * @type string
          */
         
-        firstname: {name: &#x27;firstname&#x27;},
+        firstname: {name: 'firstname'},
 
         /**
-         * The rider&#x27;s lastname.
+         * The rider's lastname.
          * 
          * @property lastname
          * @final
          * @type string
          */
         
-        lastname: {name: &#x27;lastname&#x27;},
+        lastname: {name: 'lastname'},
 
         /**
-         * The rider&#x27;s email.
+         * The rider's email.
          * 
          * @property email
          * @final
          * @type string
          */
         
-        email: {name: &#x27;email&#x27;},
+        email: {name: 'email'},
 
         /**
          * The rider account status. Its value is one of the SnapCar.RiderStatuses class properties. Check it out for more information.
@@ -1330,17 +1191,17 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        status: {name: &#x27;status&#x27;},
+        status: {name: 'status'},
 
         /**
-         * The rider&#x27;s payment method.
+         * The rider's payment method.
          * 
          * @property paymentMethod
          * @final
          * @type SnapCar.PaymentMethod
          */
         
-        payment_method: {name: &#x27;paymentMethod&#x27;}
+        payment_method: {name: 'paymentMethod'}
     });
 
     /**
@@ -1361,7 +1222,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        BOOKING_ALLOWED: &#x27;booking_allowed&#x27;,
+        BOOKING_ALLOWED: 'booking_allowed',
 
         /**
          * The user is not allowed to make bookings.
@@ -1372,7 +1233,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        BOOKING_NOT_ALLOWED: &#x27;booking_not_allowed&#x27;,
+        BOOKING_NOT_ALLOWED: 'booking_not_allowed',
 
         /**
          * The user is suspended.
@@ -1383,7 +1244,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        SUSPENDED: &#x27;suspended&#x27;
+        SUSPENDED: 'suspended'
 
     };
 
@@ -1401,7 +1262,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.BookingPrice.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;expiry_date&#x27;:
+                case 'expiry_date':
                     return new Date(parseInt(val) * 1000);
             }
         });
@@ -1419,7 +1280,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
         
         /**
          * The price in the currency defined in the currency property.
@@ -1429,19 +1290,19 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
         
-        price: {name: &#x27;price&#x27;},
+        price: {name: 'price'},
         
         /**
          * The currency.
          * 
          * @property currency
          * @example
-            &quot;EUR&quot;
+            "EUR"
          * @final
          * @type string
          */
         
-        currency: {name: &#x27;currency&#x27;},
+        currency: {name: 'currency'},
         
         /**
          * A formatted string representing the price.
@@ -1451,7 +1312,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        formatted_price: {name: &#x27;formattedPrice&#x27;},        
+        formatted_price: {name: 'formattedPrice'},        
         
         /**
          * The date of the validity date for the given price.
@@ -1461,7 +1322,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
         
-        expiry_date: {name: &#x27;expiryDate&#x27;},
+        expiry_date: {name: 'expiryDate'},
         
         /**
          * The ID of the service class for which the price is valid.
@@ -1471,35 +1332,35 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        service_class_id: {name: &#x27;serviceClassId&#x27;},
+        service_class_id: {name: 'serviceClassId'},
         
-        booking: {name: &#x27;booking&#x27;}
+        booking: {name: 'booking'}
     });
 
     /**
      * Creates a booking by confirming the booking price.
      * 
      * @method confirm
-     * @return {jQuery.Promise} A Promise object. Success/progress handlers are called with a SnapCar.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the &quot;pending&quot; status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCar.APIError argument upon error.
+     * @return {jQuery.Promise} A Promise object. Success/progress handlers are called with a SnapCar.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the "pending" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCar.APIError argument upon error.
      */
     
     SnapCar.BookingPrice.prototype.confirm = function() {
 
         var additionalParameters = {};
 
-        if (typeof this.booking.driverInfo !== &#x27;undefined&#x27;) {
+        if (typeof this.booking.driverInfo !== 'undefined') {
             additionalParameters.driver_info = this.booking.driverInfo;
         }
 
-        if (typeof this.booking.meetingPoint !== &#x27;undefined&#x27;) {
+        if (typeof this.booking.meetingPoint !== 'undefined') {
             additionalParameters.meeting_point_id = this.booking.meetingPoint.id;
         }
 
         var booking = this.booking;
         
         var promise = SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings/prices/&quot; + this.id + &quot;/confirm&quot;,
-            method: &#x27;POST&#x27;,
+            url: SnapCar.baseDomain + "/bookings/prices/" + this.id + "/confirm",
+            method: 'POST',
             data: additionalParameters
         }, function (data) {
             booking.constructor.populateProperties(booking, data);
@@ -1536,7 +1397,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type boolean
          */
         
-        charged: {name: &#x27;charged&#x27;},
+        charged: {name: 'charged'},
 
         /**
          * If charged, the cancellation amount.
@@ -1546,7 +1407,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
                 
-        amount: {name: &#x27;amount&#x27;},
+        amount: {name: 'amount'},
         
         /**
          * If charged, the currency of the cancellation fee.
@@ -1556,7 +1417,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        currency: {name: &#x27;currency&#x27;},
+        currency: {name: 'currency'},
         
         /**
          * If charged, the price formatted in the currency.
@@ -1566,7 +1427,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        formatted_amount: {name: &#x27;formattedAmount&#x27;}
+        formatted_amount: {name: 'formattedAmount'}
 
     });
 
@@ -1606,7 +1467,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        name: {name: &#x27;name&#x27;},
+        name: {name: 'name'},
         
         /**
          * The postal code.
@@ -1616,7 +1477,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        postal_code: {name: &#x27;postalCode&#x27;},
+        postal_code: {name: 'postalCode'},
         
         /**
          * The city.
@@ -1626,7 +1487,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        city: {name: &#x27;city&#x27;},
+        city: {name: 'city'},
         
         /**
          * The country.
@@ -1636,7 +1497,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        country: {name: &#x27;country&#x27;}
+        country: {name: 'country'}
     });
 
     /**
@@ -1659,7 +1520,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.Location.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;address&#x27;:
+                case 'address':
                     return SnapCar.Address.populateProperties(new SnapCar.Address(), val);
             }
         });
@@ -1677,7 +1538,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
                 
-        lat: {name: &#x27;lat&#x27;},
+        lat: {name: 'lat'},
         
         /**
          * The location longitude.
@@ -1687,7 +1548,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
                 
-        lng: {name: &#x27;lng&#x27;},
+        lng: {name: 'lng'},
         
         
         /**
@@ -1698,7 +1559,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */        
         
-        address: {name: &#x27;address&#x27;}
+        address: {name: 'address'}
     });
 
     /**
@@ -1727,7 +1588,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
                 
-        lat: {name: &#x27;lat&#x27;},
+        lat: {name: 'lat'},
         
         /**
          * The point longitude.
@@ -1737,7 +1598,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
                 
-        lng: {name: &#x27;lng&#x27;}
+        lng: {name: 'lng'}
     });
 
     /**
@@ -1766,7 +1627,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
 
         /**
          * URL of to download the document.
@@ -1776,7 +1637,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        url: {name: &#x27;url&#x27;},
+        url: {name: 'url'},
 
         /**
          * The type of document, refer to the SnapCar.BillingDocumentTypes properties.
@@ -1786,7 +1647,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        type: {name: &#x27;type&#x27;}
+        type: {name: 'type'}
     });
 
 
@@ -1807,7 +1668,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        BILL: &#x27;bill&#x27;,
+        BILL: 'bill',
         
         /**
          * Credit note type. When the client is reimbursed.
@@ -1818,7 +1679,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        CREDIT_NOTE: &#x27;credit_note&#x27;
+        CREDIT_NOTE: 'credit_note'
     };
 
     /**
@@ -1835,11 +1696,11 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.Vehicle.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;model&#x27;:
-                case &#x27;color&#x27;:
+                case 'model':
+                case 'color':
                     return SnapCar.getTextInLocale(val);
                     break;
-                case &#x27;position&#x27;:
+                case 'position':
                     return SnapCar.GeoPoint.populateProperties(new SnapCar.GeoPoint(), val);
                     break;
             }
@@ -1857,7 +1718,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        model: {name: &#x27;model&#x27;},
+        model: {name: 'model'},
 
         /**
          * The localized vehile color.
@@ -1867,7 +1728,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        color: {name: &#x27;color&#x27;},
+        color: {name: 'color'},
 
         /**
          * The current vehile position.
@@ -1877,7 +1738,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.GeoPoint
          */
                 
-        position: {name: &#x27;position&#x27;},
+        position: {name: 'position'},
 
         /**
          * The vehile plate number.
@@ -1887,7 +1748,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        plate_number: {name: &#x27;plateNumber&#x27;}
+        plate_number: {name: 'plateNumber'}
     });
 
     /**
@@ -1916,17 +1777,17 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        name: {name: &#x27;name&#x27;},
+        name: {name: 'name'},
 
         /**
-         * The driver&#x27;s phone number.
+         * The driver's phone number.
          * 
          * @property phoneNumber
          * @final
          * @type string
          */
                 
-        phone_number: {name: &#x27;phoneNumber&#x27;},
+        phone_number: {name: 'phoneNumber'},
 
         /**
          * The driver unique identifier.
@@ -1936,7 +1797,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
                 
-        id: {name: &#x27;id&#x27;}
+        id: {name: 'id'}
     });
 
     /**
@@ -1965,7 +1826,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
                 
-        timestamp: {name: &#x27;date&#x27;},
+        timestamp: {name: 'date'},
 
         /**
          * The coordinate latitude.
@@ -1975,7 +1836,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
                 
-        lat: {name: &#x27;lat&#x27;},
+        lat: {name: 'lat'},
 
         /**
          * The coordinate longitude.
@@ -1985,7 +1846,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
                 
-        lng: {name: &#x27;lng&#x27;}
+        lng: {name: 'lng'}
     });
 
     /**
@@ -2004,7 +1865,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.BookingHistory.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;history&#x27;:
+                case 'history':
                     return $.map(val, function (payload) {
                         return SnapCar.Booking.populateProperties(new SnapCar.Booking(), payload);
                     });
@@ -2023,7 +1884,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type number
          */
                 
-        total: {name: &#x27;total&#x27;},
+        total: {name: 'total'},
 
         /**
          * The current position in the pagination.
@@ -2033,7 +1894,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type number
          */
         
-        offset: {name: &#x27;offset&#x27;},
+        offset: {name: 'offset'},
 
         /**
          * The number of bookings fetched.
@@ -2043,17 +1904,17 @@ var SnapCar = (function (SnapCar, $) {
          * @type number
          */
         
-        count: {name: &#x27;count&#x27;},
+        count: {name: 'count'},
 
         /**
          * The list of SnapCar.Booking fetched
          * 
          * @property history
          * @final
-         * @type Array&lt;SnapCar.Booking&gt;
+         * @type Array<SnapCar.Booking>
          */
         
-        history: {name: &#x27;history&#x27;}
+        history: {name: 'history'}
     });
 
     /**
@@ -2067,7 +1928,7 @@ var SnapCar = (function (SnapCar, $) {
         if (this.moreBookingsAvailable()) {
             return SnapCar.bookingsHistory(this.offset + this.limit, this.limit);
         } else {
-            throw new SnapCar.InvalidParametersError(&#x27;no_more_bookings&#x27;, &#x27;There are no more bookings available in the history. Make sure that the moreBookingsAvailable method returns true before trying to load more bookings.&#x27;);
+            throw new SnapCar.InvalidParametersError('no_more_bookings', 'There are no more bookings available in the history. Make sure that the moreBookingsAvailable method returns true before trying to load more bookings.');
         }
     };
 
@@ -2079,7 +1940,7 @@ var SnapCar = (function (SnapCar, $) {
      */
 
     SnapCar.BookingHistory.prototype.moreBookingsAvailable = function () {
-        return (parseInt(this.offset) + parseInt(this.count)) &lt; parseInt(this.total);
+        return (parseInt(this.offset) + parseInt(this.count)) < parseInt(this.total);
     };
 
     /**
@@ -2111,35 +1972,35 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.Booking.populateProperties = function (context, payload) {
         SnapCar.processObjectPayload(context, payload, function (key, val) {
             switch (key) {
-                case &#x27;planned_start_date&#x27;:
-                case &#x27;creation_date&#x27;:
-                case &#x27;driver_arrival_date&#x27;:
-                case &#x27;start_date&#x27;:
-                case &#x27;end_date&#x27;:
-                case &#x27;cancellation_date&#x27;:
+                case 'planned_start_date':
+                case 'creation_date':
+                case 'driver_arrival_date':
+                case 'start_date':
+                case 'end_date':
+                case 'cancellation_date':
                     return new Date(parseInt(val) * 1000);
-                case &#x27;service_class&#x27;:
+                case 'service_class':
                     return SnapCar.ServiceClass.populateProperties(new SnapCar.ServiceClass(), val);
-                case &#x27;meeting_point&#x27;:
+                case 'meeting_point':
                     return SnapCar.MeetingPoint.populateProperties(new SnapCar.MeetingPoint(), val);
-                case &#x27;start_location&#x27;:
-                case &#x27;end_location&#x27;:
+                case 'start_location':
+                case 'end_location':
                     return SnapCar.Location.populateProperties(new SnapCar.Location(), val);
-                case &#x27;driver&#x27;:
+                case 'driver':
                     return SnapCar.Driver.populateProperties(new SnapCar.Driver(), val);
-                case &#x27;rider&#x27;:
+                case 'rider':
                     return SnapCar.Rider.populateProperties(new SnapCar.Rider(), val);
-                case &#x27;vehicle&#x27;:
+                case 'vehicle':
                     return SnapCar.Vehicle.populateProperties(new SnapCar.Vehicle(), val);
-                case &#x27;route&#x27;:
+                case 'route':
                     return $.map(val, function (payload) {
                         return SnapCar.TimestampedPoint.populateProperties(new SnapCar.TimestampedPoint(), payload);
                     });
-                case &#x27;documents&#x27;:
+                case 'documents':
                     return $.map(val, function (payload) {
                         return SnapCar.BillingDocument.populateProperties(new SnapCar.BillingDocument(), payload);
                     });
-                case &#x27;booking_price&#x27;:
+                case 'booking_price':
                     return SnapCar.BookingPrice.populateProperties(new SnapCar.BookingPrice(), val);
             }
         });
@@ -2157,7 +2018,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        id: {name: &#x27;id&#x27;},
+        id: {name: 'id'},
 
         /**
          * The passenger of the booking.
@@ -2167,7 +2028,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.Rider
          */
         
-        rider: {name: &#x27;rider&#x27;},
+        rider: {name: 'rider'},
 
         /**
          * The ordered service class for this booking.
@@ -2177,7 +2038,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.ServiceClass
          */
         
-        service_class: {name: &#x27;serviceClass&#x27;},
+        service_class: {name: 'serviceClass'},
 
         /**
          * The booking status, refer to the SnapCar.BookingStatuses properties to have a comprehensive list of all possible statuses.
@@ -2187,17 +2048,17 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        status: {name: &#x27;status&#x27;},
+        status: {name: 'status'},
 
         /**
-         * The booking location&#x27;s timezone.
+         * The booking location's timezone.
          * 
          * @property timezone
          * @final
          * @type string
          */
         
-        timezone: {name: &#x27;timezone&#x27;},
+        timezone: {name: 'timezone'},
 
         /**
          * The planned pick up date.
@@ -2207,7 +2068,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
         
-        planned_start_date: {name: &#x27;plannedStartDate&#x27;},
+        planned_start_date: {name: 'plannedStartDate'},
 
         /**
          * The booking creation date.
@@ -2217,7 +2078,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
         
-        creation_date: {name: &#x27;creationDate&#x27;},
+        creation_date: {name: 'creationDate'},
 
         /**
          * The driver arrival date at the pick up location.
@@ -2227,7 +2088,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
         
-        driver_arrival_date: {name: &#x27;driverArrivalDate&#x27;},
+        driver_arrival_date: {name: 'driverArrivalDate'},
 
         /**
          * The date at which the rider went on board.
@@ -2237,7 +2098,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
         
-        start_date: {name: &#x27;startDate&#x27;},
+        start_date: {name: 'startDate'},
 
         /**
          * Meeting at which the rider will find its driver.
@@ -2247,7 +2108,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.MeetingPoint
          */
         
-        meeting_point: {name: &#x27;meetingPoint&#x27;},
+        meeting_point: {name: 'meetingPoint'},
 
         /**
          * The date at which the rider has been dropped off.
@@ -2257,7 +2118,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
         
-        end_date: {name: &#x27;endDate&#x27;},
+        end_date: {name: 'endDate'},
 
         /**
          * The date at which the booking was cancelled (if relevant).
@@ -2267,7 +2128,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type Date
          */
         
-        cancellation_date: {name: &#x27;cancellationDate&#x27;},
+        cancellation_date: {name: 'cancellationDate'},
 
         /**
          * This code indicates the reason why the booking was cancelled. Check out the SnapCar.BookingCancellationReasons static class properties.
@@ -2277,7 +2138,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        cancellation_reason: {name: &#x27;cancellationReason&#x27;},
+        cancellation_reason: {name: 'cancellationReason'},
 
         /**
          * The pick up location.
@@ -2287,7 +2148,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.Location
          */
         
-        start_location: {name: &#x27;startLocation&#x27;},
+        start_location: {name: 'startLocation'},
 
         /**
          * The location at which the rider has been dropped off.
@@ -2297,7 +2158,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.Location
          */
         
-        end_location: {name: &#x27;endLocation&#x27;},
+        end_location: {name: 'endLocation'},
 
         /**
          * Additional pick-up information for the driver. Provided by the rider.
@@ -2307,7 +2168,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        driver_info: {name: &#x27;driverInfo&#x27;},
+        driver_info: {name: 'driverInfo'},
 
         /**
          * The initial order information.
@@ -2317,7 +2178,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.BookingPrice
          */
         
-        booking_price: {name: &#x27;bookingPrice&#x27;},
+        booking_price: {name: 'bookingPrice'},
 
         /**
          * The total billed amount
@@ -2327,7 +2188,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
         
-        billed_amount: {name: &#x27;billedAmount&#x27;},
+        billed_amount: {name: 'billedAmount'},
 
         /**
          * The total VAT amount.
@@ -2337,7 +2198,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
         
-        vat_amount: {name: &#x27;vatAmount&#x27;},
+        vat_amount: {name: 'vatAmount'},
 
         /**
          * The tip given by the rider to the driver through the SnapCar application.
@@ -2347,27 +2208,27 @@ var SnapCar = (function (SnapCar, $) {
          * @type float
          */
         
-        tip: {name: &#x27;tip&#x27;},
+        tip: {name: 'tip'},
 
         /**
          * A list of timestamped points describing the driver route from the pick up location.
          * 
          * @property route
          * @final
-         * @type Array&lt;SnapCar.TimestampedPoint&gt;
+         * @type Array<SnapCar.TimestampedPoint>
          */
         
-        route: {name: &#x27;route&#x27;},
+        route: {name: 'route'},
 
         /**
          * The list of billing documents.
          * 
          * @property documents
          * @final
-         * @type Array&lt;SnapCar.BillingDocument&gt;
+         * @type Array<SnapCar.BillingDocument>
          */
         
-        documents: {name: &#x27;documents&#x27;},
+        documents: {name: 'documents'},
 
         /**
          * The vehicle used by the driver to pick the rider up.
@@ -2377,11 +2238,11 @@ var SnapCar = (function (SnapCar, $) {
          * @type SnapCar.Vehicle
          */
         
-        vehicle: {name: &#x27;vehicle&#x27;}
+        vehicle: {name: 'vehicle'}
     });
 
     /**
-     * Gets the booking cancellation price. Relevant only when the booking is either in the &#x27;pending&#x27;, &#x27;going_to_get&#x27; or &#x27;driver_waiting&#x27; state.
+     * Gets the booking cancellation price. Relevant only when the booking is either in the 'pending', 'going_to_get' or 'driver_waiting' state.
      * 
      * @method cancellationPrice
      * @return {jQuery.Promise} A Promise object. Success handlers are called with a SnapCar.CancellationFee as the single argument. Failure handlers are called with a single SnapCar.APIError argument upon error.
@@ -2389,7 +2250,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.Booking.prototype.cancellationPrice = function () {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings/&quot; + this.id + &quot;/cancellation_price&quot;
+            url: SnapCar.baseDomain + "/bookings/" + this.id + "/cancellation_price"
         }, function (data) {
             var result = new SnapCar.CancellationFee();
             result.constructor.populateProperties(result, data);
@@ -2407,8 +2268,8 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.Booking.prototype.cancel = function () {
         var booking = this;
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings/&quot; + this.id + &quot;/cancel&quot;,
-            method: &#x27;POST&#x27;
+            url: SnapCar.baseDomain + "/bookings/" + this.id + "/cancel",
+            method: 'POST'
         }, function (data) {
             booking.constructor.populateProperties(booking, data);
             return booking;
@@ -2425,7 +2286,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.Booking.prototype.refresh = function () {
         var booking = this;
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings/&quot; + booking.id
+            url: SnapCar.baseDomain + "/bookings/" + booking.id
         }, function (data) {
             booking.constructor.populateProperties(booking, data);
             return booking;
@@ -2444,7 +2305,7 @@ var SnapCar = (function (SnapCar, $) {
                     country: this.startLocation.address.country
                 }
             },
-            end_location: (typeof this.endLocation !== &#x27;undefined&#x27;) ? {
+            end_location: (typeof this.endLocation !== 'undefined') ? {
                 lat: this.endLocation.lat,
                 lng: this.endLocation.lng,
                 address: {
@@ -2455,15 +2316,15 @@ var SnapCar = (function (SnapCar, $) {
                 }
             } : undefined,
             rider_id: this.rider.id,
-            nameboard: (typeof this.nameboard !== &#x27;undefined&#x27; ? (this.nameboard ? 1 : 0) : undefined),
-            date: (typeof this.plannedStartDate !== &#x27;undefined&#x27; ? parseInt(this.plannedStartDate.getTime() / 1000) : undefined)
+            nameboard: (typeof this.nameboard !== 'undefined' ? (this.nameboard ? 1 : 0) : undefined),
+            date: (typeof this.plannedStartDate !== 'undefined' ? parseInt(this.plannedStartDate.getTime() / 1000) : undefined)
         };
         
         return parameters;
     };
     
     var properBookingPromise = function(booking, promise) {
-        if (typeof booking.plannedStartDate === &#x27;undefined&#x27;) {
+        if (typeof booking.plannedStartDate === 'undefined') {
             var deferred = $.Deferred();
 
             promise.done(function () {
@@ -2504,30 +2365,30 @@ var SnapCar = (function (SnapCar, $) {
      * Confirms the booking (without flat price) to the SnapCar platform. Before calling this method, you have to provide at least a rider, a startLocation and the desired serviceClass. 
      * 
      * @method confirm
-     * @return {jQuery.Promise} A Promise object. Success/progress handlers are called with a SnapCar.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the &quot;pending&quot; status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCar.APIError argument upon error.
+     * @return {jQuery.Promise} A Promise object. Success/progress handlers are called with a SnapCar.Booking as the single argument. If the booking has a specific planned start date, the success callbacks are called once the platform confirms the booking creation. However, if the booking has no planned start date, the progress callbacks are called once the platform confirms the booking creation and the success callbacks are called when the booking is no longer in the "pending" status (either accepted by the driver or cancelled). Failure handlers are called with a single SnapCar.APIError argument upon error.
      */
     
     SnapCar.Booking.prototype.confirm = function() {
 
-        if ((typeof this.startLocation === &#x27;undefined&#x27;) || (typeof this.startLocation.address === &#x27;undefined&#x27;) || (typeof this.startLocation.lat === &#x27;undefined&#x27;) || (typeof this.startLocation.lng === &#x27;undefined&#x27;) || (typeof this.startLocation.address.name === &#x27;undefined&#x27;) || (typeof this.startLocation.address.city === &#x27;undefined&#x27;)) {
-            throw new SnapCar.InvalidParametersError(&#x27;start_location_missing&#x27;, &#x27;You must provide a start location including at least: lat, lng, name and city.&#x27;);
+        if ((typeof this.startLocation === 'undefined') || (typeof this.startLocation.address === 'undefined') || (typeof this.startLocation.lat === 'undefined') || (typeof this.startLocation.lng === 'undefined') || (typeof this.startLocation.address.name === 'undefined') || (typeof this.startLocation.address.city === 'undefined')) {
+            throw new SnapCar.InvalidParametersError('start_location_missing', 'You must provide a start location including at least: lat, lng, name and city.');
         }
 
-        if (typeof this.rider === &#x27;undefined&#x27;) {
-            throw new SnapCar.InvalidParametersError(&#x27;rider_missing&#x27;, &#x27;You must provide a valid rider.&#x27;);
+        if (typeof this.rider === 'undefined') {
+            throw new SnapCar.InvalidParametersError('rider_missing', 'You must provide a valid rider.');
         }
         
-        if (typeof this.serviceClass === &#x27;undefined&#x27;) {
-            throw new SnapCar.InvalidParametersError(&#x27;service_class_missing&#x27;, &#x27;You must provide the required service class for this booking.&#x27;);
+        if (typeof this.serviceClass === 'undefined') {
+            throw new SnapCar.InvalidParametersError('service_class_missing', 'You must provide the required service class for this booking.');
         }
         
         var parameters = orderParameters.call(this);
         
-        if (typeof this.driverInfo !== &#x27;undefined&#x27;) {
+        if (typeof this.driverInfo !== 'undefined') {
             parameters.driver_info = this.driverInfo;
         }
 
-        if (typeof this.meetingPoint !== &#x27;undefined&#x27;) {
+        if (typeof this.meetingPoint !== 'undefined') {
             parameters.meeting_point_id = this.meetingPoint.id;
         }
 
@@ -2536,8 +2397,8 @@ var SnapCar = (function (SnapCar, $) {
         var booking = this;
         
         var promise = SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings&quot;,
-            method: &#x27;POST&#x27;,
+            url: SnapCar.baseDomain + "/bookings",
+            method: 'POST',
             data: parameters
         }, function (data) {
             booking.constructor.populateProperties(booking, data);
@@ -2556,16 +2417,16 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.Booking.prototype.flatPrices = function () {
 
-        if ((typeof this.startLocation === &#x27;undefined&#x27;) || (typeof this.startLocation.address === &#x27;undefined&#x27;) || (typeof this.startLocation.lat === &#x27;undefined&#x27;) || (typeof this.startLocation.lng === &#x27;undefined&#x27;) || (typeof this.startLocation.address.name === &#x27;undefined&#x27;) || (typeof this.startLocation.address.city === &#x27;undefined&#x27;)) {
-            throw new SnapCar.InvalidParametersError(&#x27;start_location_missing&#x27;, &#x27;You must provide a start location including at least: lat, lng, name and city.&#x27;);
+        if ((typeof this.startLocation === 'undefined') || (typeof this.startLocation.address === 'undefined') || (typeof this.startLocation.lat === 'undefined') || (typeof this.startLocation.lng === 'undefined') || (typeof this.startLocation.address.name === 'undefined') || (typeof this.startLocation.address.city === 'undefined')) {
+            throw new SnapCar.InvalidParametersError('start_location_missing', 'You must provide a start location including at least: lat, lng, name and city.');
         }
 
-        if ((typeof this.endLocation === &#x27;undefined&#x27;) || (typeof this.endLocation.address === &#x27;undefined&#x27;) || (typeof this.endLocation.lat === &#x27;undefined&#x27;) || (typeof this.endLocation.lng === &#x27;undefined&#x27;) || (typeof this.endLocation.address.name === &#x27;undefined&#x27;) || (typeof this.endLocation.address.city === &#x27;undefined&#x27;)) {
-            throw new SnapCar.InvalidParametersError(&#x27;end_location_missing&#x27;, &#x27;You must provide an end location including at least: lat, lng, name and city.&#x27;);
+        if ((typeof this.endLocation === 'undefined') || (typeof this.endLocation.address === 'undefined') || (typeof this.endLocation.lat === 'undefined') || (typeof this.endLocation.lng === 'undefined') || (typeof this.endLocation.address.name === 'undefined') || (typeof this.endLocation.address.city === 'undefined')) {
+            throw new SnapCar.InvalidParametersError('end_location_missing', 'You must provide an end location including at least: lat, lng, name and city.');
         }
 
-        if (typeof this.rider === &#x27;undefined&#x27;) {
-            throw new SnapCar.InvalidParametersError(&#x27;rider_missing&#x27;, &#x27;You must provide a valid rider.&#x27;);
+        if (typeof this.rider === 'undefined') {
+            throw new SnapCar.InvalidParametersError('rider_missing', 'You must provide a valid rider.');
         }
 
         var parameters = orderParameters.call(this);
@@ -2573,8 +2434,8 @@ var SnapCar = (function (SnapCar, $) {
         var booking = this;
 
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings/prices&quot;,
-            method: &#x27;POST&#x27;,
+            url: SnapCar.baseDomain + "/bookings/prices",
+            method: 'POST',
             data: parameters
         }, function (data) {
             return $.map(data, function (pricePayload) {
@@ -2595,7 +2456,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.BookingStatuses = {
         
         /**
-         * When the booking is waiting for a driver to be attributed. Its value is &quot;pending&quot;.
+         * When the booking is waiting for a driver to be attributed. Its value is "pending".
          * 
          * @property PENDING
          * @static
@@ -2603,10 +2464,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        PENDING: &#x27;pending&#x27;,
+        PENDING: 'pending',
         
         /**
-         * When a driver has accepted a booking and is on his way to pick up the rider. Its value is &quot;going_to_get&quot;.
+         * When a driver has accepted a booking and is on his way to pick up the rider. Its value is "going_to_get".
          * 
          * @property GOING_TO_GET
          * @static
@@ -2614,10 +2475,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        GOING_TO_GET: &#x27;going_to_get&#x27;,
+        GOING_TO_GET: 'going_to_get',
         
         /**
-         * When the driver has arrived at the pick up location and is waiting for the rider. Its value is &quot;driver_waiting&quot;.
+         * When the driver has arrived at the pick up location and is waiting for the rider. Its value is "driver_waiting".
          * 
          * @property DRIVER_WAITING
          * @static
@@ -2625,10 +2486,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        DRIVER_WAITING: &#x27;driver_waiting&#x27;,
+        DRIVER_WAITING: 'driver_waiting',
         
         /**
-         * When the rider is in the car. Its value is &quot;on_board&quot;.
+         * When the rider is in the car. Its value is "on_board".
          * 
          * @property ON_BOARD
          * @static
@@ -2636,10 +2497,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        ON_BOARD: &#x27;on_board&#x27;,
+        ON_BOARD: 'on_board',
         
         /**
-         * When the booking is ended, meaning that the rider has been dropped off. Its value is &quot;complete&quot;.
+         * When the booking is ended, meaning that the rider has been dropped off. Its value is "complete".
          * 
          * @property COMPLETE
          * @static
@@ -2647,10 +2508,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        COMPLETE: &#x27;complete&#x27;,
+        COMPLETE: 'complete',
         
         /**
-         * When the booking is cancelled. Its value is &quot;cancelled&quot;.
+         * When the booking is cancelled. Its value is "cancelled".
          * 
          * @property CANCELLED
          * @static
@@ -2658,7 +2519,7 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        CANCELLED: &#x27;cancelled&#x27;
+        CANCELLED: 'cancelled'
     };
 
    /**
@@ -2671,7 +2532,7 @@ var SnapCar = (function (SnapCar, $) {
     SnapCar.BookingCancellationReasons = {
         
         /**
-         * The booking has been cancelled by the rider, and not charged. Its value is &quot;rider_cancellation&quot;.
+         * The booking has been cancelled by the rider, and not charged. Its value is "rider_cancellation".
          * 
          * @property RIDER_CANCELLATION
          * @static
@@ -2679,10 +2540,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        RIDER_CANCELLATION: &#x27;rider_cancellation&#x27;,
+        RIDER_CANCELLATION: 'rider_cancellation',
         
         /**
-         * The booking has been cancelled by the rider, and has been charged a cancellation fee. Its value is &quot;rider_cancellation_charged&quot;.
+         * The booking has been cancelled by the rider, and has been charged a cancellation fee. Its value is "rider_cancellation_charged".
          * 
          * @property RIDER_CANCELLATION_CHARGED
          * @static
@@ -2690,10 +2551,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        RIDER_CANCELLATION_CHARGED: &#x27;rider_cancellation_charged&#x27;,
+        RIDER_CANCELLATION_CHARGED: 'rider_cancellation_charged',
         
         /**
-         * The booking has been cancelled by SnapCar. Its value is &quot;system_cancellation&quot;.
+         * The booking has been cancelled by SnapCar. Its value is "system_cancellation".
          * 
          * @property SYSTEM_CANCELLATION
          * @static
@@ -2701,10 +2562,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        SYSTEM_CANCELLATION: &#x27;system_cancellation&#x27;,
+        SYSTEM_CANCELLATION: 'system_cancellation',
         
         /**
-         * The booking has been cancelled by SnapCar, and charged. Its value is &quot;system_cancellation_charged&quot;.
+         * The booking has been cancelled by SnapCar, and charged. Its value is "system_cancellation_charged".
          * 
          * @property SYSTEM_CANCELLATION_CHARGED
          * @static
@@ -2712,10 +2573,10 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        SYSTEM_CANCELLATION_CHARGED: &#x27;system_cancellation_charged&#x27;,
+        SYSTEM_CANCELLATION_CHARGED: 'system_cancellation_charged',
         
         /**
-         * No driver was available for dispatch. Its value is &quot;no_driver&quot;.
+         * No driver was available for dispatch. Its value is "no_driver".
          * 
          * @property NO_DRIVER
          * @static
@@ -2723,22 +2584,22 @@ var SnapCar = (function (SnapCar, $) {
          * @type string
          */
         
-        NO_DRIVER: &#x27;no_driver&#x27;
+        NO_DRIVER: 'no_driver'
     };
 
 
     // Config test 
 
-    if (typeof $ === &#x27;undefined&#x27;) {
-        throw new SnapCar.Error(&#x27;missing_jquery&#x27;, &#x27;jQuery is required to run the SnapCar SDK.&#x27;);
+    if (typeof $ === 'undefined') {
+        throw new SnapCar.Error('missing_jquery', 'jQuery is required to run the SnapCar SDK.');
     }
 
     // API Calls
 
     SnapCar.performAPICall = function (requestParams, resultProcessor, checkToken) {
 
-        if ((typeof checkToken === &#x27;undefined&#x27; || checkToken) &amp;&amp; typeof SnapCar.token === &#x27;undefined&#x27;) {
-            throw new SnapCar.Error(&#x27;missing_token&#x27;, &#x27;You have to provide a SnapCar API token in order to perform API calls.&#x27;);
+        if ((typeof checkToken === 'undefined' || checkToken) && typeof SnapCar.token === 'undefined') {
+            throw new SnapCar.Error('missing_token', 'You have to provide a SnapCar API token in order to perform API calls.');
         }
 
         var deferred = $.Deferred();
@@ -2765,7 +2626,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.eta = function (lat, lng) {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/info/eta&quot;,
+            url: SnapCar.baseDomain + "/info/eta",
             data: {lat: lat, lng: lng}
         }, function (data) {
             return $.map(data, function (statusPayload) {
@@ -2788,7 +2649,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.serviceClasses = function (lat, lng) {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/info/service_classes&quot;,
+            url: SnapCar.baseDomain + "/info/service_classes",
             data: {lat: lat, lng: lng}
         }, function (data) {
             return $.map(data, function (payload) {
@@ -2810,7 +2671,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.meetingPoints = function (lat, lng) {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/info/meeting_points&quot;,
+            url: SnapCar.baseDomain + "/info/meeting_points",
             data: {lat: lat, lng: lng}
         }, function (data) {
             var result = new SnapCar.SpecialArea();
@@ -2829,7 +2690,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.user = function () {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/users/me&quot;
+            url: SnapCar.baseDomain + "/users/me"
         }, function (data) {
             var result = new SnapCar.Rider(data);
             result.constructor.populateProperties(result, data);
@@ -2838,7 +2699,7 @@ var SnapCar = (function (SnapCar, $) {
     };
 
     /**
-     * Gets the currently authentified rider&#x27;s active bookings.
+     * Gets the currently authentified rider's active bookings.
      * 
      * @method activeBookings
      * @for SnapCar
@@ -2847,7 +2708,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.activeBookings = function () {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings&quot;
+            url: SnapCar.baseDomain + "/bookings"
         }, function (data) {
             return $.map(data, function (payload) {
                 var result = new SnapCar.Booking();
@@ -2858,7 +2719,7 @@ var SnapCar = (function (SnapCar, $) {
     };
 
     /**
-     * Gets the currently authentified rider&#x27;s bookings history.
+     * Gets the currently authentified rider's bookings history.
      * 
      * @method bookingsHistory
      * @for SnapCar
@@ -2869,7 +2730,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.bookingsHistory = function (offset, limit) {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings/history&quot;,
+            url: SnapCar.baseDomain + "/bookings/history",
             data: {
                 offset: offset || 0,
                 limit: limit || 20
@@ -2892,7 +2753,7 @@ var SnapCar = (function (SnapCar, $) {
 
     SnapCar.booking = function (id) {
         return SnapCar.performAPICall({
-            url: SnapCar.baseDomain + &quot;/bookings/&quot; + id
+            url: SnapCar.baseDomain + "/bookings/" + id
         }, function (data) {
             var result = new SnapCar.Booking();
             result.constructor.populateProperties(result, data);
@@ -2904,20 +2765,3 @@ var SnapCar = (function (SnapCar, $) {
 
 } (SnapCar || {}, jQuery));
 
-
-    </pre>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
-<script src="../assets/vendor/prettify/prettify-min.js"></script>
-<script src="../assets/js/yuidoc-bootstrap.js"></script>
-<script>prettyPrint();</script>
-</body>
-</html>
