@@ -490,7 +490,7 @@ var SnapCar = (function (SnapCar, $) {
             Object.defineProperties(object.prototype, {
             	"_mapping": {
             		enumerable: false,
-            		configurable: false,
+            		configurable: true,
             		writable: false,
             		value: mapping
             	}
