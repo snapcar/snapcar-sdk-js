@@ -490,7 +490,7 @@ var SnapCar = (function (SnapCar, $) {
             Object.defineProperties(object.prototype, {
             	"_mapping": {
             		enumerable: false,
-            		configurable: false,
+            		configurable: true,
             		writable: false,
             		value: mapping
             	}
@@ -1278,6 +1278,8 @@ console.log(SnapCar.APIError.mapping);
             switch (key) {
                 case 'expiry_date':
                     return new Date(parseInt(val) * 1000);
+                case 'service_class':
+                    return SnapCar.ServiceClass.populateProperties(new SnapCar.ServiceClass(), val);
             }
         });
         
@@ -1321,7 +1323,7 @@ console.log(SnapCar.APIError.mapping);
         /**
          * A formatted string representing the price.
          * 
-         * @property formatted_price
+         * @property formattedPrice
          * @final
          * @type string
          */
@@ -1331,7 +1333,7 @@ console.log(SnapCar.APIError.mapping);
         /**
          * The date of the validity date for the given price.
          * 
-         * @property expiry_date
+         * @property expiryDate
          * @final
          * @type Date
          */
@@ -1339,14 +1341,15 @@ console.log(SnapCar.APIError.mapping);
         expiry_date: {name: 'expiryDate'},
         
         /**
-         * The ID of the service class for which the price is valid.
+         * The service class for which the price is valid.
          * 
-         * @property service_class_id
+         * @property serviceClass
          * @final
          * @type string
          */
-        
-        service_class_id: {name: 'serviceClassId'},
+
+        service_class: {name: 'serviceClass'},
+                    
         
         booking: {name: 'booking'}
     });
