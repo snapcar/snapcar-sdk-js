@@ -2759,13 +2759,32 @@ console.log(SnapCar.APIError.mapping);
         var deferred = $.Deferred();
         requestParams.data = $.extend({}, requestParams.data || {}, {token: SnapCar.token});
 
-        $.ajax(requestParams).done(function (data) {
+        var xhr = $.ajax(requestParams).done(function (data) {
             deferred.resolve(resultProcessor(data));
         }).fail(function (data) {
             deferred.reject(new SnapCar.APIError(data));
         });
+        
+        var promise = deferred.promise();
+        
+        promise._abort = function() {
+            xhr.abort();
+        };
 
-        return deferred.promise();
+        return promise;
+    };
+    
+
+    /**
+     * Cancels a request performed against the web service.
+     * 
+     * @method abortRequest
+     * @for SnapCar
+     * @param {jQuery.Promise} The jQuery promise associated to the request to be cancelled.
+     */
+
+    SnapCar.abortRequest = function(promise) {
+        promise._abort();
     };
     
     /**

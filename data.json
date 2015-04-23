@@ -1852,7 +1852,22 @@
         },
         {
             "file": "dist/SnapCar.js",
-            "line": 2634,
+            "line": 2641,
+            "description": "Cancels a request performed against the web service.",
+            "itemtype": "method",
+            "name": "abortRequest",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "jQuery promise associated to the request to be cancelled.",
+                    "type": "jQuery.Promise"
+                }
+            ],
+            "class": "SnapCar"
+        },
+        {
+            "file": "dist/SnapCar.js",
+            "line": 2653,
             "description": "Retrieves current ETA and availability for each service class.",
             "itemtype": "method",
             "name": "eta",
@@ -1876,7 +1891,7 @@
         },
         {
             "file": "dist/SnapCar.js",
-            "line": 2657,
+            "line": 2676,
             "description": "Retrieves a list of all allowed service classes at a specific location.",
             "itemtype": "method",
             "name": "serviceClasses",
@@ -1900,7 +1915,7 @@
         },
         {
             "file": "dist/SnapCar.js",
-            "line": 2680,
+            "line": 2699,
             "description": "Retrieves meeting point information at a specific location.",
             "itemtype": "method",
             "name": "meetingPoints",
@@ -1924,7 +1939,7 @@
         },
         {
             "file": "dist/SnapCar.js",
-            "line": 2700,
+            "line": 2719,
             "description": "Gets the currently authenticated user information.",
             "itemtype": "method",
             "name": "user",
@@ -1936,7 +1951,7 @@
         },
         {
             "file": "dist/SnapCar.js",
-            "line": 2718,
+            "line": 2737,
             "description": "Gets the currently authentified rider's active bookings.",
             "itemtype": "method",
             "name": "activeBookings",
@@ -1948,7 +1963,7 @@
         },
         {
             "file": "dist/SnapCar.js",
-            "line": 2738,
+            "line": 2757,
             "description": "Gets the currently authentified rider's bookings history.",
             "itemtype": "method",
             "name": "bookingsHistory",
@@ -1976,7 +1991,7 @@
         },
         {
             "file": "dist/SnapCar.js",
-            "line": 2762,
+            "line": 2781,
             "description": "Gets information about a specific booking.",
             "itemtype": "method",
             "name": "booking",
