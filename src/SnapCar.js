@@ -1323,7 +1323,7 @@ console.log(SnapCar.APIError.mapping);
         /**
          * A formatted string representing the price.
          * 
-         * @property formatted_price
+         * @property formattedPrice
          * @final
          * @type string
          */
@@ -1333,7 +1333,7 @@ console.log(SnapCar.APIError.mapping);
         /**
          * The date of the validity date for the given price.
          * 
-         * @property expiry_date
+         * @property expiryDate
          * @final
          * @type Date
          */
