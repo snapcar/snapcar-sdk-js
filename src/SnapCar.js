@@ -1278,6 +1278,8 @@ console.log(SnapCar.APIError.mapping);
             switch (key) {
                 case 'expiry_date':
                     return new Date(parseInt(val) * 1000);
+                case 'service_class':
+                    return SnapCar.ServiceClass.populateProperties(new SnapCar.ServiceClass(), val);
             }
         });
         
@@ -1339,14 +1341,15 @@ console.log(SnapCar.APIError.mapping);
         expiry_date: {name: 'expiryDate'},
         
         /**
-         * The ID of the service class for which the price is valid.
+         * The service class for which the price is valid.
          * 
-         * @property service_class_id
+         * @property serviceClass
          * @final
          * @type string
          */
-        
-        service_class_id: {name: 'serviceClassId'},
+
+        service_class: {name: 'serviceClass'},
+                    
         
         booking: {name: 'booking'}
     });
