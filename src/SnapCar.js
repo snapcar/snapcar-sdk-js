@@ -721,8 +721,6 @@ var SnapCar = (function (SnapCar, $) {
         server_response: {name: 'serverResponse'}
     });
 
-console.log(SnapCar.APIError.mapping);
-
     /**
      * Represents an error received from the API.
      *
