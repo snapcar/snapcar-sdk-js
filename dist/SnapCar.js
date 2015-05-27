@@ -721,8 +721,6 @@ var SnapCar = (function (SnapCar, $) {
         server_response: {name: 'serverResponse'}
     });
 
-console.log(SnapCar.APIError.mapping);
-
     /**
      * Represents an error received from the API.
      *
@@ -2310,7 +2308,7 @@ console.log(SnapCar.APIError.mapping);
         });
     };    
 
-    var orderParameters = function() {
+    SnapCar._orderParameters = function() {
         var parameters = {
             start_location: {
                 lat: this.startLocation.lat,
@@ -2399,7 +2397,7 @@ console.log(SnapCar.APIError.mapping);
             throw new SnapCar.InvalidParametersError('service_class_missing', 'You must provide the required service class for this booking.');
         }
         
-        var parameters = orderParameters.call(this);
+        var parameters = SnapCar._orderParameters.call(this);
         
         if (typeof this.driverInfo !== 'undefined') {
             parameters.driver_info = this.driverInfo;
@@ -2446,7 +2444,7 @@ console.log(SnapCar.APIError.mapping);
             throw new SnapCar.InvalidParametersError('rider_missing', 'You must provide a valid rider.');
         }
 
-        var parameters = orderParameters.call(this);
+        var parameters = SnapCar._orderParameters.call(this);
 
         var booking = this;
 
