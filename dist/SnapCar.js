@@ -1361,7 +1361,7 @@ var SnapCar = (function (SnapCar, $) {
     
     SnapCar.BookingPrice.prototype.confirm = function() {
 
-        var additionalParameters = {};
+        var additionalParameters = SnapCar._bookingConfirmAdditionalParameters();
 
         if (typeof this.booking.driverInfo !== 'undefined') {
             additionalParameters.driver_info = this.booking.driverInfo;
@@ -2306,6 +2306,10 @@ var SnapCar = (function (SnapCar, $) {
             booking.constructor.populateProperties(booking, data);
             return booking;
         });
+    };    
+
+    SnapCar._bookingConfirmAdditionalParameters = function() {
+        return {};
     };    
 
     SnapCar._orderParameters = function() {
