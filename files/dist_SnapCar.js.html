@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.4.0</b>
+                    API Docs for Version: <b>0.7.0</b>
                 </p>
             </li>
         </div>
@@ -858,8 +858,6 @@ var SnapCar = (function (SnapCar, $) {
         server_response: {name: &#x27;serverResponse&#x27;}
     });
 
-console.log(SnapCar.APIError.mapping);
-
     /**
      * Represents an error received from the API.
      *
@@ -1500,7 +1498,7 @@ console.log(SnapCar.APIError.mapping);
     
     SnapCar.BookingPrice.prototype.confirm = function() {
 
-        var additionalParameters = {};
+        var additionalParameters = SnapCar._bookingConfirmAdditionalParameters();
 
         if (typeof this.booking.driverInfo !== &#x27;undefined&#x27;) {
             additionalParameters.driver_info = this.booking.driverInfo;
@@ -1710,7 +1708,7 @@ console.log(SnapCar.APIError.mapping);
          * 
          * @property address
          * @final
-         * @type string
+         * @type SnapCar.Address
          */        
         
         address: {name: &#x27;address&#x27;}
@@ -2447,7 +2445,11 @@ console.log(SnapCar.APIError.mapping);
         });
     };    
 
-    var orderParameters = function() {
+    SnapCar._bookingConfirmAdditionalParameters = function() {
+        return {};
+    };    
+
+    SnapCar._orderParameters = function() {
         var parameters = {
             start_location: {
                 lat: this.startLocation.lat,
@@ -2536,7 +2538,7 @@ console.log(SnapCar.APIError.mapping);
             throw new SnapCar.InvalidParametersError(&#x27;service_class_missing&#x27;, &#x27;You must provide the required service class for this booking.&#x27;);
         }
         
-        var parameters = orderParameters.call(this);
+        var parameters = SnapCar._orderParameters.call(this);
         
         if (typeof this.driverInfo !== &#x27;undefined&#x27;) {
             parameters.driver_info = this.driverInfo;
@@ -2583,7 +2585,7 @@ console.log(SnapCar.APIError.mapping);
             throw new SnapCar.InvalidParametersError(&#x27;rider_missing&#x27;, &#x27;You must provide a valid rider.&#x27;);
         }
 
-        var parameters = orderParameters.call(this);
+        var parameters = SnapCar._orderParameters.call(this);
 
         var booking = this;
 
