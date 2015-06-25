@@ -1571,7 +1571,7 @@ var SnapCar = (function (SnapCar, $) {
          * 
          * @property address
          * @final
-         * @type string
+         * @type SnapCar.Address
          */        
         
         address: {name: 'address'}
