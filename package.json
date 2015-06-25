@@ -1,6 +1,6 @@
 {
   "name": "snapcar-sdk-js",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "main": "dist/SnapCar.min.js",
   "description": "The official SnapCar SDK for JavaScript that allows communication between your browser application and the SnapCar platform through the SnapCar Public API.",
   "dependencies": {},
