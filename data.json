@@ -2,7 +2,7 @@
     "project": {
         "name": "snapcar-sdk-js",
         "description": "The official SnapCar SDK for JavaScript that allows communication between your browser application and the SnapCar platform through the SnapCar Public API.",
-        "version": "0.7.0",
+        "version": "1.0.0",
         "url": "http://snapcar.github.io/snapcar-sdk-js/classes/SnapCar.html"
     },
     "files": {
